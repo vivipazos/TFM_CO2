@@ -8,8 +8,8 @@
           d.shown = false;
           return d;
         })
-
 	
+	$:console.log(data_modified)
 </script>
 
 <main>
@@ -17,12 +17,12 @@
 		data = {data_modified}
 	/>
 
-{#each data_modified as object}
-	<Action
-		{...object}
-		bind:active={false}
-	/>
-{/each}
+	{#each data_modified as object}
+		<Action
+			{...object}
+			bind:active = {object.active}
+		/>
+	{/each}
 
 </main>
 
