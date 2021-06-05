@@ -542,8 +542,10 @@ var app = (function () {
     	let p;
     	let t0;
     	let t1;
-    	let button;
+    	let label;
+    	let input;
     	let t2;
+    	let span;
     	let mounted;
     	let dispose;
 
@@ -551,15 +553,22 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			p = element("p");
-    			t0 = text(/*description*/ ctx[0]);
+    			t0 = text(/*description*/ ctx[1]);
     			t1 = space();
-    			button = element("button");
-    			t2 = text(/*action*/ ctx[1]);
-    			add_location(p, file$1, 8, 4, 122);
-    			attr_dev(button, "class", "action__button");
-    			add_location(button, file$1, 12, 4, 162);
-    			attr_dev(div, "class", "action svelte-b4l0kd");
-    			add_location(div, file$1, 7, 0, 97);
+    			label = element("label");
+    			input = element("input");
+    			t2 = space();
+    			span = element("span");
+    			add_location(p, file$1, 7, 4, 89);
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "svelte-laxq7r");
+    			add_location(input, file$1, 12, 8, 160);
+    			attr_dev(span, "class", "slider round svelte-laxq7r");
+    			add_location(span, file$1, 13, 8, 214);
+    			attr_dev(label, "class", "switch svelte-laxq7r");
+    			add_location(label, file$1, 11, 4, 129);
+    			attr_dev(div, "class", "action svelte-laxq7r");
+    			add_location(div, file$1, 6, 0, 64);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -569,28 +578,23 @@ var app = (function () {
     			append_dev(div, p);
     			append_dev(p, t0);
     			append_dev(div, t1);
-    			append_dev(div, button);
-    			append_dev(button, t2);
+    			append_dev(div, label);
+    			append_dev(label, input);
+    			input.checked = /*active*/ ctx[0];
+    			append_dev(label, t2);
+    			append_dev(label, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(
-    					button,
-    					"click",
-    					function () {
-    						if (is_function(/*toggle*/ ctx[2])) /*toggle*/ ctx[2].apply(this, arguments);
-    					},
-    					false,
-    					false,
-    					false
-    				);
-
+    				dispose = listen_dev(input, "change", /*input_change_handler*/ ctx[2]);
     				mounted = true;
     			}
     		},
-    		p: function update(new_ctx, [dirty]) {
-    			ctx = new_ctx;
-    			if (dirty & /*description*/ 1) set_data_dev(t0, /*description*/ ctx[0]);
-    			if (dirty & /*action*/ 2) set_data_dev(t2, /*action*/ ctx[1]);
+    		p: function update(ctx, [dirty]) {
+    			if (dirty & /*description*/ 2) set_data_dev(t0, /*description*/ ctx[1]);
+
+    			if (dirty & /*active*/ 1) {
+    				input.checked = /*active*/ ctx[0];
+    			}
     		},
     		i: noop,
     		o: noop,
@@ -616,48 +620,41 @@ var app = (function () {
     	let { $$slots: slots = {}, $$scope } = $$props;
     	validate_slots("Action", slots, []);
     	let { description } = $$props;
-    	let { action } = $$props;
     	let { active } = $$props;
-    	let { toggle } = $$props;
-    	const writable_props = ["description", "action", "active", "toggle"];
+    	const writable_props = ["description", "active"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Action> was created with unknown prop '${key}'`);
     	});
 
+    	function input_change_handler() {
+    		active = this.checked;
+    		$$invalidate(0, active);
+    	}
+
     	$$self.$$set = $$props => {
-    		if ("description" in $$props) $$invalidate(0, description = $$props.description);
-    		if ("action" in $$props) $$invalidate(1, action = $$props.action);
-    		if ("active" in $$props) $$invalidate(3, active = $$props.active);
-    		if ("toggle" in $$props) $$invalidate(2, toggle = $$props.toggle);
+    		if ("description" in $$props) $$invalidate(1, description = $$props.description);
+    		if ("active" in $$props) $$invalidate(0, active = $$props.active);
     	};
 
-    	$$self.$capture_state = () => ({ description, action, active, toggle });
+    	$$self.$capture_state = () => ({ description, active });
 
     	$$self.$inject_state = $$props => {
-    		if ("description" in $$props) $$invalidate(0, description = $$props.description);
-    		if ("action" in $$props) $$invalidate(1, action = $$props.action);
-    		if ("active" in $$props) $$invalidate(3, active = $$props.active);
-    		if ("toggle" in $$props) $$invalidate(2, toggle = $$props.toggle);
+    		if ("description" in $$props) $$invalidate(1, description = $$props.description);
+    		if ("active" in $$props) $$invalidate(0, active = $$props.active);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [description, action, toggle, active];
+    	return [active, description, input_change_handler];
     }
 
     class Action extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, {
-    			description: 0,
-    			action: 1,
-    			active: 3,
-    			toggle: 2
-    		});
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { description: 1, active: 0 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -669,20 +666,12 @@ var app = (function () {
     		const { ctx } = this.$$;
     		const props = options.props || {};
 
-    		if (/*description*/ ctx[0] === undefined && !("description" in props)) {
+    		if (/*description*/ ctx[1] === undefined && !("description" in props)) {
     			console.warn("<Action> was created without expected prop 'description'");
     		}
 
-    		if (/*action*/ ctx[1] === undefined && !("action" in props)) {
-    			console.warn("<Action> was created without expected prop 'action'");
-    		}
-
-    		if (/*active*/ ctx[3] === undefined && !("active" in props)) {
+    		if (/*active*/ ctx[0] === undefined && !("active" in props)) {
     			console.warn("<Action> was created without expected prop 'active'");
-    		}
-
-    		if (/*toggle*/ ctx[2] === undefined && !("toggle" in props)) {
-    			console.warn("<Action> was created without expected prop 'toggle'");
     		}
     	}
 
@@ -694,27 +683,11 @@ var app = (function () {
     		throw new Error("<Action>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
-    	get action() {
-    		throw new Error("<Action>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set action(value) {
-    		throw new Error("<Action>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
     	get active() {
     		throw new Error("<Action>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
 
     	set active(value) {
-    		throw new Error("<Action>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	get toggle() {
-    		throw new Error("<Action>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
-    	}
-
-    	set toggle(value) {
     		throw new Error("<Action>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
@@ -754,21 +727,21 @@ var app = (function () {
 
     function get_each_context(ctx, list, i) {
     	const child_ctx = ctx.slice();
-    	child_ctx[3] = list[i];
-    	child_ctx[4] = list;
-    	child_ctx[5] = i;
+    	child_ctx[2] = list[i];
+    	child_ctx[3] = list;
+    	child_ctx[4] = i;
     	return child_ctx;
     }
 
-    // (27:0) {#each data_modified as object}
+    // (20:1) {#each data_modified as object}
     function create_each_block(ctx) {
     	let action;
     	let updating_active;
     	let current;
-    	const action_spread_levels = [{ toggle: /*toggle*/ ctx[1] }, /*object*/ ctx[3]];
+    	const action_spread_levels = [/*object*/ ctx[2]];
 
     	function action_active_binding(value) {
-    		/*action_active_binding*/ ctx[2].call(null, value, /*object*/ ctx[3]);
+    		/*action_active_binding*/ ctx[1].call(null, value, /*object*/ ctx[2]);
     	}
 
     	let action_props = {};
@@ -777,8 +750,8 @@ var app = (function () {
     		action_props = assign(action_props, action_spread_levels[i]);
     	}
 
-    	if (/*object*/ ctx[3].active !== void 0) {
-    		action_props.active = /*object*/ ctx[3].active;
+    	if (/*object*/ ctx[2].active !== void 0) {
+    		action_props.active = /*object*/ ctx[2].active;
     	}
 
     	action = new Action({ props: action_props, $$inline: true });
@@ -795,16 +768,13 @@ var app = (function () {
     		p: function update(new_ctx, dirty) {
     			ctx = new_ctx;
 
-    			const action_changes = (dirty & /*toggle, data_modified*/ 3)
-    			? get_spread_update(action_spread_levels, [
-    					dirty & /*toggle*/ 2 && { toggle: /*toggle*/ ctx[1] },
-    					dirty & /*data_modified*/ 1 && get_spread_object(/*object*/ ctx[3])
-    				])
+    			const action_changes = (dirty & /*data_modified*/ 1)
+    			? get_spread_update(action_spread_levels, [get_spread_object(/*object*/ ctx[2])])
     			: {};
 
     			if (!updating_active && dirty & /*data_modified*/ 1) {
     				updating_active = true;
-    				action_changes.active = /*object*/ ctx[3].active;
+    				action_changes.active = /*object*/ ctx[2].active;
     				add_flush_callback(() => updating_active = false);
     			}
 
@@ -828,7 +798,7 @@ var app = (function () {
     		block,
     		id: create_each_block.name,
     		type: "each",
-    		source: "(27:0) {#each data_modified as object}",
+    		source: "(20:1) {#each data_modified as object}",
     		ctx
     	});
 
@@ -869,7 +839,7 @@ var app = (function () {
     			}
 
     			attr_dev(main, "class", "svelte-154hxqq");
-    			add_location(main, file$2, 21, 0, 435);
+    			add_location(main, file$2, 14, 0, 312);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -890,7 +860,7 @@ var app = (function () {
     			if (dirty & /*data_modified*/ 1) budget_changes.data = /*data_modified*/ ctx[0];
     			budget.$set(budget_changes);
 
-    			if (dirty & /*toggle, data_modified*/ 3) {
+    			if (dirty & /*data_modified*/ 1) {
     				each_value = /*data_modified*/ ctx[0];
     				validate_each_argument(each_value);
     				let i;
@@ -966,13 +936,6 @@ var app = (function () {
     		return d;
     	});
 
-    	function toggle() {
-    		data.map(d => {
-    			d.active = d.active ? false : true;
-    			return d;
-    		});
-    	}
-
     	const writable_props = [];
 
     	Object.keys($$props).forEach(key => {
@@ -984,13 +947,7 @@ var app = (function () {
     		$$invalidate(0, data_modified);
     	}
 
-    	$$self.$capture_state = () => ({
-    		Budget,
-    		Action,
-    		data,
-    		data_modified,
-    		toggle
-    	});
+    	$$self.$capture_state = () => ({ Budget, Action, data, data_modified });
 
     	$$self.$inject_state = $$props => {
     		if ("data_modified" in $$props) $$invalidate(0, data_modified = $$props.data_modified);
@@ -1006,7 +963,7 @@ var app = (function () {
     		}
     	};
 
-    	return [data_modified, toggle, action_active_binding];
+    	return [data_modified, action_active_binding];
     }
 
     class App extends SvelteComponentDev {
