@@ -9,7 +9,14 @@
           return d;
         })
 
-	
+	function toggle () {
+    	data.map(d => {
+        d.active = d.active ? false : true;
+        return d;
+        })
+    }
+
+	$: console.log(data_modified)
 </script>
 
 <main>
@@ -19,8 +26,9 @@
 
 {#each data_modified as object}
 	<Action
+		{toggle}
 		{...object}
-		bind:active={false}
+		bind:active={object.active}
 	/>
 {/each}
 

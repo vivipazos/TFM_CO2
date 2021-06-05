@@ -2,13 +2,7 @@
 export let description
 export let action
 export let active
-
-function toggle () {
-     data.map(d => {
-        d.active = d.active ? false : true;
-        return d;
-        })
-    }
+export let toggle
 </script>
 
 <div class="action">
