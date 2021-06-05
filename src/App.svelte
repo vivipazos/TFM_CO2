@@ -1,6 +1,6 @@
 <script>
 	import Budget from './components/Budget.svelte'
-	import Actions from './components/Actions.svelte'
+	import Action from './components/Action.svelte'
 	import data from './data/test1.json'
 
 	let data_modified = data.map(d => {
@@ -17,9 +17,13 @@
 		data = {data_modified}
 	/>
 
-	<Actions
-		bind:value={data_modified}
+{#each data_modified as object}
+	<Action
+		{...object}
+		bind:active={false}
 	/>
+{/each}
+
 </main>
 
 <style>
