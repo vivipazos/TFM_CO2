@@ -8,15 +8,8 @@
           d.shown = false;
           return d;
         })
-
-	function toggle () {
-    	data.map(d => {
-        d.active = d.active ? false : true;
-        return d;
-        })
-    }
-
-	$: console.log(data_modified)
+	
+	$:console.log(data_modified)
 </script>
 
 <main>
@@ -24,13 +17,12 @@
 		data = {data_modified}
 	/>
 
-{#each data_modified as object}
-	<Action
-		{toggle}
-		{...object}
-		bind:active={object.active}
-	/>
-{/each}
+	{#each data_modified as object}
+		<Action
+			{...object}
+			bind:active = {object.active}
+		/>
+	{/each}
 
 </main>
 
