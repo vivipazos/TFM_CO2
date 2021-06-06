@@ -21,3 +21,4 @@ npm-debug.log*
 # Package lock
 package-lock.json
 public/build/bundle.js
+public/build/bundle.js

@@ -701,7 +701,7 @@ var app = (function () {
     	{
     		action: "Reduce all transport emissions by 20%",
     		CO2: 9452,
-    		description: "Transport emissions are one of the largest contributors. Although this is largely attributed to private cars and freight, if we could shift choices towards more public transport, more efficient vehicles and less distance travelled, there could be a  significant drop in carbon added to the atmosphere."
+    		description: "Transport emissions are one of the largest contributors. Although this is largely attributed to private cars and freight, if we could shift choices towards more public transport, more efficient vehicles and less distance travelled, there could be a significant drop in carbon added to the atmosphere."
     	},
     	{
     		action: "Increase renewable energy",
