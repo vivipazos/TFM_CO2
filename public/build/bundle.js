@@ -449,7 +449,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "budgetBar svelte-1nbrkyr");
+    			attr_dev(div, "class", "budgetBar svelte-1xqy5ao");
     			add_location(div, file, 5, 1, 38);
     		},
     		l: function claim(nodes) {
@@ -540,12 +540,19 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let div;
     	let p;
+    	let br0;
     	let t0;
+    	let b;
     	let t1;
+    	let t2;
     	let label;
     	let input;
-    	let t2;
+    	let t3;
     	let span;
+    	let t4;
+    	let br1;
+    	let t5;
+    	let t6;
     	let mounted;
     	let dispose;
 
@@ -553,22 +560,33 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			p = element("p");
-    			t0 = text(/*description*/ ctx[1]);
-    			t1 = space();
+    			br0 = element("br");
+    			t0 = space();
+    			b = element("b");
+    			t1 = text(/*action*/ ctx[2]);
+    			t2 = space();
     			label = element("label");
     			input = element("input");
-    			t2 = space();
+    			t3 = space();
     			span = element("span");
-    			add_location(p, file$1, 8, 4, 111);
+    			t4 = space();
+    			br1 = element("br");
+    			t5 = space();
+    			t6 = text(/*description*/ ctx[1]);
+    			add_location(br0, file$1, 9, 8, 120);
+    			add_location(b, file$1, 10, 8, 133);
     			attr_dev(input, "type", "checkbox");
-    			attr_dev(input, "class", "svelte-ffcaap");
-    			add_location(input, file$1, 13, 8, 182);
-    			attr_dev(span, "class", "slider round svelte-ffcaap");
-    			add_location(span, file$1, 14, 8, 236);
-    			attr_dev(label, "class", "switch svelte-ffcaap");
-    			add_location(label, file$1, 12, 4, 151);
-    			attr_dev(div, "class", "action svelte-ffcaap");
-    			add_location(div, file$1, 7, 0, 86);
+    			attr_dev(input, "class", "svelte-1vgfpvj");
+    			add_location(input, file$1, 15, 12, 215);
+    			attr_dev(span, "class", "slider round svelte-1vgfpvj");
+    			add_location(span, file$1, 16, 12, 273);
+    			attr_dev(label, "class", "switch svelte-1vgfpvj");
+    			add_location(label, file$1, 14, 8, 180);
+    			add_location(br1, file$1, 19, 8, 334);
+    			attr_dev(p, "class", "svelte-1vgfpvj");
+    			add_location(p, file$1, 8, 4, 108);
+    			attr_dev(div, "class", "action svelte-1vgfpvj");
+    			add_location(div, file$1, 7, 0, 83);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -576,25 +594,34 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, p);
+    			append_dev(p, br0);
     			append_dev(p, t0);
-    			append_dev(div, t1);
-    			append_dev(div, label);
+    			append_dev(p, b);
+    			append_dev(b, t1);
+    			append_dev(p, t2);
+    			append_dev(p, label);
     			append_dev(label, input);
     			input.checked = /*active*/ ctx[0];
-    			append_dev(label, t2);
+    			append_dev(label, t3);
     			append_dev(label, span);
+    			append_dev(p, t4);
+    			append_dev(p, br1);
+    			append_dev(p, t5);
+    			append_dev(p, t6);
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "change", /*input_change_handler*/ ctx[2]);
+    				dispose = listen_dev(input, "change", /*input_change_handler*/ ctx[3]);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*description*/ 2) set_data_dev(t0, /*description*/ ctx[1]);
+    			if (dirty & /*action*/ 4) set_data_dev(t1, /*action*/ ctx[2]);
 
     			if (dirty & /*active*/ 1) {
     				input.checked = /*active*/ ctx[0];
     			}
+
+    			if (dirty & /*description*/ 2) set_data_dev(t6, /*description*/ ctx[1]);
     		},
     		i: noop,
     		o: noop,
@@ -621,7 +648,8 @@ var app = (function () {
     	validate_slots("Action", slots, []);
     	let { description } = $$props;
     	let { active } = $$props;
-    	const writable_props = ["description", "active"];
+    	let { action } = $$props;
+    	const writable_props = ["description", "active", "action"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Action> was created with unknown prop '${key}'`);
@@ -635,26 +663,28 @@ var app = (function () {
     	$$self.$$set = $$props => {
     		if ("description" in $$props) $$invalidate(1, description = $$props.description);
     		if ("active" in $$props) $$invalidate(0, active = $$props.active);
+    		if ("action" in $$props) $$invalidate(2, action = $$props.action);
     	};
 
-    	$$self.$capture_state = () => ({ description, active });
+    	$$self.$capture_state = () => ({ description, active, action });
 
     	$$self.$inject_state = $$props => {
     		if ("description" in $$props) $$invalidate(1, description = $$props.description);
     		if ("active" in $$props) $$invalidate(0, active = $$props.active);
+    		if ("action" in $$props) $$invalidate(2, action = $$props.action);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [active, description, input_change_handler];
+    	return [active, description, action, input_change_handler];
     }
 
     class Action extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { description: 1, active: 0 });
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { description: 1, active: 0, action: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -673,6 +703,10 @@ var app = (function () {
     		if (/*active*/ ctx[0] === undefined && !("active" in props)) {
     			console.warn("<Action> was created without expected prop 'active'");
     		}
+
+    		if (/*action*/ ctx[2] === undefined && !("action" in props)) {
+    			console.warn("<Action> was created without expected prop 'action'");
+    		}
     	}
 
     	get description() {
@@ -690,33 +724,31 @@ var app = (function () {
     	set active(value) {
     		throw new Error("<Action>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
+
+    	get action() {
+    		throw new Error("<Action>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set action(value) {
+    		throw new Error("<Action>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
     }
 
     var data = [
     	{
-    		action: "eat less meat",
-    		CO2: 5000,
-    		description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+    		action: "Eat less meat",
+    		CO2: 5130,
+    		description: "If everyone in the world ate red meat just once a week (flexitarian), we could save about 5,130 MtC02eq. However, not every country consumes meat the same. If this figure is weighted towards those who consume more meat, by just looking at the top 20 countries, we can account for more than 75% of this amount."
     	},
     	{
-    		action: "go vegan",
-    		CO2: 2000,
-    		description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+    		action: "Reduce all transport emissions by 20%",
+    		CO2: 9452,
+    		description: "Transport emissions are one of the largest contributors. Although this is largely attributed to private cars and freight, if we could shift choices towards more public transport, more efficient vehicles and less distance travelled, there could be a significant drop in carbon added to the atmosphere."
     	},
     	{
-    		action: "recycle",
-    		CO2: 104,
-    		description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
-    	},
-    	{
-    		action: "reduce transport",
-    		CO2: 10000,
-    		description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
-    	},
-    	{
-    		action: "renewable energies",
-    		CO2: 500,
-    		description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
+    		action: "Increase renewable energy",
+    		CO2: 467,
+    		description: "Two thirds of global greenhouse gas emissions come from the production and use of energy. In 2015, just 16% of the world’s energy supply came from solar, wind and other renewable sources. If we can get that figure up to 65% by 2050 - a shift that researchers say is both technically and financially feasible - then we can prevent 14,000 million tonnes of carbon dioxide emissions"
     	}
     ];
 
@@ -838,7 +870,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(main, "class", "svelte-154hxqq");
+    			attr_dev(main, "class", "svelte-1awux1t");
     			add_location(main, file$2, 14, 0, 312);
     		},
     		l: function claim(nodes) {
