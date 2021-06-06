@@ -1,11 +1,15 @@
 <script>
 export let description;
 export let active;
+export let action;
 
 </script>
 
 <div class="action">
     <p>
+        <b>
+            {action}
+        </b><br>
         {description}
     </p>
 

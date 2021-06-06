@@ -540,11 +540,16 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let div;
     	let p;
+    	let b;
     	let t0;
     	let t1;
+    	let br;
+    	let t2;
+    	let t3;
+    	let t4;
     	let label;
     	let input;
-    	let t2;
+    	let t5;
     	let span;
     	let mounted;
     	let dispose;
@@ -553,22 +558,29 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			p = element("p");
-    			t0 = text(/*description*/ ctx[1]);
+    			b = element("b");
+    			t0 = text(/*action*/ ctx[2]);
     			t1 = space();
+    			br = element("br");
+    			t2 = space();
+    			t3 = text(/*description*/ ctx[1]);
+    			t4 = space();
     			label = element("label");
     			input = element("input");
-    			t2 = space();
+    			t5 = space();
     			span = element("span");
-    			add_location(p, file$1, 7, 4, 89);
+    			add_location(b, file$1, 9, 8, 120);
+    			add_location(br, file$1, 11, 12, 157);
+    			add_location(p, file$1, 8, 4, 108);
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-laxq7r");
-    			add_location(input, file$1, 12, 8, 160);
+    			add_location(input, file$1, 16, 8, 229);
     			attr_dev(span, "class", "slider round svelte-laxq7r");
-    			add_location(span, file$1, 13, 8, 214);
+    			add_location(span, file$1, 17, 8, 283);
     			attr_dev(label, "class", "switch svelte-laxq7r");
-    			add_location(label, file$1, 11, 4, 129);
+    			add_location(label, file$1, 15, 4, 198);
     			attr_dev(div, "class", "action svelte-laxq7r");
-    			add_location(div, file$1, 6, 0, 64);
+    			add_location(div, file$1, 7, 0, 83);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -576,21 +588,27 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, p);
-    			append_dev(p, t0);
-    			append_dev(div, t1);
+    			append_dev(p, b);
+    			append_dev(b, t0);
+    			append_dev(b, t1);
+    			append_dev(p, br);
+    			append_dev(p, t2);
+    			append_dev(p, t3);
+    			append_dev(div, t4);
     			append_dev(div, label);
     			append_dev(label, input);
     			input.checked = /*active*/ ctx[0];
-    			append_dev(label, t2);
+    			append_dev(label, t5);
     			append_dev(label, span);
 
     			if (!mounted) {
-    				dispose = listen_dev(input, "change", /*input_change_handler*/ ctx[2]);
+    				dispose = listen_dev(input, "change", /*input_change_handler*/ ctx[3]);
     				mounted = true;
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*description*/ 2) set_data_dev(t0, /*description*/ ctx[1]);
+    			if (dirty & /*action*/ 4) set_data_dev(t0, /*action*/ ctx[2]);
+    			if (dirty & /*description*/ 2) set_data_dev(t3, /*description*/ ctx[1]);
 
     			if (dirty & /*active*/ 1) {
     				input.checked = /*active*/ ctx[0];
@@ -621,7 +639,8 @@ var app = (function () {
     	validate_slots("Action", slots, []);
     	let { description } = $$props;
     	let { active } = $$props;
-    	const writable_props = ["description", "active"];
+    	let { action } = $$props;
+    	const writable_props = ["description", "active", "action"];
 
     	Object.keys($$props).forEach(key => {
     		if (!~writable_props.indexOf(key) && key.slice(0, 2) !== "$$") console.warn(`<Action> was created with unknown prop '${key}'`);
@@ -635,26 +654,28 @@ var app = (function () {
     	$$self.$$set = $$props => {
     		if ("description" in $$props) $$invalidate(1, description = $$props.description);
     		if ("active" in $$props) $$invalidate(0, active = $$props.active);
+    		if ("action" in $$props) $$invalidate(2, action = $$props.action);
     	};
 
-    	$$self.$capture_state = () => ({ description, active });
+    	$$self.$capture_state = () => ({ description, active, action });
 
     	$$self.$inject_state = $$props => {
     		if ("description" in $$props) $$invalidate(1, description = $$props.description);
     		if ("active" in $$props) $$invalidate(0, active = $$props.active);
+    		if ("action" in $$props) $$invalidate(2, action = $$props.action);
     	};
 
     	if ($$props && "$$inject" in $$props) {
     		$$self.$inject_state($$props.$$inject);
     	}
 
-    	return [active, description, input_change_handler];
+    	return [active, description, action, input_change_handler];
     }
 
     class Action extends SvelteComponentDev {
     	constructor(options) {
     		super(options);
-    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { description: 1, active: 0 });
+    		init(this, options, instance$1, create_fragment$1, safe_not_equal, { description: 1, active: 0, action: 2 });
 
     		dispatch_dev("SvelteRegisterComponent", {
     			component: this,
@@ -673,6 +694,10 @@ var app = (function () {
     		if (/*active*/ ctx[0] === undefined && !("active" in props)) {
     			console.warn("<Action> was created without expected prop 'active'");
     		}
+
+    		if (/*action*/ ctx[2] === undefined && !("action" in props)) {
+    			console.warn("<Action> was created without expected prop 'action'");
+    		}
     	}
 
     	get description() {
@@ -688,6 +713,14 @@ var app = (function () {
     	}
 
     	set active(value) {
+    		throw new Error("<Action>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	get action() {
+    		throw new Error("<Action>: Props cannot be read directly from the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
+    	}
+
+    	set action(value) {
     		throw new Error("<Action>: Props cannot be set directly on the component instance unless compiling with 'accessors: true' or '<svelte:options accessors/>'");
     	}
     }
