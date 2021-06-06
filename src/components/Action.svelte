@@ -41,9 +41,9 @@ export let active;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
+        background-color: #CC0022;
+        -webkit-transition: .3s;
+        transition: .3s;
     }
 
     .slider:before {
@@ -54,16 +54,13 @@ export let active;
         left: 4px;
         bottom: 4px;
         background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
+        box-shadow: 0 0 6px #00000033;
+        -webkit-transition: .3s;
+        transition: .3s;
     }
 
     input:checked + .slider {
-        background-color: #2196F3;
-    }
-
-    input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
+        background-color: #00eeff;
     }
 
     input:checked + .slider:before {
