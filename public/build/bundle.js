@@ -450,7 +450,7 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			attr_dev(div, "class", "budgetBar svelte-1xqy5ao");
-    			add_location(div, file, 5, 1, 38);
+    			add_location(div, file, 7, 1, 40);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
