@@ -540,17 +540,19 @@ var app = (function () {
     function create_fragment$1(ctx) {
     	let div;
     	let p;
-    	let b;
+    	let br0;
     	let t0;
+    	let b;
     	let t1;
-    	let br;
     	let t2;
-    	let t3;
-    	let t4;
     	let label;
     	let input;
-    	let t5;
+    	let t3;
     	let span;
+    	let t4;
+    	let br1;
+    	let t5;
+    	let t6;
     	let mounted;
     	let dispose;
 
@@ -558,28 +560,32 @@ var app = (function () {
     		c: function create() {
     			div = element("div");
     			p = element("p");
+    			br0 = element("br");
+    			t0 = space();
     			b = element("b");
-    			t0 = text(/*action*/ ctx[2]);
-    			t1 = space();
-    			br = element("br");
+    			t1 = text(/*action*/ ctx[2]);
     			t2 = space();
-    			t3 = text(/*description*/ ctx[1]);
-    			t4 = space();
     			label = element("label");
     			input = element("input");
-    			t5 = space();
+    			t3 = space();
     			span = element("span");
-    			add_location(b, file$1, 9, 8, 120);
-    			add_location(br, file$1, 11, 12, 157);
-    			add_location(p, file$1, 8, 4, 108);
+    			t4 = space();
+    			br1 = element("br");
+    			t5 = space();
+    			t6 = text(/*description*/ ctx[1]);
+    			add_location(br0, file$1, 9, 8, 120);
+    			add_location(b, file$1, 10, 8, 133);
     			attr_dev(input, "type", "checkbox");
-    			attr_dev(input, "class", "svelte-laxq7r");
-    			add_location(input, file$1, 16, 8, 229);
-    			attr_dev(span, "class", "slider round svelte-laxq7r");
-    			add_location(span, file$1, 17, 8, 283);
-    			attr_dev(label, "class", "switch svelte-laxq7r");
-    			add_location(label, file$1, 15, 4, 198);
-    			attr_dev(div, "class", "action svelte-laxq7r");
+    			attr_dev(input, "class", "svelte-1vgfpvj");
+    			add_location(input, file$1, 15, 12, 215);
+    			attr_dev(span, "class", "slider round svelte-1vgfpvj");
+    			add_location(span, file$1, 16, 12, 273);
+    			attr_dev(label, "class", "switch svelte-1vgfpvj");
+    			add_location(label, file$1, 14, 8, 180);
+    			add_location(br1, file$1, 19, 8, 334);
+    			attr_dev(p, "class", "svelte-1vgfpvj");
+    			add_location(p, file$1, 8, 4, 108);
+    			attr_dev(div, "class", "action svelte-1vgfpvj");
     			add_location(div, file$1, 7, 0, 83);
     		},
     		l: function claim(nodes) {
@@ -588,18 +594,20 @@ var app = (function () {
     		m: function mount(target, anchor) {
     			insert_dev(target, div, anchor);
     			append_dev(div, p);
+    			append_dev(p, br0);
+    			append_dev(p, t0);
     			append_dev(p, b);
-    			append_dev(b, t0);
     			append_dev(b, t1);
-    			append_dev(p, br);
     			append_dev(p, t2);
-    			append_dev(p, t3);
-    			append_dev(div, t4);
-    			append_dev(div, label);
+    			append_dev(p, label);
     			append_dev(label, input);
     			input.checked = /*active*/ ctx[0];
-    			append_dev(label, t5);
+    			append_dev(label, t3);
     			append_dev(label, span);
+    			append_dev(p, t4);
+    			append_dev(p, br1);
+    			append_dev(p, t5);
+    			append_dev(p, t6);
 
     			if (!mounted) {
     				dispose = listen_dev(input, "change", /*input_change_handler*/ ctx[3]);
@@ -607,12 +615,13 @@ var app = (function () {
     			}
     		},
     		p: function update(ctx, [dirty]) {
-    			if (dirty & /*action*/ 4) set_data_dev(t0, /*action*/ ctx[2]);
-    			if (dirty & /*description*/ 2) set_data_dev(t3, /*description*/ ctx[1]);
+    			if (dirty & /*action*/ 4) set_data_dev(t1, /*action*/ ctx[2]);
 
     			if (dirty & /*active*/ 1) {
     				input.checked = /*active*/ ctx[0];
     			}
+
+    			if (dirty & /*description*/ 2) set_data_dev(t6, /*description*/ ctx[1]);
     		},
     		i: noop,
     		o: noop,
@@ -861,7 +870,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(main, "class", "svelte-154hxqq");
+    			attr_dev(main, "class", "svelte-l0zudh");
     			add_location(main, file$2, 14, 0, 312);
     		},
     		l: function claim(nodes) {

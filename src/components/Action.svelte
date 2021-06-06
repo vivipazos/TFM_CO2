@@ -7,16 +7,20 @@ export let action;
 
 <div class="action">
     <p>
+        <br>
         <b>
             {action}
-        </b><br>
-        {description}
-    </p>
+        </b>
 
-    <label class="switch">
-        <input type="checkbox" bind:checked={active}>
-        <span class="slider round"></span>
-    </label>
+        <label class="switch">
+            <input type="checkbox" bind:checked={active}>
+            <span class="slider round"></span>
+        </label>
+
+        <br>
+        {description}
+
+    </p>    
 
 </div>
 
@@ -62,11 +66,11 @@ export let action;
     }
 
     input:checked + .slider {
-        background-color: #2196F3;
+        background-color: #CC0022;
     }
 
     input:focus + .slider {
-        box-shadow: 0 0 1px #2196F3;
+        box-shadow: 0 0 1px #CC0022;
     }
 
     input:checked + .slider:before {
@@ -82,5 +86,10 @@ export let action;
 
     .slider.round:before {
         border-radius: 50%;
+    }
+
+    p {
+        max-width: 550px;
+        margin: 0 auto;
     }
 </style>
