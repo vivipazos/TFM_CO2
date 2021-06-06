@@ -2,18 +2,15 @@
 	import Budget from './components/Budget.svelte'
 	import Action from './components/Action.svelte'
 	import Text from './components/common/Text.svelte'
-	import data from './data/test1.json'
 
 	export let content;
 	export let actions;
 
 	let data_modified = actions.map(d => {
           d.active = false;
-          d.shown = false;
           return d;
         })
 	
-	console.log(actions)
 </script>
 
 <main>
