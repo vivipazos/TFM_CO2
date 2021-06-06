@@ -707,16 +707,6 @@ var app = (function () {
     		action: "Increase renewable energy",
     		CO2: 467,
     		description: "Two thirds of global greenhouse gas emissions come from the production and use of energy. In 2015, just 16% of the world’s energy supply came from solar, wind and other renewable sources. If we can get that figure up to 65% by 2050 - a shift that researchers say is both technically and financially feasible - then we can prevent 14,000 million tonnes of carbon dioxide emissions"
-    	},
-    	{
-    		action: "reduce transport",
-    		CO2: 10000,
-    		description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
-    	},
-    	{
-    		action: "renewable energies",
-    		CO2: 500,
-    		description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged"
     	}
     ];
 
