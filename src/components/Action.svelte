@@ -1,27 +1,25 @@
 <script>
-export let description;
+export let desc;
+export let category;
+export let label;
+export let amount_all;
+export let amount_some;
+export let amount_some_desc;
+export let source;
+// export let action;
 export let active;
-export let action;
 
 </script>
 
 <div class="action">
     <p>
-        <br>
-        <b>
-            {action}
-        </b>
+        {desc}
+    </p>
 
-        <label class="switch">
-            <input type="checkbox" bind:checked={active}>
-            <span class="slider round"></span>
-        </label>
-
-        <br>
-        {description}
-
-    </p>    
-
+    <label class="switch">
+        <input type="checkbox" bind:checked={active}>
+        <span class="slider round"></span>
+    </label>
 </div>
 
 <style>
@@ -48,9 +46,9 @@ export let action;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #ccc;
-        -webkit-transition: .4s;
-        transition: .4s;
+        background-color: #CC0022;
+        -webkit-transition: .3s;
+        transition: .3s;
     }
 
     .slider:before {
@@ -61,16 +59,13 @@ export let action;
         left: 4px;
         bottom: 4px;
         background-color: white;
-        -webkit-transition: .4s;
-        transition: .4s;
+        box-shadow: 0 0 6px #00000033;
+        -webkit-transition: .3s;
+        transition: .3s;
     }
 
     input:checked + .slider {
-        background-color: #CC0022;
-    }
-
-    input:focus + .slider {
-        box-shadow: 0 0 1px #CC0022;
+        background-color: #00eeff;
     }
 
     input:checked + .slider:before {
@@ -86,10 +81,5 @@ export let action;
 
     .slider.round:before {
         border-radius: 50%;
-    }
-
-    p {
-        max-width: 550px;
-        margin: 0 auto;
     }
 </style>
