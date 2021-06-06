@@ -559,6 +559,7 @@ var app = (function () {
     			input = element("input");
     			t2 = space();
     			span = element("span");
+<<<<<<< Updated upstream
     			add_location(p, file$1, 7, 4, 89);
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-laxq7r");
@@ -569,6 +570,18 @@ var app = (function () {
     			add_location(label, file$1, 11, 4, 129);
     			attr_dev(div, "class", "action svelte-laxq7r");
     			add_location(div, file$1, 6, 0, 64);
+=======
+    			add_location(p, file$1, 8, 4, 111);
+    			attr_dev(input, "type", "checkbox");
+    			attr_dev(input, "class", "svelte-laxq7r");
+    			add_location(input, file$1, 13, 8, 182);
+    			attr_dev(span, "class", "slider round svelte-laxq7r");
+    			add_location(span, file$1, 14, 8, 236);
+    			attr_dev(label, "class", "switch svelte-laxq7r");
+    			add_location(label, file$1, 12, 4, 151);
+    			attr_dev(div, "class", "action svelte-laxq7r");
+    			add_location(div, file$1, 7, 0, 86);
+>>>>>>> Stashed changes
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
@@ -696,7 +709,11 @@ var app = (function () {
     	{
     		action: "Eat less meat",
     		CO2: 5130,
+<<<<<<< Updated upstream
     		description: "If everyone in the world ate red meat just once a week (flexitarian), we could save about 5,130 Gt C02eq. However, not every country consumes meat the same. If this figure is weighted towards those who consume more meat, by just looking at the top 20 countries, we can account for more than 75% of this amount."
+=======
+    		description: "Eat less meat: If everyone in the world ate red meat just once a week (flexitarian), we could save about 5063 teragrams every year. However, not every country consumes meat the same. If this figure is weighted towards those who consume more meat, by just looking at the top 20 countries, we can account for more than 75% of this amount."
+>>>>>>> Stashed changes
     	},
     	{
     		action: "Reduce all transport emissions by 20%",
