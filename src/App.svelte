@@ -31,9 +31,8 @@
 		position: relative;
 		padding: 1em;
 		margin: 0 auto;
-		max: 550px;
 	}
 
-
+	
 	
 </style>

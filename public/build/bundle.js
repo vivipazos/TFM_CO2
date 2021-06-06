@@ -738,7 +738,7 @@ var app = (function () {
     	{
     		action: "Eat less meat",
     		CO2: 5130,
-    		description: "If everyone in the world ate red meat just once a week (flexitarian), we could save about 5,130 Gt C02eq. However, not every country consumes meat the same. If this figure is weighted towards those who consume more meat, by just looking at the top 20 countries, we can account for more than 75% of this amount."
+    		description: "If everyone in the world ate red meat just once a week (flexitarian), we could save about 5,130 MtC02eq. However, not every country consumes meat the same. If this figure is weighted towards those who consume more meat, by just looking at the top 20 countries, we can account for more than 75% of this amount."
     	},
     	{
     		action: "Reduce all transport emissions by 20%",
@@ -870,7 +870,7 @@ var app = (function () {
     				each_blocks[i].c();
     			}
 
-    			attr_dev(main, "class", "svelte-l0zudh");
+    			attr_dev(main, "class", "svelte-1awux1t");
     			add_location(main, file$2, 14, 0, 312);
     		},
     		l: function claim(nodes) {
