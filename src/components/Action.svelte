@@ -1,6 +1,5 @@
 <script>
 export let description;
-// export let action;
 export let active;
 
 </script>

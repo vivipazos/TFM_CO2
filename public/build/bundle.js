@@ -449,7 +449,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			div = element("div");
-    			attr_dev(div, "class", "budgetBar svelte-1nbrkyr");
+    			attr_dev(div, "class", "budgetBar svelte-1xqy5ao");
     			add_location(div, file, 5, 1, 38);
     		},
     		l: function claim(nodes) {
@@ -559,16 +559,16 @@ var app = (function () {
     			input = element("input");
     			t2 = space();
     			span = element("span");
-    			add_location(p, file$1, 8, 4, 111);
+    			add_location(p, file$1, 7, 4, 89);
     			attr_dev(input, "type", "checkbox");
     			attr_dev(input, "class", "svelte-laxq7r");
-    			add_location(input, file$1, 13, 8, 182);
+    			add_location(input, file$1, 12, 8, 160);
     			attr_dev(span, "class", "slider round svelte-laxq7r");
-    			add_location(span, file$1, 14, 8, 236);
+    			add_location(span, file$1, 13, 8, 214);
     			attr_dev(label, "class", "switch svelte-laxq7r");
-    			add_location(label, file$1, 12, 4, 151);
+    			add_location(label, file$1, 11, 4, 129);
     			attr_dev(div, "class", "action svelte-laxq7r");
-    			add_location(div, file$1, 7, 0, 86);
+    			add_location(div, file$1, 6, 0, 64);
     		},
     		l: function claim(nodes) {
     			throw new Error("options.hydrate only works if the component was compiled with the `hydratable: true` option");
