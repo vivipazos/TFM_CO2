@@ -1,7 +1,12 @@
 [
     {
-      "id": "1WPzM1EAtMHnOIA8Hf4SOjmRZS2RXlqkANZqfH_lPNmA",
+      "id": "1DY2qNpBCoyWOl62Kg94_NMiqgVpjdflvVP8JVQ9G0S4",
       "dest": "src/data/story.json"
+    },
+    {
+      "id": "1P60j8wC89xdDpxc6aKRGqrgBVVfekGxkEukF5xZw3WY",
+      "dest": "src/data/actions.json",
+      "gid": "0"
     }
 ]
   

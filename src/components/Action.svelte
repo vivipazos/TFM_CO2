@@ -1,5 +1,11 @@
 <script>
-export let description;
+export let desc;
+export let category;
+export let label;
+export let amount_all;
+export let amount_some;
+export let amount_some_desc;
+export let source;
 // export let action;
 export let active;
 
@@ -7,14 +13,13 @@ export let active;
 
 <div class="action">
     <p>
-        {description}
+        {desc}
     </p>
 
     <label class="switch">
         <input type="checkbox" bind:checked={active}>
         <span class="slider round"></span>
     </label>
-
 </div>
 
 <style>
