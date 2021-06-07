@@ -8,6 +8,7 @@ export let amount_some_desc;
 export let source;
 // export let action;
 export let active;
+export let onChange;
 
 </script>
 
@@ -17,7 +18,7 @@ export let active;
     </p>
 
     <label class="switch">
-        <input type="checkbox" bind:checked={active}>
+        <input type="checkbox" bind:checked={active} on:change={onChange}>
         <span class="slider round"></span>
     </label>
 </div>

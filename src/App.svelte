@@ -5,12 +5,14 @@
 
 	export let content;
 	export let actions;
+	export let carbon;
 
 	let data_modified = actions.map(d => {
           d.active = false;
           return d;
         })
 	
+	$:console.log(data_modified);
 </script>
 
 <main>
@@ -22,12 +24,14 @@
 	<div></div>
 	{:else if block.type === 'calculator'}
 	<Budget
-		data = {data_modified}
+		action = {data_modified}
+		{carbon}
 	/>
 	{#each actions as object}
 		<Action
 			{...object}
 			bind:active = {object.active}
+			onChange = {() => data_modified = data_modified }
 		/>
 	{/each}
 	{/if}
