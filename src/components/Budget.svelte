@@ -13,8 +13,12 @@ $:modifiedValue = baseValue - selectedAction
 
 $:console.log(modifiedValue)
 
-console.log(carbon)
+let lastValue = carbon[carbon.length - 1]
 
+console.log(lastValue)
+
+// function {
+// }
 
 </script>
 
