@@ -47,7 +47,7 @@ export let onChange;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: #CC0022;
+        background-color: #f2f2f2;
         -webkit-transition: .3s;
         transition: .3s;
     }
@@ -66,7 +66,7 @@ export let onChange;
     }
 
     input:checked + .slider {
-        background-color: #00eeff;
+        background-color: #CC0022;
     }
 
     input:checked + .slider:before {
