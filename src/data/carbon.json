@@ -1,1 +1,857 @@
-[{"year":"1850","carbonDioxide":"4759.415"},{"year":"1851","carbonDioxide":"4958.22"},{"year":"1852","carbonDioxide":"5165.771"},{"year":"1853","carbonDioxide":"5382.98"},{"year":"1854","carbonDioxide":"5638.119"},{"year":"1855","carbonDioxide":"5898.285"},{"year":"1856","carbonDioxide":"6175.577"},{"year":"1857","carbonDioxide":"6455.466"},{"year":"1858","carbonDioxide":"6739.638"},{"year":"1859","carbonDioxide":"7040.951"},{"year":"1860","carbonDioxide":"7371.593"},{"year":"1861","carbonDioxide":"7719.329"},{"year":"1862","carbonDioxide":"8073.387"},{"year":"1863","carbonDioxide":"8451.247"},{"year":"1864","carbonDioxide":"8858.338"},{"year":"1865","carbonDioxide":"9290.646"},{"year":"1866","carbonDioxide":"9736.617"},{"year":"1867","carbonDioxide":"10214.43"},{"year":"1868","carbonDioxide":"10705.19"},{"year":"1869","carbonDioxide":"11226.32"},{"year":"1870","carbonDioxide":"11758.85"},{"year":"1871","carbonDioxide":"12325"},{"year":"1872","carbonDioxide":"12951.37"},{"year":"1873","carbonDioxide":"13616.79"},{"year":"1874","carbonDioxide":"14239.78"},{"year":"1875","carbonDioxide":"14915.58"},{"year":"1876","carbonDioxide":"15601.14"},{"year":"1877","carbonDioxide":"16300.23"},{"year":"1878","carbonDioxide":"17004.62"},{"year":"1879","carbonDioxide":"17759.49"},{"year":"1880","carbonDioxide":"18613.19"},{"year":"1881","carbonDioxide":"19495.6"},{"year":"1882","carbonDioxide":"20427.53"},{"year":"1883","carbonDioxide":"21418.56"},{"year":"1884","carbonDioxide":"22420.74"},{"year":"1885","carbonDioxide":"23430.42"},{"year":"1886","carbonDioxide":"24455.9"},{"year":"1887","carbonDioxide":"25532.66"},{"year":"1888","carbonDioxide":"26724.94"},{"year":"1889","carbonDioxide":"27916.74"},{"year":"1890","carbonDioxide":"29215.21"},{"year":"1891","carbonDioxide":"30574.09"},{"year":"1892","carbonDioxide":"31944.17"},{"year":"1893","carbonDioxide":"33297.85"},{"year":"1894","carbonDioxide":"34698.72"},{"year":"1895","carbonDioxide":"36184"},{"year":"1896","carbonDioxide":"37717.71"},{"year":"1897","carbonDioxide":"39324.03"},{"year":"1898","carbonDioxide":"41018.3"},{"year":"1899","carbonDioxide":"42869.21"},{"year":"1900","carbonDioxide":"44822.83"},{"year":"1901","carbonDioxide":"46841.25"},{"year":"1902","carbonDioxide":"48911.19"},{"year":"1903","carbonDioxide":"51169.81"},{"year":"1904","carbonDioxide":"53452.57"},{"year":"1905","carbonDioxide":"55883.71"},{"year":"1906","carbonDioxide":"58437.93"},{"year":"1907","carbonDioxide":"61325.76"},{"year":"1908","carbonDioxide":"64105.05"},{"year":"1909","carbonDioxide":"66995.7"},{"year":"1910","carbonDioxide":"70027.86"},{"year":"1911","carbonDioxide":"73115.12"},{"year":"1912","carbonDioxide":"76348.53"},{"year":"1913","carbonDioxide":"79846.79"},{"year":"1914","carbonDioxide":"83020.79"},{"year":"1915","carbonDioxide":"86151.18"},{"year":"1916","carbonDioxide":"89529.84"},{"year":"1917","carbonDioxide":"93063.39"},{"year":"1918","carbonDioxide":"96546.83"},{"year":"1919","carbonDioxide":"99566.75"},{"year":"1920","carbonDioxide":"103080.1"},{"year":"1921","carbonDioxide":"106163.3"},{"year":"1922","carbonDioxide":"109397.5"},{"year":"1923","carbonDioxide":"113068.1"},{"year":"1924","carbonDioxide":"116751.1"},{"year":"1925","carbonDioxide":"120460.9"},{"year":"1926","carbonDioxide":"124103.1"},{"year":"1927","carbonDioxide":"128081.5"},{"year":"1928","carbonDioxide":"132041.1"},{"year":"1929","carbonDioxide":"136293.3"},{"year":"1930","carbonDioxide":"140212.7"},{"year":"1931","carbonDioxide":"143715.7"},{"year":"1932","carbonDioxide":"146873.5"},{"year":"1933","carbonDioxide":"150198.5"},{"year":"1934","carbonDioxide":"153814.8"},{"year":"1935","carbonDioxide":"157609.3"},{"year":"1936","carbonDioxide":"161777.8"},{"year":"1937","carbonDioxide":"166234.5"},{"year":"1938","carbonDioxide":"170428"},{"year":"1939","carbonDioxide":"174863.8"},{"year":"1940","carbonDioxide":"179710.9"},{"year":"1941","carbonDioxide":"184666.4"},{"year":"1942","carbonDioxide":"189602"},{"year":"1943","carbonDioxide":"194620.9"},{"year":"1944","carbonDioxide":"199722"},{"year":"1945","carbonDioxide":"203962.8"},{"year":"1946","carbonDioxide":"208592.5"},{"year":"1947","carbonDioxide":"213718.3"},{"year":"1948","carbonDioxide":"219114.9"},{"year":"1949","carbonDioxide":"224354.1"},{"year":"1950","carbonDioxide":"230352.5"},{"year":"1951","carbonDioxide":"236726.3"},{"year":"1952","carbonDioxide":"243186.4"},{"year":"1953","carbonDioxide":"249828.2"},{"year":"1954","carbonDioxide":"256613.2"},{"year":"1955","carbonDioxide":"264050.2"},{"year":"1956","carbonDioxide":"271968.1"},{"year":"1957","carbonDioxide":"280147.4"},{"year":"1958","carbonDioxide":"288559.6"},{"year":"1959","carbonDioxide":"297408.1"},{"year":"1960","carbonDioxide":"306743"},{"year":"1961","carbonDioxide":"316099"},{"year":"1962","carbonDioxide":"325786.5"},{"year":"1963","carbonDioxide":"336022.5"},{"year":"1964","carbonDioxide":"346792.1"},{"year":"1965","carbonDioxide":"358061.4"},{"year":"1966","carbonDioxide":"369855.2"},{"year":"1967","carbonDioxide":"382026.7"},{"year":"1968","carbonDioxide":"394862.7"},{"year":"1969","carbonDioxide":"408554.6"},{"year":"1970","carbonDioxide":"423381.4"},{"year":"1971","carbonDioxide":"438807.3"},{"year":"1972","carbonDioxide":"454949.9"},{"year":"1973","carbonDioxide":"471950.6"},{"year":"1974","carbonDioxide":"488876.5"},{"year":"1975","carbonDioxide":"505779.4"},{"year":"1976","carbonDioxide":"523579.2"},{"year":"1977","carbonDioxide":"541867.1"},{"year":"1978","carbonDioxide":"560826"},{"year":"1979","carbonDioxide":"580290.2"},{"year":"1980","carbonDioxide":"599659.6"},{"year":"1981","carbonDioxide":"618501"},{"year":"1982","carbonDioxide":"637202"},{"year":"1983","carbonDioxide":"656078.3"},{"year":"1984","carbonDioxide":"675504.5"},{"year":"1985","carbonDioxide":"695621.3"},{"year":"1986","carbonDioxide":"716023"},{"year":"1987","carbonDioxide":"737085.7"},{"year":"1988","carbonDioxide":"758951.7"},{"year":"1989","carbonDioxide":"781145"},{"year":"1990","carbonDioxide":"803842.7"},{"year":"1991","carbonDioxide":"827012.2"},{"year":"1992","carbonDioxide":"849457.1"},{"year":"1993","carbonDioxide":"872139.7"},{"year":"1994","carbonDioxide":"894983.5"},{"year":"1995","carbonDioxide":"918315.7"},{"year":"1996","carbonDioxide":"942366.5"},{"year":"1997","carbonDioxide":"966557.7"},{"year":"1998","carbonDioxide":"990669.8"},{"year":"1999","carbonDioxide":"1015101"},{"year":"2000","carbonDioxide":"1040220"},{"year":"2001","carbonDioxide":"1065552"},{"year":"2002","carbonDioxide":"1091463"},{"year":"2003","carbonDioxide":"1118639"},{"year":"2004","carbonDioxide":"1147110"},{"year":"2005","carbonDioxide":"1176521"},{"year":"2006","carbonDioxide":"1206895"},{"year":"2007","carbonDioxide":"1238189"},{"year":"2008","carbonDioxide":"1270135"},{"year":"2009","carbonDioxide":"1301599"},{"year":"2010","carbonDioxide":"1334731"},{"year":"2011","carbonDioxide":"1368941"},{"year":"2012","carbonDioxide":"1403701"},{"year":"2013","carbonDioxide":"1438688"},{"year":"2014","carbonDioxide":"1473933"},{"year":"2015","carbonDioxide":"1509143"},{"year":"2016","carbonDioxide":"1544363"},{"year":"2017","carbonDioxide":"1580059"},{"year":"2018","carbonDioxide":"1616479"},{"year":"2019","carbonDioxide":"1652920"},{"year":"2020","carbonDioxide":"1698971"}]
+[
+  {
+    "year": 1850,
+    "carbonDioxide": 7230.769019,
+    "Percentage": 0.3036809
+  },
+  {
+    "year": 1851,
+    "carbonDioxide": 9918.441034,
+    "Percentage": 0.416558888
+  },
+  {
+    "year": 1852,
+    "carbonDioxide": 12632.68023,
+    "Percentage": 0.530552656
+  },
+  {
+    "year": 1853,
+    "carbonDioxide": 15374.34973,
+    "Percentage": 0.645698452
+  },
+  {
+    "year": 1854,
+    "carbonDioxide": 18165.44823,
+    "Percentage": 0.76292019
+  },
+  {
+    "year": 1855,
+    "carbonDioxide": 20971.21193,
+    "Percentage": 0.880757842
+  },
+  {
+    "year": 1856,
+    "carbonDioxide": 23808.68561,
+    "Percentage": 0.999927264
+  },
+  {
+    "year": 1857,
+    "carbonDioxide": 26670.11054,
+    "Percentage": 1.1201026
+  },
+  {
+    "year": 1858,
+    "carbonDioxide": 29554.01665,
+    "Percentage": 1.24122211
+  },
+  {
+    "year": 1859,
+    "carbonDioxide": 32466.18818,
+    "Percentage": 1.363528724
+  },
+  {
+    "year": 1860,
+    "carbonDioxide": 35330.91431,
+    "Percentage": 1.483842705
+  },
+  {
+    "year": 1861,
+    "carbonDioxide": 38182.76306,
+    "Percentage": 1.603615857
+  },
+  {
+    "year": 1862,
+    "carbonDioxide": 41026.79921,
+    "Percentage": 1.723060892
+  },
+  {
+    "year": 1863,
+    "carbonDioxide": 43886.43744,
+    "Percentage": 1.84316119
+  },
+  {
+    "year": 1864,
+    "carbonDioxide": 46768.31333,
+    "Percentage": 1.964195434
+  },
+  {
+    "year": 1865,
+    "carbonDioxide": 49674.87701,
+    "Percentage": 2.086266527
+  },
+  {
+    "year": 1866,
+    "carbonDioxide": 52584.22437,
+    "Percentage": 2.20845453
+  },
+  {
+    "year": 1867,
+    "carbonDioxide": 55519.09034,
+    "Percentage": 2.331714274
+  },
+  {
+    "year": 1868,
+    "carbonDioxide": 58462.16812,
+    "Percentage": 2.455318901
+  },
+  {
+    "year": 1869,
+    "carbonDioxide": 61435.27757,
+    "Percentage": 2.580184811
+  },
+  {
+    "year": 1870,
+    "carbonDioxide": 64622.38921,
+    "Percentage": 2.714038476
+  },
+  {
+    "year": 1871,
+    "carbonDioxide": 67943.71648,
+    "Percentage": 2.853528986
+  },
+  {
+    "year": 1872,
+    "carbonDioxide": 71391.23836,
+    "Percentage": 2.99831947
+  },
+  {
+    "year": 1873,
+    "carbonDioxide": 74940.99371,
+    "Percentage": 3.147403599
+  },
+  {
+    "year": 1874,
+    "carbonDioxide": 78499.1809,
+    "Percentage": 3.296841852
+  },
+  {
+    "year": 1875,
+    "carbonDioxide": 82159.82863,
+    "Percentage": 3.450583286
+  },
+  {
+    "year": 1876,
+    "carbonDioxide": 85873.13093,
+    "Percentage": 3.606536129
+  },
+  {
+    "year": 1877,
+    "carbonDioxide": 89636.76857,
+    "Percentage": 3.764602976
+  },
+  {
+    "year": 1878,
+    "carbonDioxide": 93438.93832,
+    "Percentage": 3.924288112
+  },
+  {
+    "year": 1879,
+    "carbonDioxide": 97316.26103,
+    "Percentage": 4.087129554
+  },
+  {
+    "year": 1880,
+    "carbonDioxide": 101304.2074,
+    "Percentage": 4.254617015
+  },
+  {
+    "year": 1881,
+    "carbonDioxide": 105368.1672,
+    "Percentage": 4.425296921
+  },
+  {
+    "year": 1882,
+    "carbonDioxide": 109515.071,
+    "Percentage": 4.599460341
+  },
+  {
+    "year": 1883,
+    "carbonDioxide": 113758.6924,
+    "Percentage": 4.777685751
+  },
+  {
+    "year": 1884,
+    "carbonDioxide": 118045.6872,
+    "Percentage": 4.957732774
+  },
+  {
+    "year": 1885,
+    "carbonDioxide": 122369.9502,
+    "Percentage": 5.139345003
+  },
+  {
+    "year": 1886,
+    "carbonDioxide": 126728.3441,
+    "Percentage": 5.322390679
+  },
+  {
+    "year": 1887,
+    "carbonDioxide": 131157.4513,
+    "Percentage": 5.508406198
+  },
+  {
+    "year": 1888,
+    "carbonDioxide": 135722.9468,
+    "Percentage": 5.700149811
+  },
+  {
+    "year": 1889,
+    "carbonDioxide": 140313.0652,
+    "Percentage": 5.89292755
+  },
+  {
+    "year": 1890,
+    "carbonDioxide": 145129.8608,
+    "Percentage": 6.095225369
+  },
+  {
+    "year": 1891,
+    "carbonDioxide": 150107.4425,
+    "Percentage": 6.304275955
+  },
+  {
+    "year": 1892,
+    "carbonDioxide": 155157.894,
+    "Percentage": 6.516386956
+  },
+  {
+    "year": 1893,
+    "carbonDioxide": 160238.5804,
+    "Percentage": 6.729767778
+  },
+  {
+    "year": 1894,
+    "carbonDioxide": 165414.151,
+    "Percentage": 6.947133584
+  },
+  {
+    "year": 1895,
+    "carbonDioxide": 170718.0397,
+    "Percentage": 7.169888549
+  },
+  {
+    "year": 1896,
+    "carbonDioxide": 176108.0078,
+    "Percentage": 7.396258711
+  },
+  {
+    "year": 1897,
+    "carbonDioxide": 181612.3397,
+    "Percentage": 7.627431974
+  },
+  {
+    "year": 1898,
+    "carbonDioxide": 187231.3194,
+    "Percentage": 7.863420262
+  },
+  {
+    "year": 1899,
+    "carbonDioxide": 193030.109,
+    "Percentage": 8.106960287
+  },
+  {
+    "year": 1900,
+    "carbonDioxide": 199042.4793,
+    "Percentage": 8.359470361
+  },
+  {
+    "year": 1901,
+    "carbonDioxide": 205211.1876,
+    "Percentage": 8.618546383
+  },
+  {
+    "year": 1902,
+    "carbonDioxide": 211478.969,
+    "Percentage": 8.881783324
+  },
+  {
+    "year": 1903,
+    "carbonDioxide": 217987.7015,
+    "Percentage": 9.155139826
+  },
+  {
+    "year": 1904,
+    "carbonDioxide": 224567.3087,
+    "Percentage": 9.431472957
+  },
+  {
+    "year": 1905,
+    "carbonDioxide": 231337.8382,
+    "Percentage": 9.715824522
+  },
+  {
+    "year": 1906,
+    "carbonDioxide": 238267.6421,
+    "Percentage": 10.00686536
+  },
+  {
+    "year": 1907,
+    "carbonDioxide": 245555.8444,
+    "Percentage": 10.31295837
+  },
+  {
+    "year": 1908,
+    "carbonDioxide": 252765.4854,
+    "Percentage": 10.61575193
+  },
+  {
+    "year": 1909,
+    "carbonDioxide": 260121.184,
+    "Percentage": 10.92467967
+  },
+  {
+    "year": 1910,
+    "carbonDioxide": 267592.1409,
+    "Percentage": 11.23844809
+  },
+  {
+    "year": 1911,
+    "carbonDioxide": 275095.1537,
+    "Percentage": 11.5535628
+  },
+  {
+    "year": 1912,
+    "carbonDioxide": 282724.9249,
+    "Percentage": 11.87400116
+  },
+  {
+    "year": 1913,
+    "carbonDioxide": 290611.7797,
+    "Percentage": 12.20523662
+  },
+  {
+    "year": 1914,
+    "carbonDioxide": 298127.435,
+    "Percentage": 12.5208823
+  },
+  {
+    "year": 1915,
+    "carbonDioxide": 305586.5694,
+    "Percentage": 12.83415419
+  },
+  {
+    "year": 1916,
+    "carbonDioxide": 313269.0385,
+    "Percentage": 13.15680578
+  },
+  {
+    "year": 1917,
+    "carbonDioxide": 321099.6652,
+    "Percentage": 13.48567976
+  },
+  {
+    "year": 1918,
+    "carbonDioxide": 328869.2,
+    "Percentage": 13.81198797
+  },
+  {
+    "year": 1919,
+    "carbonDioxide": 336186.78,
+    "Percentage": 14.1193148
+  },
+  {
+    "year": 1920,
+    "carbonDioxide": 344144.6084,
+    "Percentage": 14.45353104
+  },
+  {
+    "year": 1921,
+    "carbonDioxide": 351784.2674,
+    "Percentage": 14.77438468
+  },
+  {
+    "year": 1922,
+    "carbonDioxide": 359638.4116,
+    "Percentage": 15.10424635
+  },
+  {
+    "year": 1923,
+    "carbonDioxide": 367966.3366,
+    "Percentage": 15.45400607
+  },
+  {
+    "year": 1924,
+    "carbonDioxide": 376345.1547,
+    "Percentage": 15.80590323
+  },
+  {
+    "year": 1925,
+    "carbonDioxide": 384779.9698,
+    "Percentage": 16.16015216
+  },
+  {
+    "year": 1926,
+    "carbonDioxide": 393165.6481,
+    "Percentage": 16.51233744
+  },
+  {
+    "year": 1927,
+    "carbonDioxide": 401904.1743,
+    "Percentage": 16.87934176
+  },
+  {
+    "year": 1928,
+    "carbonDioxide": 410634.3209,
+    "Percentage": 17.24599415
+  },
+  {
+    "year": 1929,
+    "carbonDioxide": 419652.0365,
+    "Percentage": 17.62472399
+  },
+  {
+    "year": 1930,
+    "carbonDioxide": 428537.2833,
+    "Percentage": 17.99789035
+  },
+  {
+    "year": 1931,
+    "carbonDioxide": 437154.494,
+    "Percentage": 18.35979962
+  },
+  {
+    "year": 1932,
+    "carbonDioxide": 445495.127,
+    "Percentage": 18.71009305
+  },
+  {
+    "year": 1933,
+    "carbonDioxide": 454089.9492,
+    "Percentage": 19.07106204
+  },
+  {
+    "year": 1934,
+    "carbonDioxide": 463046.8829,
+    "Percentage": 19.44723913
+  },
+  {
+    "year": 1935,
+    "carbonDioxide": 472229.5545,
+    "Percentage": 19.83289686
+  },
+  {
+    "year": 1936,
+    "carbonDioxide": 481851.3814,
+    "Percentage": 20.23699843
+  },
+  {
+    "year": 1937,
+    "carbonDioxide": 491800.8551,
+    "Percentage": 20.65486064
+  },
+  {
+    "year": 1938,
+    "carbonDioxide": 501528.2716,
+    "Percentage": 21.0633968
+  },
+  {
+    "year": 1939,
+    "carbonDioxide": 511513.3033,
+    "Percentage": 21.48275239
+  },
+  {
+    "year": 1940,
+    "carbonDioxide": 522003.0184,
+    "Percentage": 21.92330389
+  },
+  {
+    "year": 1941,
+    "carbonDioxide": 532657.8795,
+    "Percentage": 22.37079125
+  },
+  {
+    "year": 1942,
+    "carbonDioxide": 543284.599,
+    "Percentage": 22.81709672
+  },
+  {
+    "year": 1943,
+    "carbonDioxide": 553970.8268,
+    "Percentage": 23.26590145
+  },
+  {
+    "year": 1944,
+    "carbonDioxide": 564718.8059,
+    "Percentage": 23.71729962
+  },
+  {
+    "year": 1945,
+    "carbonDioxide": 574566.8486,
+    "Percentage": 24.13090189
+  },
+  {
+    "year": 1946,
+    "carbonDioxide": 584772.1054,
+    "Percentage": 24.55950659
+  },
+  {
+    "year": 1947,
+    "carbonDioxide": 595460.6502,
+    "Percentage": 25.00840862
+  },
+  {
+    "year": 1948,
+    "carbonDioxide": 606358.7164,
+    "Percentage": 25.46611022
+  },
+  {
+    "year": 1949,
+    "carbonDioxide": 617028.5246,
+    "Percentage": 25.91422535
+  },
+  {
+    "year": 1950,
+    "carbonDioxide": 628666.7051,
+    "Percentage": 26.40301058
+  },
+  {
+    "year": 1951,
+    "carbonDioxide": 640950.8708,
+    "Percentage": 26.91892618
+  },
+  {
+    "year": 1952,
+    "carbonDioxide": 653405.0115,
+    "Percentage": 27.44198045
+  },
+  {
+    "year": 1953,
+    "carbonDioxide": 666127.5542,
+    "Percentage": 27.97630719
+  },
+  {
+    "year": 1954,
+    "carbonDioxide": 679084.5246,
+    "Percentage": 28.52047952
+  },
+  {
+    "year": 1955,
+    "carbonDioxide": 692769.6868,
+    "Percentage": 29.09523476
+  },
+  {
+    "year": 1956,
+    "carbonDioxide": 707030.6289,
+    "Percentage": 29.69417185
+  },
+  {
+    "year": 1957,
+    "carbonDioxide": 721623.2483,
+    "Percentage": 30.30703886
+  },
+  {
+    "year": 1958,
+    "carbonDioxide": 736529.4344,
+    "Percentage": 30.93307518
+  },
+  {
+    "year": 1959,
+    "carbonDioxide": 751988.5827,
+    "Percentage": 31.58233504
+  },
+  {
+    "year": 1960,
+    "carbonDioxide": 767404.6452,
+    "Percentage": 32.22978536
+  },
+  {
+    "year": 1961,
+    "carbonDioxide": 782597.92,
+    "Percentage": 32.86787895
+  },
+  {
+    "year": 1962,
+    "carbonDioxide": 797986.4329,
+    "Percentage": 33.51417223
+  },
+  {
+    "year": 1963,
+    "carbonDioxide": 813760.8431,
+    "Percentage": 34.1766726
+  },
+  {
+    "year": 1964,
+    "carbonDioxide": 829906.141,
+    "Percentage": 34.85474965
+  },
+  {
+    "year": 1965,
+    "carbonDioxide": 846387.4733,
+    "Percentage": 35.54693963
+  },
+  {
+    "year": 1966,
+    "carbonDioxide": 863281.6109,
+    "Percentage": 36.25646678
+  },
+  {
+    "year": 1967,
+    "carbonDioxide": 880485.4311,
+    "Percentage": 36.97900011
+  },
+  {
+    "year": 1968,
+    "carbonDioxide": 898328.5067,
+    "Percentage": 37.72838116
+  },
+  {
+    "year": 1969,
+    "carbonDioxide": 917050.4613,
+    "Percentage": 38.51467374
+  },
+  {
+    "year": 1970,
+    "carbonDioxide": 936855.7647,
+    "Percentage": 39.34646526
+  },
+  {
+    "year": 1971,
+    "carbonDioxide": 957175.9053,
+    "Percentage": 40.19987913
+  },
+  {
+    "year": 1972,
+    "carbonDioxide": 978105.8797,
+    "Percentage": 41.07890506
+  },
+  {
+    "year": 1973,
+    "carbonDioxide": 999862.1168,
+    "Percentage": 41.99263272
+  },
+  {
+    "year": 1974,
+    "carbonDioxide": 1021437.82,
+    "Percentage": 42.89877826
+  },
+  {
+    "year": 1975,
+    "carbonDioxide": 1042931.277,
+    "Percentage": 43.80146956
+  },
+  {
+    "year": 1976,
+    "carbonDioxide": 1065255.964,
+    "Percentage": 44.73907121
+  },
+  {
+    "year": 1977,
+    "carbonDioxide": 1088014.988,
+    "Percentage": 45.69491435
+  },
+  {
+    "year": 1978,
+    "carbonDioxide": 1111342.882,
+    "Percentage": 46.67464913
+  },
+  {
+    "year": 1979,
+    "carbonDioxide": 1135067.34,
+    "Percentage": 47.67103895
+  },
+  {
+    "year": 1980,
+    "carbonDioxide": 1158821.614,
+    "Percentage": 48.66868101
+  },
+  {
+    "year": 1981,
+    "carbonDioxide": 1182104.156,
+    "Percentage": 49.6465111
+  },
+  {
+    "year": 1982,
+    "carbonDioxide": 1205252.227,
+    "Percentage": 50.61869358
+  },
+  {
+    "year": 1983,
+    "carbonDioxide": 1228689.26,
+    "Percentage": 51.60301202
+  },
+  {
+    "year": 1984,
+    "carbonDioxide": 1252800.147,
+    "Percentage": 52.61563128
+  },
+  {
+    "year": 1985,
+    "carbonDioxide": 1277661.675,
+    "Percentage": 53.65977623
+  },
+  {
+    "year": 1986,
+    "carbonDioxide": 1302895.836,
+    "Percentage": 54.71957121
+  },
+  {
+    "year": 1987,
+    "carbonDioxide": 1328870.36,
+    "Percentage": 55.81046027
+  },
+  {
+    "year": 1988,
+    "carbonDioxide": 1355755.397,
+    "Percentage": 56.93958948
+  },
+  {
+    "year": 1989,
+    "carbonDioxide": 1383046.484,
+    "Percentage": 58.08577209
+  },
+  {
+    "year": 1990,
+    "carbonDioxide": 1410724.191,
+    "Percentage": 59.24819214
+  },
+  {
+    "year": 1991,
+    "carbonDioxide": 1438832.312,
+    "Percentage": 60.42868892
+  },
+  {
+    "year": 1992,
+    "carbonDioxide": 1466222.668,
+    "Percentage": 61.57904068
+  },
+  {
+    "year": 1993,
+    "carbonDioxide": 1493856.937,
+    "Percentage": 62.73963645
+  },
+  {
+    "year": 1994,
+    "carbonDioxide": 1521629.18,
+    "Percentage": 63.90602685
+  },
+  {
+    "year": 1995,
+    "carbonDioxide": 1549853.521,
+    "Percentage": 65.09140471
+  },
+  {
+    "year": 1996,
+    "carbonDioxide": 1578733.89,
+    "Percentage": 66.30433465
+  },
+  {
+    "year": 1997,
+    "carbonDioxide": 1609476.454,
+    "Percentage": 67.59547387
+  },
+  {
+    "year": 1998,
+    "carbonDioxide": 1638156.166,
+    "Percentage": 68.79997659
+  },
+  {
+    "year": 1999,
+    "carbonDioxide": 1667095.192,
+    "Percentage": 70.01537004
+  },
+  {
+    "year": 2000,
+    "carbonDioxide": 1697265.1,
+    "Percentage": 71.28245862
+  },
+  {
+    "year": 2001,
+    "carbonDioxide": 1727483.266,
+    "Percentage": 72.55157397
+  },
+  {
+    "year": 2002,
+    "carbonDioxide": 1758894.332,
+    "Percentage": 73.87078922
+  },
+  {
+    "year": 2003,
+    "carbonDioxide": 1791734.71,
+    "Percentage": 75.25003332
+  },
+  {
+    "year": 2004,
+    "carbonDioxide": 1825749.844,
+    "Percentage": 76.67861534
+  },
+  {
+    "year": 2005,
+    "carbonDioxide": 1860354.45,
+    "Percentage": 78.13195423
+  },
+  {
+    "year": 2006,
+    "carbonDioxide": 1896209.026,
+    "Percentage": 79.63778989
+  },
+  {
+    "year": 2007,
+    "carbonDioxide": 1932309.25,
+    "Percentage": 81.15394241
+  },
+  {
+    "year": 2008,
+    "carbonDioxide": 1969228.911,
+    "Percentage": 82.70450995
+  },
+  {
+    "year": 2009,
+    "carbonDioxide": 2006556.816,
+    "Percentage": 84.27222314
+  },
+  {
+    "year": 2010,
+    "carbonDioxide": 2045027.578,
+    "Percentage": 85.88793448
+  },
+  {
+    "year": 2011,
+    "carbonDioxide": 2084299.835,
+    "Percentage": 87.53730737
+  },
+  {
+    "year": 2012,
+    "carbonDioxide": 2124503.666,
+    "Percentage": 89.22580489
+  },
+  {
+    "year": 2013,
+    "carbonDioxide": 2165109.514,
+    "Percentage": 90.93118652
+  },
+  {
+    "year": 2014,
+    "carbonDioxide": 2206395.563,
+    "Percentage": 92.66513549
+  },
+  {
+    "year": 2015,
+    "carbonDioxide": 2247853.414,
+    "Percentage": 94.40629988
+  },
+  {
+    "year": 2016,
+    "carbonDioxide": 2288773.717,
+    "Percentage": 96.12488807
+  },
+  {
+    "year": 2017,
+    "carbonDioxide": 2330041.749,
+    "Percentage": 97.8580804
+  },
+  {
+    "year": 2018,
+    "carbonDioxide": 2347041.749,
+    "Percentage": 98.5720536
+  },
+  {
+    "year": 2019,
+    "carbonDioxide": 2364041.749,
+    "Percentage": 99.2860268
+  },
+  {
+    "year": 2020,
+    "carbonDioxide": 2381041.749,
+    "Percentage": 100
+  }
+]

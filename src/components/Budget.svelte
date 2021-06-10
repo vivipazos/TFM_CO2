@@ -2,8 +2,8 @@
 export let action
 export let carbon
 
-let baseValue = 46051;
-let carbonLimit = 2620000;
+let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
+let carbonLimit  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
 
 $:selectedAction = action.filter(d => d.active)
     .map(d => +d.amount_all)
