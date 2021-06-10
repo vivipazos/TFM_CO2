@@ -31,7 +31,7 @@ console.log(lastValue)
 </script>
 {#if year}
 <div style="--widthV: {widthV}" class="budgetBarYearly">
-
+    <hr class="vertical" />
 </div>
 {/if}
 
@@ -61,4 +61,12 @@ console.log(lastValue)
         height: 100vh;
 	}
 
+    .vertical {
+            border-left: 3px dotted black;
+            margin: 0;
+            height: 150px;
+            position:absolute;
+            left: var(--widthV);
+            z-index: 100;
+        }
 </style>
