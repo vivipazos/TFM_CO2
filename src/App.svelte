@@ -6,7 +6,8 @@
 	import Scroller from '@sveltejs/svelte-scroller';
 	import { each } from 'svelte/internal';
   
-  	let index = 0, offset, progress;
+  	let offset, progress;
+	$:index=index < 170 ? index:0 ;
 
 	export let content;
 	export let actions;
@@ -27,13 +28,11 @@
 				percentage = {Yearly[index].Percentage}
 				widthV = {parseFloat(Yearly[index].Percentage).toFixed(2).toString() + "%"}
 			/>
-
-		  <p>Section {index + 1} is currently active.</p>
 		</div>
 	  
 		<div slot="foreground">
 			{#each Yearly as year}
-				<section>Text</section>
+				<section>{Yearly[index].year}</section>
 			{/each}
 		</div>
 	</Scroller>
