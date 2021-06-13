@@ -13,7 +13,9 @@
 	import { each } from 'svelte/internal';
 
   	let offset, progress;
-	$:index=index < 4 ? index:4 ;
+	$:index=index < 4 ? index:0 ;
+
+	
 
 	export let content;
 	export let actions;
