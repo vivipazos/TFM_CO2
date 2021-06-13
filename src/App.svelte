@@ -113,24 +113,24 @@
 <style>
 	main {
 		position: relative;
+		font-family: 'Open Sans', sans-serif;
 	}
 
 	section {
 		height: 80vh; 
 		text-align: left;
 		padding-top: 50vh;
-		width: 500px;
+		width: 400px;
 		margin: 0 auto;
 		font-family: 'Open Sans', sans-serif;
-		font-size: 25px;
-		line-height: 32px;		
 	}
 
 	.scrollyText {
-		background-color: hsl(0, 0%, 100%, 0.7);
+		background-color: hsl(0, 0%, 100%, 1);
 		border-radius: 5px;
-		padding: 10px;
-		font-size: 20px;
+		padding: 20px;
+		font-size: 18px;
+		line-height: 25px;
 	}
 
 </style>
