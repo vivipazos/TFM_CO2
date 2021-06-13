@@ -5,7 +5,7 @@
 	import Yearly from './data/YearlyData.json'
 	import Scroller from '@sveltejs/svelte-scroller';
 	import { each } from 'svelte/internal';
-  
+
   	let offset, progress;
 	$:index=index < 5 ? index:0 ;
 
@@ -33,7 +33,7 @@
 		<div slot="background">
 			<Budget
 				year = {selected_data[index].year}
-				carbon = {selected_data[index].carbonDioxide}
+				carbon = {selected_data[index].carbonDioxide.toFixed(2)}
 				percentage = {selected_data[index].Percentage}
 				widthV = {parseFloat(selected_data[index].Percentage).toFixed(2).toString() + "%"}
 			/>
