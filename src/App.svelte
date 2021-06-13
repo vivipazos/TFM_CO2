@@ -1,9 +1,3 @@
-<svelte:head>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap");
-    </style>
-</svelte:head>
-
 <script>
 	import Budget from './components/Budget.svelte'
 	import Action from './components/Action.svelte'
@@ -14,6 +8,7 @@
 
   	let offset, progress;
 	$:index=index < 8 ? index:0 ;
+	$: console.log(index)
 
 	export let content;
 	export let actions;
@@ -27,9 +22,8 @@
         })
 
 	let selected_data = carbon_modi.filter(function (sely) {
-        return sely.year === 1850 || sely.year === 1900 || sely.year === 1950 || sely.year === 2000 || sely.year === 2005 ||sely.year === 2010 ||sely.year === 2015 || sely.year === 2020
+        return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2018 ;
     });
-
 	console.log(selected_data)
 
 	let data_modified = actions.map(d => {
@@ -42,10 +36,18 @@
 	<Scroller top={0} bottom={0.8} bind:index bind:offset bind:progress>
 		<div slot="background">
 			<Budget
-				year = {selected_data[index].year}
-				carbon = {selected_data[index].carbonDioxide.toFixed(2)}
-				percentage = {selected_data[index].Percentage}
-				widthV = {parseFloat(selected_data[index].Percentage).toFixed(2).toString() + "%"}
+				year = {index > 4
+					? selected_data[4].year
+					:selected_data[index].year}
+				carbon = {index > 4
+					? selected_data[4].carbonDioxide.toFixed(2)
+					:selected_data[index].carbonDioxide.toFixed(2)}
+				percentage = {index > 4
+					? selected_data[4].Percentage
+					:selected_data[index].Percentage}
+				widthV = {index > 4
+					? parseFloat(selected_data[4].Percentage).toFixed(2).toString() + "%"
+					:parseFloat(selected_data[index].Percentage).toFixed(2).toString() + "%"}
 			/>
 		</div>
 	  
@@ -105,7 +107,6 @@
 <style>
 	main {
 		position: relative;
-		font-family: 'Open Sans', sans-serif;
 	}
 
 	section {
@@ -118,10 +119,4 @@
 		font-size: 25px;
 		line-height: 32px;		
 	}	
-
-	.scrollyText {
-		background-color: hsla(0,0%,100%,.5);
-		padding: 20px;
-		border-radius: 5px;
-	}
 </style>
