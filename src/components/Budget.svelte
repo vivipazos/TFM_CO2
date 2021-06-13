@@ -33,7 +33,7 @@ console.log(lastValue)
     <hr class="vertical" />
     <p class="year">{year} <br>{(carbon/1000).toFixed(2)} Gt CO&#xb2</p>
     <p class="yearLimit">2040</p>
-    <span class="dot"></span>
+    <!-- <span class="dot"></span> -->
     <video autoplay muted loop>
         <source src="./smoke_edge.mp4" type="video/mp4">
     </video>
