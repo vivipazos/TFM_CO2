@@ -13,9 +13,17 @@
 	export let actions;
 	export let carbon;
 
-	let selected_data = carbon.filter(function (sely) {
+	let carbon_modi = carbon.map(d => {
+          d.year = parseFloat(d.year);
+		  d.carbonDioxide = parseFloat(d.carbonDioxide);
+		  d.Percentage = parseFloat(d.Percentage);
+          return d;
+        })
+
+	let selected_data = carbon_modi.filter(function (sely) {
         return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2018 ;
     });
+	console.log(selected_data)
 
 	let data_modified = actions.map(d => {
           d.active = false;
