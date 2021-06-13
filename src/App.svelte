@@ -43,9 +43,14 @@
 		</div>
 	  
 		<div slot="foreground">
-			{#each selected_data as year}
-				<section>This is the year {selected_data[index].year}</section>
-			{/each}
+			<!-- {#each selected_data as year} -->
+				<section>We are speeding on a highway to hell ...and we need to <b>slow down</b>.</section>
+				<section>Human activity is increasing the amount of CO2 in the atmosphere.</section>
+				<section>The more CO2, the more global warming.</section>
+				<section>By current estimates, we people have emitted about 2200 Gt of CO2 in the atmosphere. This amounts to almost 1oC of global warming already. </section>
+				<section>Where has all that CO2 come from? Most of it have been direct emissions from fossil fuel combustion, all type or energy production, and industrial processes.</section>
+				<section>Those were just the direct emissions. There is also CO2 accumulating resulting from deliberate human activities on land, including those leading to land-use change.</section>
+			<!-- {/each} -->
 		</div>
 	</Scroller>
 	{#each content as block}
@@ -79,7 +84,12 @@
 
 	section {
 		height: 80vh; 
-		text-align: center;
+		text-align: left;
 		padding-top: 50vh;
+		width: 500px;
+		margin: 0 auto;
+		font-family: sans-serif;
+		font-size: 25px;
+		line-height: 32px;		
 	}	
 </style>
