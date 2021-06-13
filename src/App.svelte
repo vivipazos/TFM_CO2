@@ -13,7 +13,7 @@
 	import { each } from 'svelte/internal';
 
   	let offset, progress;
-	$:index=index < 5 ? index:0 ;
+	$:index=index < 4 ? index:4 ;
 
 	export let content;
 	export let actions;
@@ -27,9 +27,15 @@
         })
 
 	let selected_data = carbon_modi.filter(function (sely) {
-        return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2018 ;
+        return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2020
     });
+
+	let lastValue = selected_data[4]
+
+
+
 	console.log(selected_data)
+	console.log(lastValue)
 
 	let data_modified = actions.map(d => {
           d.active = false;
@@ -66,6 +72,8 @@
 				<section><div class="scrollyText">By current estimates, we people have emitted about 2200 Gt of CO2 in the atmosphere. This amounts to almost 1oC of global warming already.</div></section>
 				<section><div class="scrollyText">Where has all that CO2 come from? Most of it have been direct emissions from fossil fuel combustion, all type or energy production, and industrial processes.</div></section>
 				<section><div class="scrollyText">Those were just the direct emissions. There is also CO2 accumulating resulting from deliberate human activities on land, including those leading to land-use change.</div></section>
+				<section><div class="scrollyText">At the current speed of increase, global warming will reach 1.5oC by 2040</div></section>
+				<section><div class="scrollyText">We ought to slow this down. Check the impacts of some actions we can take:</div></section>
 			<!-- {/each} -->
 		</div>
 	</Scroller>
