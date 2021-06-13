@@ -7,11 +7,20 @@
 	import { each } from 'svelte/internal';
   
   	let offset, progress;
-	$:index=index < 170 ? index:170 ;
+	$:index=index < 5 ? index:0 ;
+
+	console.log(Yearly)
 
 	export let content;
 	export let actions;
 	export let carbon;
+
+	
+	let selected_data = Yearly.filter(function (sely) {
+        return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2018 ;
+    });
+
+	console.log(selected_data)
 
 	let data_modified = actions.map(d => {
           d.active = false;
@@ -23,16 +32,16 @@
 	<Scroller top={0} bottom={0.8} bind:index bind:offset bind:progress>
 		<div slot="background">
 			<Budget
-				year = {Yearly[index].year}
-				carbon = {Yearly[index].carbonDioxide}
-				percentage = {Yearly[index].Percentage}
-				widthV = {parseFloat(Yearly[index].Percentage).toFixed(2).toString() + "%"}
+				year = {selected_data[index].year}
+				carbon = {selected_data[index].carbonDioxide}
+				percentage = {selected_data[index].Percentage}
+				widthV = {parseFloat(selected_data[index].Percentage).toFixed(2).toString() + "%"}
 			/>
 		</div>
 	  
 		<div slot="foreground">
-			{#each Yearly as year}
-				<section>This is the {Yearly[index].year}</section>
+			{#each selected_data as year}
+				<section>This is the year {selected_data[index].year}</section>
 			{/each}
 		</div>
 	</Scroller>
