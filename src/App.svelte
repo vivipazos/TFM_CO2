@@ -7,7 +7,8 @@
 	import { each } from 'svelte/internal';
 
   	let offset, progress;
-	$:index=index < 5 ? index:0 ;
+	$:index=index < 5 ? index:0;
+	$:console.log(index)
 
 	export let content;
 	export let actions;
