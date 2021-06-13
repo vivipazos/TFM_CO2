@@ -8,6 +8,12 @@ export let widthV
 
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonLimit  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
+/* let circles = new Array(40).fill()
+	.map(a => ({
+		x: Math.random(),
+		y: Math.random(),
+        r: 8
+	})); /*
 
 //$: if(percentage)
 //{widthV = percentage.toFixed(2).toString() + "%"}
@@ -33,10 +39,16 @@ console.log(lastValue)
     <hr class="vertical" />
     <p class="year">{year} <br>{(carbon/1000).toFixed(2)} Gt CO&#xb2</p>
     <p class="yearLimit">2040</p>
-    <!-- <span class="dot"></span> -->
     <video autoplay muted loop>
         <source src="./smoke_edge2.mp4" type="video/mp4">
     </video>
+<!--     <svg class="dangerZone" viewBox="0 0 {width} {height}">
+            <g>
+                {#each circles as d}
+                <circle cx={d.x} cy={d.y} r={d.r} fill={d.color}/>
+                {/each}
+            </g>
+    </svg> -->
 </div>
 {/if}
 
@@ -90,13 +102,15 @@ console.log(lastValue)
 		right:180px;
 	}
     .dot {
-        height: 25px;
-        width: 25px;
+        height: 12px;
+        width: 12px;
         background-color: #BB3327;
         border-radius: 50%;
         display: inline-block;
     }
-
+    .dangerZone {
+        margin-left: 1200px;
+    }
     video {
         position: absolute;
         height: 100vh;

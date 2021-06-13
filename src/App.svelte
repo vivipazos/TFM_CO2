@@ -13,7 +13,7 @@
 	import { each } from 'svelte/internal';
 
   	let offset, progress;
-	$:index=index < 4 ? index:0 ;
+	$:index=index < 8 ? index:0 ;
 
 	export let content;
 	export let actions;
@@ -27,7 +27,7 @@
         })
 
 	let selected_data = carbon_modi.filter(function (sely) {
-        return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2020
+        return sely.year === 1850 || sely.year === 1900 || sely.year === 1950 || sely.year === 2000 || sely.year === 2005 ||sely.year === 2010 ||sely.year === 2015 || sely.year === 2020
     });
 
 	console.log(selected_data)
