@@ -61,7 +61,7 @@
 <style>
 	main {
 		position: relative;
-		padding: 1em;
+		padding: 0;
 		margin: 0 auto;
 	}
 
