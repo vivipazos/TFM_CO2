@@ -32,7 +32,7 @@
 	  
 		<div slot="foreground">
 			{#each Yearly as year}
-				<section>{Yearly[index].year}</section>
+				<section>This is the {Yearly[index].year}</section>
 			{/each}
 		</div>
 	</Scroller>
