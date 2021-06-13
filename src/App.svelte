@@ -77,5 +77,6 @@
 	section {
 		height: 80vh; 
 		text-align: center;
+		padding-top: 50vh;
 	}	
 </style>
