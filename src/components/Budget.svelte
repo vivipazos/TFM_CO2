@@ -34,6 +34,9 @@ console.log(lastValue)
     <p class="year">{year} <br>{(carbon/1000).toFixed(2)} Gt CO&#xb2</p>
     <p class="yearLimit">2040</p>
     <span class="dot"></span>
+    <video autoplay muted loop>
+        <source src="./smoke_edge.mp4" type="video/mp4">
+    </video>
 </div>
 {/if}
 
@@ -57,8 +60,8 @@ console.log(lastValue)
         top: 0;
         left: 0;
 		margin: 0;
-        background-color: rgb(204, 0, 51);
-        background-image: linear-gradient(rgb(204, 0, 51) #CC3333);
+        background-color: rgb(207,25,25);
+        background-image: linear-gradient(rgb(207,25,25) #CC3333);
         transition: width 2s;
         width: var(--widthV);
         height: 100vh;
@@ -81,7 +84,7 @@ console.log(lastValue)
         z-index: 100;
     }
     .yearLimit {
-		color: rgb(204, 0, 51);
+		color: #BB3327;
         position: absolute;
 		top:130px;
 		right:180px;
@@ -89,8 +92,15 @@ console.log(lastValue)
     .dot {
         height: 25px;
         width: 25px;
-        background-color: rgb(204, 0, 51);
+        background-color: #BB3327;
         border-radius: 50%;
         display: inline-block;
+    }
+
+    video {
+        position: absolute;
+        height: 100vh;
+        left: var(--widthV);
+        transition: left 2s;
     }
 </style>

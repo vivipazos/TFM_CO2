@@ -78,8 +78,6 @@
 <style>
 	main {
 		position: relative;
-		padding: 0;
-		margin: 0 auto;
 	}
 
 	section {
