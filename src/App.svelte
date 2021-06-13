@@ -9,14 +9,11 @@
   	let offset, progress;
 	$:index=index < 5 ? index:0 ;
 
-	console.log(Yearly)
-
 	export let content;
 	export let actions;
 	export let carbon;
 
-	
-	let selected_data = Yearly.filter(function (sely) {
+	let selected_data = carbon.filter(function (sely) {
         return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2018 ;
     });
 
@@ -75,5 +72,6 @@
 	section {
 		height: 80vh; 
 		text-align: center;
+		padding-top: 50vh;
 	}	
 </style>
