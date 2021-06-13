@@ -67,6 +67,6 @@
 
 	section {
 		height: 80vh; 
-	}
-	
+		text-align: center;
+	}	
 </style>
