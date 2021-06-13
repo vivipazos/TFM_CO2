@@ -1,3 +1,9 @@
+<svelte:head>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap");
+    </style>
+</svelte:head>
+
 <script>
 	import Budget from './components/Budget.svelte'
 	import Action from './components/Action.svelte'
@@ -22,7 +28,7 @@
         })
 
 	let selected_data = carbon_modi.filter(function (sely) {
-        return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2018 ;
+        return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2020 ;
     });
 	console.log(selected_data)
 
@@ -115,8 +121,14 @@
 		padding-top: 50vh;
 		width: 500px;
 		margin: 0 auto;
-		font-family: sans-serif;
+		font-family: 'Open Sans', sans-serif;
 		font-size: 25px;
 		line-height: 32px;		
-	}	
+	}
+
+	.scrollyText {
+		background-color: hsa(0, 0%, 100%, 0.7);
+		border-radius: 5px;
+	}
+
 </style>
