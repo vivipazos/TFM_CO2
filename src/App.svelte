@@ -5,6 +5,12 @@
 	import Yearly from './data/YearlyData.json'
 	import Scroller from '@sveltejs/svelte-scroller';
 	import { each } from 'svelte/internal';
+
+	let selected_data = Yearly.filter(function (sely) {
+		return sely.year === 1850 && sely.year<= 1950 || sely.year === 2019;
+	});
+
+	console.log(selected_data)
   
   	let offset, progress;
 	$:index=index < 170 ? index:170 ;
