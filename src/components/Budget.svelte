@@ -35,7 +35,7 @@ console.log(lastValue)
     <p class="yearLimit">2040</p>
     <!-- <span class="dot"></span> -->
     <video autoplay muted loop>
-        <source src="./smoke_edge.mp4" type="video/mp4">
+        <source src="./smoke_edge2.mp4" type="video/mp4">
     </video>
 </div>
 {/if}
@@ -100,6 +100,7 @@ console.log(lastValue)
     video {
         position: absolute;
         height: 100vh;
+        width: auto;
         left: var(--widthV);
         transition: left 2s;
     }
