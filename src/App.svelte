@@ -65,14 +65,18 @@
 					</div>
 				</section>
 				<section><div class="scrollyText">By current estimates, we people have emitted about 2200 Gt of CO2 in the atmosphere. This amounts to almost 1oC of global warming already.</div></section>
-				<section><div class="scrollyText">Where has all that CO2 come from? Most of it have been direct emissions from fossil fuel combustion, all type or energy production, and industrial processes.</div></section>
-				<section><div class="scrollyText">Those were just the direct emissions. There is also CO2 accumulating resulting from deliberate human activities on land, including those leading to land-use change.</div>
+				<section>
+					<div class="scrollyText">Where has all that CO2 come from? Most of it have been direct emissions from fossil fuel combustion, all type or energy production, and industrial processes.</div>
 				</section>
 				<section>
-				<div class="scrollyText">At the current speed of increase, global warming will reach 1.5oC by 2040</div>
+					<div class="scrollyText">Those were just the direct emissions. There is also CO2 accumulating resulting from deliberate human activities on land, including those leading to land-use change.</div>
 				</section>
 				<section>
-				<div class="scrollyText">We ought to slow this down. Check the impacts of some actions we can take:</div></section>
+					<div class="scrollyText">At the current speed of increase, global warming will reach 1.5oC by 2040</div>
+				</section>
+				<section>
+					<div class="scrollyText">We ought to slow this down. Check the impacts of some actions we can take:</div>
+				</section>
 			<!-- {/each} -->
 		</div>
 	</Scroller>
