@@ -8,6 +8,7 @@
 
   	let offset, progress;
 	$:index=index < 8 ? index:0 ;
+	$: console.log(index)
 
 	export let content;
 	export let actions;
@@ -35,10 +36,18 @@
 	<Scroller top={0} bottom={0.8} bind:index bind:offset bind:progress>
 		<div slot="background">
 			<Budget
-				year = {selected_data[index].year}
-				carbon = {selected_data[index].carbonDioxide.toFixed(2)}
-				percentage = {selected_data[index].Percentage}
-				widthV = {parseFloat(selected_data[index].Percentage).toFixed(2).toString() + "%"}
+				year = {index > 4
+					? selected_data[4].year
+					:selected_data[index].year}
+				carbon = {index > 4
+					? selected_data[4].carbonDioxide.toFixed(2)
+					:selected_data[index].carbonDioxide.toFixed(2)}
+				percentage = {index > 4
+					? selected_data[4].Percentage
+					:selected_data[index].Percentage}
+				widthV = {index > 4
+					? parseFloat(selected_data[4].Percentage).toFixed(2).toString() + "%"
+					:parseFloat(selected_data[index].Percentage).toFixed(2).toString() + "%"}
 			/>
 		</div>
 	  
