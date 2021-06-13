@@ -53,7 +53,7 @@ console.log(lastValue)
 		margin: 0;
         background-color: rgb(204, 0, 51);
         width: 800px;
-        height: 100vh;
+        height: 200px;
 	}
 
     .budgetBarYearly {
