@@ -20,8 +20,6 @@
         return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2018 ;
     });
 
-	console.log(selected_data)
-
 	let data_modified = actions.map(d => {
           d.active = false;
           return d;
