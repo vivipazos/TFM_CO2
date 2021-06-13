@@ -6,7 +6,6 @@ export let year
 export let percentage
 export let widthV
 
-$: console.log(widthV)
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonLimit  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
 
@@ -32,6 +31,9 @@ console.log(lastValue)
 {#if year}
 <div style="--widthV: {widthV}" class="budgetBarYearly">
     <hr class="vertical" />
+    <p class="year">{year}</p>
+    <p class="yearLimit">2040</p>
+    <span class="dot"></span>
 </div>
 {/if}
 
@@ -45,10 +47,10 @@ console.log(lastValue)
 		position: sticky;
         top: 0;
         left: 0;
-		margin: 0 auto;
+		margin: 0;
         background-color: rgb(204, 0, 51);
         width: 800px;
-        height: 200px;
+        height: 100vh;
 	}
 
     .budgetBarYearly {
@@ -62,11 +64,32 @@ console.log(lastValue)
 	}
 
     .vertical {
-            border-left: 3px dotted black;
-            margin: 0;
-            height: 150px;
-            position:absolute;
-            left: var(--widthV);
-            z-index: 100;
-        }
+        border-left: 3px dotted black;
+        height: 130px;
+        margin: 0;
+        position:absolute;
+        left: var(--widthV);
+        z-index: 100;
+    }
+    .year {
+        height: 150px;
+        margin: 0;
+        position:absolute;
+        top:130px;
+        left: var(--widthV);
+        z-index: 100;
+    }
+    .yearLimit {
+		color: rgb(204, 0, 51);
+        position: absolute;
+		top:130px;
+		right:180px;
+	}
+    .dot {
+        height: 25px;
+        width: 25px;
+        background-color: rgb(204, 0, 51);
+        border-radius: 50%;
+        display: inline-block;
+    }
 </style>
