@@ -72,7 +72,7 @@ export let onChange;
     }
 
     input:checked + .slider {
-        background-color: #CC0022;
+        background-color: rgb(204, 0, 51);
     }
 
     input:checked + .slider:before {
