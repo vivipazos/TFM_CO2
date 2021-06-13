@@ -127,8 +127,10 @@
 	}
 
 	.scrollyText {
-		background-color: hsa(0, 0%, 100%, 0.7);
+		background-color: hsl(0, 0%, 100%, 0.7);
 		border-radius: 5px;
+		padding: 10px;
+		font-size: 20px;
 	}
 
 </style>
