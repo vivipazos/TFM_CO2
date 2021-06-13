@@ -58,6 +58,7 @@ console.log(lastValue)
         left: 0;
 		margin: 0;
         background-color: rgb(204, 0, 51);
+        background-image: linear-gradient(rgb(204, 0, 51) #CC3333);
         transition: width 2s;
         width: var(--widthV);
         height: 100vh;
