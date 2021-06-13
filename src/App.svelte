@@ -1,3 +1,9 @@
+<svelte:head>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap");
+    </style>
+</svelte:head>
+
 <script>
 	import Budget from './components/Budget.svelte'
 	import Action from './components/Action.svelte'
@@ -43,13 +49,23 @@
 		</div>
 	  
 		<div slot="foreground">
-			<!-- {#each selected_data as year} -->
-				<section>We are speeding on a highway to hell ...and we need to <b>slow down</b>.</section>
-				<section>Human activity is increasing the amount of CO2 in the atmosphere.</section>
-				<section>The more CO2, the more global warming.</section>
-				<section>By current estimates, we people have emitted about 2200 Gt of CO2 in the atmosphere. This amounts to almost 1oC of global warming already. </section>
-				<section>Where has all that CO2 come from? Most of it have been direct emissions from fossil fuel combustion, all type or energy production, and industrial processes.</section>
-				<section>Those were just the direct emissions. There is also CO2 accumulating resulting from deliberate human activities on land, including those leading to land-use change.</section>
+				<section>
+					<div class="scrollyText">
+						We are speeding on a highway to hell ...and we need to <b>slow down</b>.
+					</div>
+				</section>
+				<section>
+					<div class="scrollyText">
+					Human activity is increasing the amount of CO2 in the atmosphere.
+					</div>
+				</section>
+				<section>
+					<div class="scrollyText">The more CO2, the more global warming.
+					</div>
+				</section>
+				<section><div class="scrollyText">By current estimates, we people have emitted about 2200 Gt of CO2 in the atmosphere. This amounts to almost 1oC of global warming already.</div></section>
+				<section><div class="scrollyText">Where has all that CO2 come from? Most of it have been direct emissions from fossil fuel combustion, all type or energy production, and industrial processes.</div></section>
+				<section><div class="scrollyText">Those were just the direct emissions. There is also CO2 accumulating resulting from deliberate human activities on land, including those leading to land-use change.</div></section>
 			<!-- {/each} -->
 		</div>
 	</Scroller>
@@ -78,6 +94,7 @@
 <style>
 	main {
 		position: relative;
+		font-family: 'Open Sans', sans-serif;
 	}
 
 	section {
@@ -90,4 +107,10 @@
 		font-size: 25px;
 		line-height: 32px;		
 	}	
+
+	.scrollyText {
+		background-color: hsla(0,0%,100%,.5);
+		padding: 20px;
+		border-radius: 5px;
+	}
 </style>
