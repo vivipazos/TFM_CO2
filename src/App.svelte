@@ -11,7 +11,11 @@
 	import Scroller from '@sveltejs/svelte-scroller';
 	import Header from  './components/Header.svelte'
 	import Footer from './components/Footer.svelte'
-
+	
+	
+	import Sections from './components/Sections.svelte'
+	import data from './data/data.json'
+  
   	let offset, progress;
 	$:index=index < 8 ? index:0 ;
 
@@ -82,6 +86,11 @@
 				{/each}
 			</div>
 		</Scroller>
+
+	{:else if block.type === 'sections'}
+
+	  <Sections {data}/>
+
 
 	{:else if block.type === 'calculator'}
 		<Budget
