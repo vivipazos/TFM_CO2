@@ -11,6 +11,8 @@
 	import Yearly from './data/YearlyData.json'
 	import Scroller from '@sveltejs/svelte-scroller';
 	import { each } from 'svelte/internal';
+	import Header from  './components/Header.svelte'
+	import Footer from './components/Footer.svelte'
 
   	let offset, progress;
 	$:index=index < 8 ? index:0 ;
@@ -42,7 +44,21 @@
         })
 </script>
 
+
+
+
 <main>
+{#each content as block}
+	{#if block.type === 'head'}
+		<Header {...block}/>
+	
+	{:else if block.type === 'text'}
+		<Text {...block} />
+	{/if}	
+{/each}
+
+
+		
 	<Scroller top={0} bottom={0.8} bind:index bind:offset bind:progress>
 		<div slot="background">
 			<Budget
@@ -64,7 +80,7 @@
 		<div slot="foreground">
 				<section>
 					<div class="scrollyText">
-						We are speeding on a highway to hell ...and we need to <b>slow down</b>.
+						<h4>We are speeding on a highway to hell ...and we need to <b>slow down</b>.</h4>
 					</div>
 				</section>
 				<section>
@@ -92,25 +108,46 @@
 			<!-- {/each} -->
 		</div>
 	</Scroller>
-	{#each content as block}
 
-	{#if block.type === 'text'}
-		<Text {...block} />
-	{:else if block.type === 'scroller'}
-	<div></div>
-	{:else if block.type === 'calculator'}
-	<Budget
-		action = {data_modified}
-		{carbon}
-	/>
-	{#each actions as object}
-		<Action
-			{...object}
-			bind:active = {object.active}
-			onChange = {() => data_modified = data_modified }
-		/>
-	{/each}
-	{/if}
+
+
+	{#each content as block}
+		{#if block.type === 'text'}
+			<Text {...block} />
+		{:else if block.type === 'calculator'}
+			<Budget
+			action = {data_modified}
+			{carbon}
+			/>
+			{#each actions as object}
+				<Action
+				{...object}
+				bind:active = {object.active}
+				onChange = {() => data_modified = data_modified }
+			/>
+			{/each}
+
+		{:else if block.type === 'footer'}
+		<Footer>
+			<div slot="about">
+				{#each block.about as text}
+				{text.p}
+				{/each}
+			</div>
+			<div slot="data">
+				{#each block.data as text}
+				{text.p}
+				{/each}
+			</div>
+			<div slot="disclaimer">
+				{#each block.disclaimer as text}
+				{text.p}
+				{/each}
+			</div>
+			
+		</Footer>
+   		 {/if}
+
 	{/each}
 </main>
 
