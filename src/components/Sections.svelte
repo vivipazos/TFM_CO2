@@ -1,7 +1,7 @@
 <script>
  
-import data from "./data/data.json"		
-import Tooltip from './components/common/Tooltip.svelte';
+export let  data;
+
 import ScatterCanvas from './components/charts/ScatterCanvas.svelte'
    
  let scatterStep=0	 ;

@@ -1,17 +1,21 @@
 <script>
 	
-	import Tooltip from './Tooltip.svelte'
+	import Tooltip from './components/common/Tooltip.svelte'
 	import { Canvas } from 'svelte-canvas'
 	import { extent } from 'd3-array'
 	import { scaleLinear } from 'd3-scale'
-  import { Delaunay } from 'd3-delaunay'
+    import { Delaunay } from 'd3-delaunay'
 	import Square from './Square.svelte'
+
+
 	export let data;
 	export let step = 0;
 	export let layout;
 	export let width;
 	export let height;	
-  let tooltipOptions;
+
+
+    let tooltipOptions;
 	const margin = { top: 0, right: 0, bottom: 0, left: 0 }
 	let picked = null, click = false
 	
