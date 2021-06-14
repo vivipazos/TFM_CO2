@@ -37,8 +37,8 @@ console.log(lastValue)
 {#if year}
 <div style="--widthV: {widthV}" class="budgetBarYearly">
     <hr class="vertical" />
-    <p class="year">{year} <br>{(carbon/1000).toFixed(2)} Gt CO&#xb2</p>
-    <!-- <p class="yearLimit">2040</p> -->
+    <p class="year">{year} <br>{carbon} Gt CO&#xb2</p>
+     <p class="yearLimit">2040</p>
     <video autoplay muted loop>
         <source src="./smoke_co2.mp4" type="video/mp4">
     </video>

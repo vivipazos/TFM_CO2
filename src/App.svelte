@@ -14,11 +14,16 @@
 
   	let offset, progress;
 	$:index=index < 8 ? index:0 ;
-	$: console.log(index)
 
 	export let content;
 	export let actions;
 	export let carbon;
+
+/* 	let groupedData = actions.reduce(function(acumarray, d) {
+    	(acumarray[d.category] = acumarray[d.category] || []).push(d);
+    	return acumarray;
+  	}, {}); */
+
 
 	let carbon_modi = carbon.map(d => {
           d.year = parseFloat(d.year);
@@ -30,7 +35,6 @@
 	let selected_data = carbon_modi.filter(function (sely) {
         return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2020 ;
     });
-	console.log(selected_data)
 
 	let data_modified = actions.map(d => {
           d.active = false;
@@ -46,8 +50,8 @@
 					? selected_data[4].year
 					:selected_data[index].year}
 				carbon = {index > 4
-					? selected_data[4].carbonDioxide.toFixed(2)
-					:selected_data[index].carbonDioxide.toFixed(2)}
+					? (selected_data[4].carbonDioxide/1000).toFixed(2)
+					:(selected_data[index].carbonDioxide/1000).toFixed(2)}
 				percentage = {index > 4
 					? selected_data[4].Percentage
 					:selected_data[index].Percentage}
