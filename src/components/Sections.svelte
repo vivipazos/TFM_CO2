@@ -2,7 +2,7 @@
  
 export let  data;
 
-import ScatterCanvas from './components/charts/ScatterCanvas.svelte'
+import ScatterCanvas from './charts/ScatterCanvas.svelte'
    
  let scatterStep=0	 ;
  

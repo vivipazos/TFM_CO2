@@ -1,6 +1,6 @@
 <script>
 	
-	import Tooltip from './components/common/Tooltip.svelte'
+	import Tooltip from '../common/Tooltip.svelte'
 	import { Canvas } from 'svelte-canvas'
 	import { extent } from 'd3-array'
 	import { scaleLinear } from 'd3-scale'
