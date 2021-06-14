@@ -74,7 +74,7 @@ console.log(lastValue)
 		margin: 0;
         background-color: rgb(207,25,25);
         background-image: linear-gradient(rgb(207,25,25) #CC3333);
-        transition: width 2s;
+        /* transition: width 2s linear; */
         width: var(--widthV);
         height: 100vh;
 	}
@@ -116,6 +116,6 @@ console.log(lastValue)
         height: 100vh;
         width: auto;
         left: var(--widthV);
-        transition: left 2s;
+        /* transition: left 2s linear; */
     }
 </style>
