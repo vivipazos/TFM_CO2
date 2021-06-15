@@ -19,14 +19,14 @@
 	const margin = { top: 0, right: 0, bottom: 0, left: 0 }
 	let picked = null, click = false
 	
-//	$: x = scaleLinear()
-//	 	.domain([0,100])
-//		.range([width*0.5185, width*0.8563])
-//	  .nice()
+  //	$: x = scaleLinear()
+  //	 	.domain([0,100])
+  //		.range([width*0.5185, width*0.8563])
+  //	    .nice()
 	
 	$: y = scaleLinear()
 					.domain([0,100])
-					.range([height - margin.bottom, margin.top])
+					.range([height - height*0.2, margin.top])
 					.nice()
 	
 $: delaunay = Delaunay.from(data, d => 0, d => y(d.coords[step].y))
@@ -54,7 +54,7 @@ $: delaunay = Delaunay.from(data, d => 0, d => y(d.coords[step].y))
 				x=0
 				y={((d.coords[step].y)/100)*height}
 				height={((d.coords[step].height)/100)*height}
-				width=200
+				width=600
 			
 				
                

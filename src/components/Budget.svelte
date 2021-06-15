@@ -136,6 +136,8 @@ console.log(lastValue) */
     .sections {
 		z-index: 200;
 		position: absolute;
-		left: 73vw;
+		left: 51vw;
+        top:1vh;
+        bottom:1vh
 	}
 </style>

@@ -40,7 +40,7 @@
         return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2020 ;
     });
 
-	$: if (progress > 0.6) {
+	$: if ( progress > 0.7 && progress<0.9) {
 		visible = true;
 	}
 	else {
@@ -84,14 +84,16 @@
 			</div>
 
 			<div slot="foreground">
-				{#each block.steps as step}
-					<section>
-						<div class="scrollyText">
-							<p>{@html step.p}</p>
-						</div>
-					</section>
-				{/each}
-			</div>
+                {#each block.steps as step}
+                    <section>
+                        {#if visible === false}
+                        <div class="scrollyText">
+                            <p>{@html step.p}</p>
+                        </div>
+                        {/if} 
+                    </section>
+                {/each}
+            </div>
 		</Scroller>
 
 	{:else if block.type === 'calculator'}
