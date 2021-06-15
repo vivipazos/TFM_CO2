@@ -1,13 +1,12 @@
 <script>
- 
 export let  data;
 
 import ScatterCanvas from './charts/ScatterCanvas.svelte'
    
- let scatterStep=0	 ;
- 
-   let width=300;
-   $: height = width ;
+let scatterStep=0;
+let width=300;
+let height=740;
+
    
 </script>
 <main>
