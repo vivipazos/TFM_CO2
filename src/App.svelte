@@ -12,12 +12,12 @@
 	import Header from  './components/Header.svelte'
 	import Footer from './components/Footer.svelte'
 	
-	
-	import Sections from './components/Sections.svelte'
 	import data from './data/data.json'
+	import { loop_guard } from 'svelte/internal';
   
   	let offset, progress;
 	$:index=index < 8 ? index:0 ;
+	let visible = false;
 
 	export let content;
 	export let actions;
@@ -40,7 +40,12 @@
         return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2020 ;
     });
 
-	console.log(selected_data)
+	$: if (progress > 0.6) {
+		visible = true;
+	}
+	else {
+		visible = false;
+	}
 
 	let data_modified = actions.map(d => {
           d.active = false;
@@ -73,6 +78,8 @@
 						? selected_data[4].Percentage
 						:selected_data[index].Percentage}
 					widthV = {parseFloat(currentDatapoint.Percentage).toFixed(2).toString() + "%"}
+					{data}
+					{visible}
 				/>
 			</div>
 
@@ -87,16 +94,11 @@
 			</div>
 		</Scroller>
 
-	{:else if block.type === 'sections'}
-
-	  <Sections {data}/>
-
-
 	{:else if block.type === 'calculator'}
-		<Budget
+<!-- 		<Budget
 		action = {data_modified}
 		{carbon}
-		/>
+		/> -->
 		{#each actions as object}
 			<Action
 			{...object}
@@ -141,9 +143,9 @@
 		padding-top: 20vh;
 		width: 450px;
 		margin: 0 auto;
+		margin-left: 45%;
 		font-family: 'Open Sans', sans-serif;
 	}
-
 	.scrollyText {
 		background-color: hsl(0, 0%, 100%, 1);
 		border-radius: 5px;

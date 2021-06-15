@@ -1,10 +1,14 @@
 <script>
+import Sections from './Sections.svelte'
 export let action
 export let carbon
 
 export let year
 export let percentage
 export let widthV
+
+export let visible
+export let data 
 
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonLimit  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
@@ -42,6 +46,11 @@ console.log(lastValue)
     <video autoplay muted loop>
         <source src="./smoke_edge3.mp4" type="video/mp4">
     </video>
+     {#if visible === true}
+    <div class="sections">
+        <Sections {data}/>
+    </div>
+    {/if} 
 <!--     <svg class="dangerZone" viewBox="0 0 {width} {height}">
             <g>
                 {#each circles as d}
@@ -52,9 +61,9 @@ console.log(lastValue)
 </div>
 {/if}
 
- <div class="budgetBar">
+<!--  <div class="budgetBar">
 
- </div>
+ </div> -->
 
 
 <style>
@@ -119,4 +128,10 @@ console.log(lastValue)
         object-fit: fill;
         /* transition: left 2s; */
     }
+
+    .sections {
+		z-index: 200;
+		position: absolute;
+		left: 73vw;
+	}
 </style>
