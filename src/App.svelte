@@ -8,19 +8,26 @@
 	import Budget from './components/Budget.svelte'
 	import Action from './components/Action.svelte'
 	import Text from './components/common/Text.svelte'
-	import Yearly from './data/YearlyData.json'
 	import Scroller from '@sveltejs/svelte-scroller';
-	import { each } from 'svelte/internal';
 	import Header from  './components/Header.svelte'
 	import Footer from './components/Footer.svelte'
-
+	
+	
+	import Sections from './components/Sections.svelte'
+	import data from './data/data.json'
+  
   	let offset, progress;
 	$:index=index < 8 ? index:0 ;
-	$: console.log(index)
 
 	export let content;
 	export let actions;
 	export let carbon;
+
+/* 	let groupedData = actions.reduce(function(acumarray, d) {
+    	(acumarray[d.category] = acumarray[d.category] || []).push(d);
+    	return acumarray;
+  	}, {}); */
+
 
 	let carbon_modi = carbon.map(d => {
           d.year = parseFloat(d.year);
@@ -32,98 +39,73 @@
 	let selected_data = carbon_modi.filter(function (sely) {
         return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2020 ;
     });
+
 	console.log(selected_data)
 
 	let data_modified = actions.map(d => {
           d.active = false;
           return d;
         })
+
+	$: numDatapoints = carbon_modi.length - 1;
+	$: actualProgress = Math.min(progress, 0.5) / 0.5;
+	$: currentIndex = Math.floor(Math.min(1, Math.max(actualProgress ||0, 0)) * numDatapoints);
+	$: currentDatapoint = carbon_modi[currentIndex];
 </script>
-
-
-
 
 <main>
 {#each content as block}
+
 	{#if block.type === 'head'}
 		<Header {...block}/>
-	
+
 	{:else if block.type === 'text'}
 		<Text {...block} />
-	{/if}	
-{/each}
+
+	{:else if block.type === 'scroller'}
+
+		<Scroller top={0} bottom={0.8} bind:index bind:offset bind:progress>
+			<div slot="background">
+				<Budget
+					year = {currentDatapoint.year}
+					carbon = {currentDatapoint.carbonDioxide}
+					percentage = {index > 4
+						? selected_data[4].Percentage
+						:selected_data[index].Percentage}
+					widthV = {parseFloat(currentDatapoint.Percentage).toFixed(2).toString() + "%"}
+				/>
+			</div>
+
+			<div slot="foreground">
+				{#each block.steps as step}
+					<section>
+						<div class="scrollyText">
+							<h4>{@html step.p}</h4>
+						</div>
+					</section>
+				{/each}
+			</div>
+		</Scroller>
+
+	{:else if block.type === 'sections'}
+
+	  <Sections {data}/>
 
 
-		
-	<Scroller top={0} bottom={0.8} bind:index bind:offset bind:progress>
-		<div slot="background">
-			<Budget
-				year = {index > 4
-					? selected_data[4].year
-					:selected_data[index].year}
-				carbon = {index > 4
-					? selected_data[4].carbonDioxide.toFixed(2)
-					:selected_data[index].carbonDioxide.toFixed(2)}
-				percentage = {index > 4
-					? selected_data[4].Percentage
-					:selected_data[index].Percentage}
-				widthV = {index > 4
-					? parseFloat(selected_data[4].Percentage).toFixed(2).toString() + "%"
-					:parseFloat(selected_data[index].Percentage).toFixed(2).toString() + "%"}
-			/>
-		</div>
-	  
-		<div slot="foreground">
-				<section>
-					<div class="scrollyText">
-						<h4>We are speeding on a highway to hell ...and we need to <b>slow down</b>.</h4>
-					</div>
-				</section>
-				<section>
-					<div class="scrollyText">
-					Human activity is increasing the amount of CO2 in the atmosphere.
-					</div>
-				</section>
-				<section>
-					<div class="scrollyText">The more CO2, the more global warming.
-					</div>
-				</section>
-				<section><div class="scrollyText">By current estimates, we people have emitted about 2200 Gt of CO2 in the atmosphere. This amounts to almost 1oC of global warming already.</div></section>
-				<section>
-					<div class="scrollyText">Where has all that CO2 come from? Most of it have been direct emissions from fossil fuel combustion, all type or energy production, and industrial processes.</div>
-				</section>
-				<section>
-					<div class="scrollyText">Those were just the direct emissions. There is also CO2 accumulating resulting from deliberate human activities on land, including those leading to land-use change.</div>
-				</section>
-				<section>
-					<div class="scrollyText">At the current speed of increase, global warming will reach 1.5oC by 2040</div>
-				</section>
-				<section>
-					<div class="scrollyText">We ought to slow this down. Check the impacts of some actions we can take:</div>
-				</section>
-			<!-- {/each} -->
-		</div>
-	</Scroller>
+	{:else if block.type === 'calculator'}
+		<Budget
+		action = {data_modified}
+		{carbon}
+		/>
+		{#each actions as object}
+			<Action
+			{...object}
+			bind:active = {object.active}
+			onChange = {() => data_modified = data_modified }
+		/>
+		{/each}
 
-
-
-	{#each content as block}
-		{#if block.type === 'text'}
-			<Text {...block} />
-		{:else if block.type === 'calculator'}
-			<Budget
-			action = {data_modified}
-			{carbon}
-			/>
-			{#each actions as object}
-				<Action
-				{...object}
-				bind:active = {object.active}
-				onChange = {() => data_modified = data_modified }
-			/>
-			{/each}
-
-		{:else if block.type === 'footer'}
+	{:else if block.type === 'footer'}
 		<Footer>
 			<div slot="about">
 				{#each block.about as text}
@@ -140,11 +122,11 @@
 				{text.p}
 				{/each}
 			</div>
-			
-		</Footer>
-   		 {/if}
 
-	{/each}
+		</Footer>
+	{/if}
+
+{/each}
 </main>
 
 <style>

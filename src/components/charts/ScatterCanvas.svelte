@@ -1,69 +1,68 @@
 <script>
+	
+	import Tooltip from '../common/Tooltip.svelte'
 	import { Canvas } from 'svelte-canvas'
 	import { extent } from 'd3-array'
 	import { scaleLinear } from 'd3-scale'
     import { Delaunay } from 'd3-delaunay'
-	import Circle from './Circle.svelte'
 	import Square from './Square.svelte'
+
 
 	export let data;
 	export let step = 0;
 	export let layout;
-	export let mark;
+	export let width;
+	export let height;	
 
-	const margin = { top: 10, right: 10, bottom: 25, left: 25 }
 
-	let width, height;
+    let tooltipOptions;
+	const margin = { top: 0, right: 0, bottom: 0, left: 0 }
 	let picked = null, click = false
-
-	$: x = scaleLinear()
-				 	.domain(extent(data, d => d.coords[step].x))
-					.range([margin.left, width - margin.right])
-					.nice()
-
+	
+//	$: x = scaleLinear()
+//	 	.domain([0,100])
+//		.range([width*0.5185, width*0.8563])
+//	  .nice()
+	
 	$: y = scaleLinear()
-					.domain(extent(data, d => d.coords[step].y))
+					.domain([0,100])
 					.range([height - margin.bottom, margin.top])
 					.nice()
 	
-    $: delaunay = Delaunay.from(data, d => x(d.coords[step].x), d => y(d.coords[step].y))
-
+$: delaunay = Delaunay.from(data, d => 0, d => y(d.coords[step].y))
 </script>
-<div class="graphic {layout}" bind:clientWidth={width} bind:clientHeight={height}>
+<div class="graphic {layout} absolute">
 	<Canvas 
-		{width} {height} 
+		{width} {height}
 		style='cursor: pointer'
-		on:mousemove={({ offsetX: x, offsetY: y }) => picked = delaunay.find(x, y)}
-		on:mouseout={() => picked = null}
+		on:mousemove={({ offsetX: x, offsetY: y }) => {
+					picked = delaunay.find(x, y); 		
+					let tip = (data[picked].data[0]) ;
+					tooltipOptions = {x: x, y: y, tip: tip, visible: true}
+		}}
+		on:mouseout={() => {
+			picked = null
+			tooltipOptions = {x: -1000, y: -1000, tip: '', visible: false}
+		}}
 		on:mousedown={() => click = true}
 		on:mouseup={() => click = false}
 	>
 
+
 		{#each data as d, i}
-			{#if mark === 'circle'}
-			<Circle 
-				x={x(d.coords[step].x)}
-				y={y(d.coords[step].y)} 
-				fill="#00336633"
-				r={d.coords[step].r}
-                stroke={i === picked && "#000"} 
+				<Square 
+				x=0
+				y={((d.coords[step].y)/100)*height}
+				height={((d.coords[step].height)/100)*height}
+				width=200
+			
+				
+               
 			/>
-			{:else if mark === 'square'}
-			<Square 
-				x={x(d.coords[step].x)}
-				y={y(d.coords[step].y)} 
-				fill="tomato"
-				height={d.coords[step].height}
-				width={d.coords[step].width}
-                stroke={i === picked && "#000"} 
-			/>
-			{/if}
+		
 		{/each}
 	</Canvas>
+	<Tooltip {... tooltipOptions} {width} {height} />
 </div>
 
-<style>
-    .canvas {
-        position:relative;
-    }
-</style>
+
