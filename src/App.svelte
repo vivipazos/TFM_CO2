@@ -1,6 +1,6 @@
 <svelte:head>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap");
+        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
     </style>
 </svelte:head>
 
@@ -138,8 +138,8 @@
 	section {
 		height: 80vh; 
 		text-align: left;
-		padding-top: 50vh;
-		width: 400px;
+		padding-top: 20vh;
+		width: 450px;
 		margin: 0 auto;
 		font-family: 'Open Sans', sans-serif;
 	}
@@ -150,6 +150,26 @@
 		padding: 20px;
 		font-size: 18px;
 		line-height: 25px;
+	}
+
+	:global(.firstPar) {
+		font-size: 30px;
+		line-height: 42px;
+		font-weight: 700;
+	}
+
+	:global(.carbonDi) {
+		background-color: rgb(207,25,25);
+		border-radius: 6px;
+		padding: 6px;
+		color: #fff;
+		font-weight: 400;
+	}
+
+	p {
+		font-size: 22px;
+		line-height: 28px;
+		font-weight: 300;
 	}
 
 </style>
