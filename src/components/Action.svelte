@@ -27,15 +27,15 @@ export let onChange;
     .action {
         padding-bottom: 2rem;
         text-align: center;
-        margin-left: 400px;
-        margin-right: 400px;
+        /* margin-left: 400px;
+        margin-right: 400px; */
 
     }
     .switch {
         position: relative;
         display: inline-block;
-        margin-left: 400px;
-        margin-right: 400px;
+        /* margin-left: 400px;
+        margin-right: 400px; */
         width: 60px;
         height: 34px;
     }
