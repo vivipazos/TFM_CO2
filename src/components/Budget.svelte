@@ -37,10 +37,10 @@ console.log(lastValue)
 {#if year}
 <div style="--widthV: {widthV}" class="budgetBarYearly">
     <hr class="vertical" />
-    <p class="year">{year} <br>{carbon} Gt CO&#xb2</p>
-     <p class="yearLimit">2040</p>
+    <p class="year">{year} <br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
+    <!-- <p class="yearLimit">2040</p> -->
     <video autoplay muted loop>
-        <source src="./smoke_co2.mp4" type="video/mp4">
+        <source src="./smoke_edge3.mp4" type="video/mp4">
     </video>
 <!--     <svg class="dangerZone" viewBox="0 0 {width} {height}">
             <g>
@@ -74,7 +74,7 @@ console.log(lastValue)
 		margin: 0;
         background-color: rgb(207,25,25);
         background-image: linear-gradient(rgb(207,25,25) #CC3333);
-        /* transition: width 2s linear; */
+        transition: width 2s;
         width: var(--widthV);
         height: 100vh;
 	}
@@ -116,6 +116,6 @@ console.log(lastValue)
         height: 100vh;
         width: auto;
         left: var(--widthV);
-        /* transition: left 2s linear; */
+        transition: left 2s;
     }
 </style>

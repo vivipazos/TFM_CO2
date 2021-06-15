@@ -80,7 +80,7 @@
 				{#each block.steps as step}
 					<section>
 						<div class="scrollyText">
-							<h4>{@html step.p}</h4>
+							<p>{@html step.p}</p>
 						</div>
 					</section>
 				{/each}
