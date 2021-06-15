@@ -41,7 +41,7 @@ console.log(lastValue)
 {#if year}
 <div style="--widthV: {widthV}" class="budgetBarYearly">
     <hr class="vertical" />
-    <p class="year">{year} <br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
+    <p class="year"><b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
     <video autoplay muted loop>
         <source src="./smoke_edge3.mp4" type="video/mp4">
@@ -72,8 +72,8 @@ console.log(lastValue)
         top: 0;
         left: 0;
 		margin: 0;
-        background-color: rgb(204, 0, 51);
-        width: 800px;
+        background-color: rgb(207,25,25);
+        width: var(--widthV);
         height: 200px;
 	}
 
@@ -82,49 +82,50 @@ console.log(lastValue)
         left: 0;
 		margin: 0;
         background-color: rgb(207,25,25);
-        background-image: linear-gradient(rgb(207,25,25) #CC3333);
-        /* transition: width 2s; */
         width: var(--widthV);
         height: 100vh;
 	}
 
     .vertical {
-        border-left: 3px dotted black;
-        height: 130px;
+        border-left: 1px thick white;
+        height: 55px;
         margin: 0;
         position:absolute;
         left: var(--widthV);
         z-index: 100;
     }
     .year {
-        height: 150px;
-        margin: 0;
+        height: 60px;
+        margin: 10px;
         position:absolute;
-        top:130px;
+        top: 0;
         left: var(--widthV);
         z-index: 100;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        color: black;
     }
-    .yearLimit {
+
+    b {
+        font-weight: 600;
+    }
+    /* .yearLimit {
 		color: #BB3327;
         position: absolute;
 		top:130px;
 		right:180px;
-	}
-    .dot {
-        height: 12px;
-        width: 12px;
-        background-color: #BB3327;
-        border-radius: 50%;
-        display: inline-block;
-    }
-    .dangerZone {
+	} */
+
+    /* .dangerZone {
         margin-left: 1200px;
-    }
+    } */
+
     video {
         position: absolute;
         height: 100vh;
-        width: auto;
+        width: 10vw;
         left: var(--widthV);
+        object-fit: fill;
         /* transition: left 2s; */
     }
 
