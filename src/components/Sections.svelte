@@ -9,7 +9,7 @@ let height=740;
 
    
 </script>
-<main>
+
    
    <div class='col'>
        <button title="0" on:click={() => scatterStep = 0}> World</button>
@@ -34,5 +34,13 @@ let height=740;
 
    </div>
    
-</main>
+<style>
+    .col {
+        position:absolute;
+        right: 35vw ;
+        top: 50vh;
+        width: 40px;
+        margin-top: 20px;
+    }
+</style>
 
