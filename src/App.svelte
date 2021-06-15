@@ -95,10 +95,10 @@
 		</Scroller>
 
 	{:else if block.type === 'calculator'}
-<!-- 		<Budget
+	<Budget
 		action = {data_modified}
 		{carbon}
-		/> -->
+		/>
 		{#each actions as object}
 			<Action
 			{...object}

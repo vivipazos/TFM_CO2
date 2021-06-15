@@ -12,30 +12,34 @@ export let data
 
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonLimit  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
-/* let circles = new Array(40).fill()
+
+/*
+let circles = new Array(40).fill()
 	.map(a => ({
 		x: Math.random(),
 		y: Math.random(),
         r: 8
-	})); /*
+	}));
 
-//$: if(percentage)
-//{widthV = percentage.toFixed(2).toString() + "%"}
-/* 
-$:selectedAction = action.filter(d => d.active)
+$: if(percentage)
+{widthV = percentage.toFixed(2).toString() + "%"}
+*/
+
+$:console.log(action) //This is working and showing the active "action"
+
+/* $:selectedAction = action.filter(d => d.active)
     .map(d => +d.amount_all)
-    .reduce((a,c) => a + c, 0) 
+    .reduce((a,c) => a + c, 0)  */
 
-$:modifiedValue = baseValue - selectedAction
+// $:console.log(selectedAction)
+
+/* $:modifiedValue = baseValue - selectedAction
 
 $:console.log(modifiedValue)
 
 let lastValue = carbon[carbon.length - 1]
 
-console.log(lastValue)
-*/
-// function {
-// }
+console.log(lastValue) */
 
 </script>
 {#if year}

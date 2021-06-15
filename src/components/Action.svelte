@@ -13,6 +13,9 @@ export let onChange;
 </script>
 
 <div class="action">
+    <h4>
+        {label}
+    </h4>
     <p>
         {desc}
     </p>
@@ -26,16 +29,18 @@ export let onChange;
 <style>
     .action {
         padding-bottom: 2rem;
-        text-align: center;
-        /* margin-left: 400px;
-        margin-right: 400px; */
-
+        margin-top: 40px;
+        text-align: left;
+        margin: 0 auto;
+        width: 450px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 22px;
+        line-height: 26px;
     }
+
     .switch {
         position: relative;
         display: inline-block;
-        /* margin-left: 400px;
-        margin-right: 400px; */
         width: 60px;
         height: 34px;
     }
@@ -89,4 +94,5 @@ export let onChange;
     .slider.round:before {
         border-radius: 50%;
     }
+
 </style>
