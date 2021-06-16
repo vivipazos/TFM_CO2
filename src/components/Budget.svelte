@@ -48,7 +48,7 @@ console.log(lastValue) */
     <p class="year"><b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
     <video autoplay muted loop>
-        <source src="./smoke_edge3.mp4" type="video/mp4">
+        <source src="./smoke_edge_loop.mp4" type="video/mp4">
     </video>
      {#if visible === true}
     <div class="sections">
@@ -76,7 +76,7 @@ console.log(lastValue) */
         top: 0;
         left: 0;
 		margin: 0;
-        background-color: rgb(207,25,25);
+        background-color: rgb(255,1,0);
         width: var(--widthV);
         height: 200px;
 	}
@@ -85,7 +85,7 @@ console.log(lastValue) */
         top: 0;
         left: 0;
 		margin: 0;
-        background-color: rgb(207,25,25);
+        background-color: rgb(255,1,0);
         width: var(--widthV);
         height: 100vh;
 	}
@@ -127,9 +127,10 @@ console.log(lastValue) */
     video {
         position: absolute;
         height: 100vh;
-        width: 10vw;
+        width: 15vw;
         left: var(--widthV);
         object-fit: fill;
+        transform: scaleY(-1);
         /* transition: left 2s; */
     }
 
