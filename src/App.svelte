@@ -11,13 +11,12 @@
 	import Scroller from '@sveltejs/svelte-scroller';
 	import Header from  './components/Header.svelte'
 	import Footer from './components/Footer.svelte'
-	
+	import Sections from './components/Sections.svelte';
+
 	import data from './data/data.json'
-	import { loop_guard } from 'svelte/internal';
-  
+
   	let offset, progress;
 	$:index=index < 8 ? index:0 ;
-	let visible = false;
 
 	export let content;
 	export let actions;
@@ -39,13 +38,6 @@
 	let selected_data = carbon_modi.filter(function (sely) {
         return sely.year === 1850 || sely.year === 1900 || sely.year === 1960 || sely.year === 2000 || sely.year === 2020 ;
     });
-
-	$: if ( progress > 0.7 && progress<0.9) {
-		visible = true;
-	}
-	else {
-		visible = false;
-	}
 
 	let data_modified = actions.map(d => {
           d.active = false;
@@ -79,19 +71,20 @@
 						:selected_data[index].Percentage}
 					widthV = {parseFloat(currentDatapoint.Percentage).toFixed(2).toString() + "%"}
 					{data}
-					{visible}
 				/>
 			</div>
 
 			<div slot="foreground">
                 {#each block.steps as step}
-                    <section>
-                        {#if visible === false}
-                        <div class="scrollyText">
-                            <p>{@html step.p}</p>
-                        </div>
-                        {/if} 
-                    </section>
+					<section class="step-{step.type}">
+						{#if step.type === 'textbox'}
+							<div class="scrollyText">
+								<p>{@html step.p}</p>
+							</div>
+						{:else if step.type === 'sections'}
+							<Sections {data}/>
+						{/if}
+					</section>
                 {/each}
             </div>
 		</Scroller>
@@ -139,15 +132,22 @@
 		font-family: 'Open Sans', sans-serif;
 	}
 
+	.step-sections {
+		height: 300vh;
+	}
+	.step-sections > :global(*) {
+		position: sticky;
+		top: 5vh;
+	}
+
 	section {
-		height: 80vh; 
+		height: 80vh;
 		text-align: left;
 		padding-top: 20vh;
 		width: 450px;
 		margin: 0 auto;
 		margin-left: 45%;
 		font-family: 'Open Sans', sans-serif;
-		pointer-events: none;
 	}
 	.scrollyText {
 		background-color: hsl(0, 0%, 100%, 1);

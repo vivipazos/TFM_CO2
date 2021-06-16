@@ -8,7 +8,7 @@ export let percentage
 export let widthV
 
 export let visible
-export let data 
+export let data
 
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonLimit  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
@@ -50,14 +50,9 @@ console.log(lastValue) */
     <video autoplay muted loop>
         <source src="./smoke_edge_loop.mp4" type="video/mp4">
     </video>
-     {#if visible === true}
-    <div class="sections">
-        <Sections {data}/>
-    </div>
-    {/if} 
 
 <div class="mark">
-        <p  title= "This is a reference year"   <b>1850</b><br> 7.23 Gt CO&#x2082;</p>
+        <p title= "This is a reference year"><b>1850</b><br> 7.23 Gt CO&#x2082;</p>
 </div>
 
 
