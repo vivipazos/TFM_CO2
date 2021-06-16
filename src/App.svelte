@@ -149,7 +149,6 @@
 		padding-top: 20vh;
 		width: 450px;
 		margin: 0 auto;
-		margin-left: 45%;
 		font-family: 'Open Sans', sans-serif;
 	}
 	.scrollyText {
