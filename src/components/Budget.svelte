@@ -56,9 +56,9 @@ console.log(lastValue) */
     </div>
     {/if} 
 
-<div class="mark">
-        <p  title= "This is a reference year"   <b>1850</b><br> 7.23 Gt CO&#x2082;</p>
-</div>
+<!-- <div class="mark">
+        <p>title= "This is a reference year"   <b>1850</b><br> 7.23 Gt CO&#x2082;</p>
+</div> -->
 
 
 <!--     <svg class="dangerZone" viewBox="0 0 {width} {height}">
