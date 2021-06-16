@@ -65,7 +65,7 @@ let height=900;
          z-index: 100;
     }
     .container {
-        position: relative !default;
+        position: relative !important;
     }
 
     button {
@@ -102,8 +102,5 @@ let height=900;
         transition: background 0s;
     }
 
-    .button:focus{
-        background-color:#595959 ;
-    }
 </style>
 
