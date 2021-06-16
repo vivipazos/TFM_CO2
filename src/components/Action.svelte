@@ -9,7 +9,6 @@ export let source;
 // export let action;
 export let active;
 export let onChange;
-
 </script>
 
 <div class="action">
