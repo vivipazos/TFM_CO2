@@ -147,6 +147,7 @@
 		margin: 0 auto;
 		margin-left: 45%;
 		font-family: 'Open Sans', sans-serif;
+		pointer-events: none;
 	}
 	.scrollyText {
 		background-color: hsl(0, 0%, 100%, 1);

@@ -55,6 +55,12 @@ console.log(lastValue) */
         <Sections {data}/>
     </div>
     {/if} 
+
+<div class="mark">
+        <p  title= "This is a reference year"   <b>1850</b><br> 7.23 Gt CO&#x2082;</p>
+</div>
+
+
 <!--     <svg class="dangerZone" viewBox="0 0 {width} {height}">
             <g>
                 {#each circles as d}
@@ -105,6 +111,17 @@ console.log(lastValue) */
         top: 0;
         left: var(--widthV);
         z-index: 100;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        color: black;
+    }
+    .mark {
+        height: 60px;
+        margin: 10px;
+        position:absolute;
+        top: 0;
+        z-index: 99;
+        border-left: 1px thick white;
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         color: black;
