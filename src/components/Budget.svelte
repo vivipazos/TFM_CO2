@@ -48,13 +48,19 @@ console.log(lastValue) */
     <p class="year"><b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
     <video autoplay muted loop>
-        <source src="./smoke_edge3.mp4" type="video/mp4">
+        <source src="./smoke_edge_loop.mp4" type="video/mp4">
     </video>
      {#if visible === true}
     <div class="sections">
         <Sections {data}/>
     </div>
     {/if} 
+
+<div class="mark">
+        <p  title= "This is a reference year"   <b>1850</b><br> 7.23 Gt CO&#x2082;</p>
+</div>
+
+
 <!--     <svg class="dangerZone" viewBox="0 0 {width} {height}">
             <g>
                 {#each circles as d}
@@ -105,6 +111,17 @@ console.log(lastValue) */
         top: 0;
         left: var(--widthV);
         z-index: 100;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        color: black;
+    }
+    .mark {
+        height: 60px;
+        margin: 10px;
+        position:absolute;
+        top: 0;
+        z-index: 99;
+        border-left: 1px thick white;
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         color: black;

@@ -5,7 +5,7 @@ import ScatterCanvas from './charts/ScatterCanvas.svelte'
    
 let scatterStep=0;
 let width=1000;
-let height=800;
+let height=900;
 
    
 </script>
@@ -19,6 +19,8 @@ let height=800;
        <button title="4" on:click={() => scatterStep = 4}> Sectors,detail</button>
    </div>	
    
+
+  
    
    <div class="container">
    {#if width}
@@ -34,6 +36,10 @@ let height=800;
 
    </div>
    
+   <div class="yearspan">
+    <hr class="horizontal" />
+   </div>
+
 <style>
     .col {
         position:absolute;
@@ -41,6 +47,13 @@ let height=800;
         top: 25vh;
         width:100px;
         
+    }
+    .horizontal {
+        border-left: 100px thick white;
+        left: 55px;
+        margin: 0;
+        position:absolute;
+         z-index: 100;
     }
 </style>
 
