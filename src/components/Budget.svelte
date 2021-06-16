@@ -52,7 +52,7 @@ console.log(lastValue) */
     </video>
 
 <div class="mark">
-        <p title= "This is a reference year"><b>1850</b><br> 7.23 Gt CO&#x2082;</p>
+    <p title= "This is a reference year"><b>1850</b><br> 7.23 Gt CO&#x2082;</p>
 </div>
 
 
@@ -120,6 +120,7 @@ console.log(lastValue) */
         font-family: 'Open Sans', sans-serif;
         font-weight: 300;
         color: black;
+        pointer-events: all;
     }
 
     b {

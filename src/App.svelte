@@ -76,7 +76,7 @@
 
 			<div slot="foreground">
                 {#each block.steps as step}
-					<section class="step-{step.type}">
+					<section class="step step-{step.type}">
 						{#if step.type === 'textbox'}
 							<div class="scrollyText">
 								<p>{@html step.p}</p>
@@ -135,6 +135,9 @@
 	.step-sections {
 		height: 300vh;
 	}
+	.step {
+		pointer-events: all;
+	}
 	.step-sections > :global(*) {
 		position: sticky;
 		top: 5vh;
@@ -175,6 +178,10 @@
 		font-size: 22px;
 		line-height: 28px;
 		font-weight: 300;
+	}
+
+	:global(svelte-scroller-foreground) {
+		pointer-events: none;
 	}
 
 </style>
