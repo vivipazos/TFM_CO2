@@ -165,10 +165,11 @@ console.log(lastValue) */
     video {
         position: absolute;
         height: 100vh;
-        width: 15vw;
-        left: var(--widthV);
+        width: auto;
+        left: calc(var(--widthV) - 10vw);
         object-fit: fill;
         transform: scaleY(-1);
+        offset: 0 0 0 3em;
         /* transition: left 2s; */
     }
 </style>

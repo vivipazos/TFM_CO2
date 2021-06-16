@@ -152,10 +152,9 @@
 		padding-top: 20vh;
 		width: 450px;
 		margin: 0 auto;
-		margin-left: 45%;
 		font-family: 'Open Sans', sans-serif;
 	}
-	.scrollyText {
+	:global(.scrollyText) {
 		background-color: hsl(0, 0%, 100%, 1);
 		border-radius: 5px;
 		padding: 20px;
