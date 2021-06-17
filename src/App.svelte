@@ -41,6 +41,7 @@
 
 	let data_modified = actions.map(d => {
           d.active = false;
+		  d.amount = +d.amount_all
           return d;
         })
 
