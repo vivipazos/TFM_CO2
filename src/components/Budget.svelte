@@ -60,7 +60,7 @@ console.log(lastValue) */
     <p class="year"><b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
     <video autoplay muted loop>
-        <source src="./smoke_edge_loop.mp4" type="video/mp4">
+        <source src="./smoke_edge_loop2.mp4" type="video/mp4">
     </video>
 
 <div class="mark">
@@ -146,6 +146,17 @@ console.log(lastValue) */
         font-weight: 300;
         color: black;
         pointer-events: all;
+        animation: 3s fadeIn;
+        animation-fill-mode: forwards;
+        visibility: hidden;
+    }
+    @keyframes fadeIn {
+    99% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+        }
     }
 
     b {
@@ -165,11 +176,9 @@ console.log(lastValue) */
     video {
         position: absolute;
         height: 100vh;
-        width: 20vw;
-        left: calc(var(--widthV) - 10vw);
+        width: 30vw;
+        left: calc(var(--widthV) - 15vw);
         object-fit: fill;
-        transform: scaleY(-1);
         offset: 0 0 0 3em;
-        /* transition: left 2s; */
     }
 </style>

@@ -13,7 +13,7 @@ body {
 	font-style: normal;
 }
 
-h1, h2, h3, h4 { font-family: 'neue-haas-grotesk-display', sans-serif; }
+h1, h2, h3, h4 { font-family: 'Open Sans', sans-serif; }
 
 h1 {
 	font-weight: 300;
@@ -31,21 +31,21 @@ h4 {
 p { 
 	font-size: 1rem;
 	font-weight: 400;
-	font-family: 'neue-haas-grotesk-text', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 .label {
 	font-weight: 300;
 	font-size: .7rem;
 	color: #767676;
 	fill: #767676;
-	font-family: 'neue-haas-grotesk-display', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 .value {
 	color: #333;
 	fill: #333;
 	font-size: .8rem;
 	font-weight: 600;
-	font-family: 'neue-haas-grotesk-display', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 }
 
 .col, .wide {

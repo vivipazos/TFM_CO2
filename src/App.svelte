@@ -158,8 +158,7 @@
 		background-color: hsl(0, 0%, 100%, 1);
 		border-radius: 5px;
 		padding: 20px;
-		font-size: 18px;
-		line-height: 25px;
+		font-size: 15px;
 	}
 	.calc_title {
 		margin-top: 500px;
@@ -179,13 +178,7 @@
 		border-radius: 6px;
 		padding: 6px;
 		color: #fff;
-		font-weight: 400;
-	}
-
-	p {
-		font-size: 22px;
-		line-height: 28px;
-		font-weight: 300;
+		font-weight: 700;
 	}
 
 	:global(svelte-scroller-foreground) {
