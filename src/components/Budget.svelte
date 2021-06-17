@@ -140,7 +140,7 @@ console.log(lastValue) */
     video {
         position: absolute;
         height: 100vh;
-        width: auto;
+        width: 20vw;
         left: calc(var(--widthV) - 10vw);
         object-fit: fill;
         transform: scaleY(-1);
