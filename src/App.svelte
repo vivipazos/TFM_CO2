@@ -90,10 +90,13 @@
 		</Scroller>
 
 	{:else if block.type === 'calculator'}
-	<Budget
-		action = {data_modified}
-		{carbon}
+		<Budget
+			action = {data_modified}
+			{carbon}
 		/>
+
+		<p class="calc_title">Toggle <strong>individual changes</strong> to make a difference</p>
+
 		{#each actions as object}
 			<Action
 			{...object}
@@ -157,6 +160,12 @@
 		padding: 20px;
 		font-size: 18px;
 		line-height: 25px;
+	}
+	.calc_title {
+		margin-top: 500px;
+		margin-bottom: 100px;
+		text-align: center;
+		font-size: 36px;
 	}
 
 	:global(.firstPar) {

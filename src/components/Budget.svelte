@@ -1,5 +1,4 @@
 <script>
-import Sections from './Sections.svelte'
 export let action
 export let carbon
 
@@ -7,12 +6,10 @@ export let year
 export let percentage
 export let widthV
 
-export let visible
-export let data
-
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonLimit  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
-
+let selectedActions = action;
+$:console.log(year)
 /*
 let circles = new Array(40).fill()
 	.map(a => ({
@@ -27,11 +24,26 @@ $: if(percentage)
 
 $:console.log(action) //This is working and showing the active "action"
 
-/* $:selectedAction = action.filter(d => d.active)
-    .map(d => +d.amount_all)
-    .reduce((a,c) => a + c, 0)  */
+/* function filter(d) {
+    selectedActions =
+        action.map((d) => {if (d.active === true) {
+            Amount = +d.amount_all;
+        } 
+          return d;
+        });
+  } 
 
-// $:console.log(selectedAction)
+let selected = filter(action) 
+$: console.log(selected) */
+/* function isTrue(value) {
+  return value === true
+}
+
+ selected_actions = action.filter(d => d.active === true)
+    .map(d => +d.amount_all)
+    .reduce((a,c) => a + c, 0) 
+$: console.log(selected_actions) */
+
 
 /* $:modifiedValue = baseValue - selectedAction
 
@@ -64,12 +76,11 @@ console.log(lastValue) */
             </g>
     </svg> -->
 </div>
+{:else}
+    <div class="budgetBar">
+        
+    </div> 
 {/if}
-
-<!--  <div class="budgetBar">
-
- </div> -->
-
 
 <style>
 	.budgetBar {
@@ -78,9 +89,23 @@ console.log(lastValue) */
         left: 0;
 		margin: 0;
         background-color: rgb(255,1,0);
-        width: var(--widthV);
+        width: 0vw;
         height: 200px;
+        animation-name: grow;
+        animation-duration: 100s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        z-index: 100;
 	}
+
+    @keyframes grow {
+        from {
+            width:0vw;
+        }
+        to {
+           width:100vw;
+        }
+    }
 
     .budgetBarYearly {
         top: 0;
@@ -147,12 +172,4 @@ console.log(lastValue) */
         offset: 0 0 0 3em;
         /* transition: left 2s; */
     }
-
-    .sections {
-		z-index: 200;
-		position: absolute;
-		left: 51vw;
-        top:1vh;
-        bottom:1vh
-	}
 </style>
