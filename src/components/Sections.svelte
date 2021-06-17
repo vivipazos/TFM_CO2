@@ -13,27 +13,15 @@ let height=900;
 
 </script>
 
-<!-- <svelte:window bind:innerHeight={innerHeight} bind:innerWidth={innerWidth}/> -->
+<svelte:window bind:innerHeight={height} bind:innerWidth={width}/>
 
 <div class="container">
-
-   <div class='col scrollyText'>
-       <p>See emissions broken down by:</p>
-       <button class="ripple" title="0" on:click={() => scatterStep = 0}> Global emissions versus land use</button>
-       <button class="ripple" title="1" on:click={() => scatterStep = 1}> Countries by production</button>
-       <button class="ripple" title="2" on:click={() => scatterStep = 2}> Countries by consumption</button>
-       <button class="ripple" title="3" on:click={() => scatterStep = 3}> Sectors</button>
-       <button class="ripple" title="4" on:click={() => scatterStep = 4}> Sectors in more detail </button>
-   </div>
-
-
-
 
    <div >
    {#if width}
    <ScatterCanvas
        data={data}
-       layout='wide'
+       layout='fs'
        step={scatterStep}
        mark='square'
        {width}
@@ -42,6 +30,15 @@ let height=900;
        {/if}
 
    </div>
+
+   <div class='col scrollyText'>
+        <p>See emissions broken down by:</p>
+        <button class="ripple" title="0" on:click={() => scatterStep = 0}> Global emissions versus land use</button>
+        <button class="ripple" title="1" on:click={() => scatterStep = 1}> Countries by production</button>
+        <button class="ripple" title="2" on:click={() => scatterStep = 2}> Countries by consumption</button>
+        <button class="ripple" title="3" on:click={() => scatterStep = 3}> Sectors</button>
+        <button class="ripple" title="4" on:click={() => scatterStep = 4}> Sectors in more detail </button>
+    </div>
 
    <div class="yearspan">
     <hr class="horizontal" />

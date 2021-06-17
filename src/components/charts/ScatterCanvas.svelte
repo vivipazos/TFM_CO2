@@ -17,7 +17,9 @@
 
     let tooltipOptions;
 	const margin = { top: 0, right: 0, bottom: 0, left: 0 }
-	let picked = null, click = false
+	let picked = null, click = false;
+
+	$:console.log('Sections! ', width, height)
 
   //	$: x = scaleLinear()
   //	 	.domain([0,100])
@@ -26,12 +28,12 @@
 
 	$: y = scaleLinear()
 					.domain([0,100])
-					.range([height - height*0.2, margin.top])
+					.range([margin.top, height])
 					.nice()
 
-$: delaunay = Delaunay.from(data, d => 0, d => y(d.coords[step].y))
+$: delaunay = Delaunay.from(data, d => 0, d => y(d.coords[step].y) + y(d.coords[step].height) / 2)
 </script>
-<div class="graphic {layout} absolute">
+<div class="{layout} absolute">
 	<Canvas
 		{width} {height}
 		style='cursor: pointer'
@@ -48,16 +50,14 @@ $: delaunay = Delaunay.from(data, d => 0, d => y(d.coords[step].y))
 		on:mouseup={() => click = false}
 	>
 
-
 		{#each data as d, i}
 				<Square
-				x=0
-				y={((d.coords[step].y)/100)*height}
-				height={((d.coords[step].height)/100)*height}
-				width=600
-
-
-
+				x={width * 0.52}
+				y={y(d.coords[step].y)}
+				height={y(d.coords[step].height)}
+				width={width * 0.34}
+				stroke={i === picked ? "black" : "white"}
+				lineWidth={i === picked ? 3 : 1}
 			/>
 
 		{/each}
@@ -65,4 +65,11 @@ $: delaunay = Delaunay.from(data, d => 0, d => y(d.coords[step].y))
 	<Tooltip {... tooltipOptions} {width} {height} />
 </div>
 
-
+<style>
+	.absolute {
+		position: absolute;
+		top: 0;
+		left: 0;
+		margin-left: calc((100vw - 450px) * (-0.5));
+	}
+</style>
