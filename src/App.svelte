@@ -1,16 +1,11 @@
-<svelte:head>
-    <style>
-        @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
-    </style>
-</svelte:head>
-
 <script>
-	import Budget from './components/Budget.svelte'
-	import Action from './components/Action.svelte'
-	import Text from './components/common/Text.svelte'
+	import Budget from './components/Budget.svelte';
+	import BudgetActions from './components/BudgetActions.svelte';
+	import Action from './components/Action.svelte';
+	import Text from './components/common/Text.svelte';
 	import Scroller from '@sveltejs/svelte-scroller';
-	import Header from  './components/Header.svelte'
-	import Footer from './components/Footer.svelte'
+	import Header from  './components/Header.svelte';
+	import Footer from './components/Footer.svelte';
 	import Sections from './components/Sections.svelte';
 
 	import data from './data/data.json'
@@ -21,12 +16,6 @@
 	export let content;
 	export let actions;
 	export let carbon;
-
-/* 	let groupedData = actions.reduce(function(acumarray, d) {
-    	(acumarray[d.category] = acumarray[d.category] || []).push(d);
-    	return acumarray;
-  	}, {}); */
-
 
 	let carbon_modi = carbon.map(d => {
           d.year = parseFloat(d.year);
@@ -50,6 +39,12 @@
 	$: currentIndex = Math.floor(Math.min(1, Math.max(actualProgress ||0, 0)) * numDatapoints);
 	$: currentDatapoint = carbon_modi[currentIndex];
 </script>
+
+<svelte:head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap");
+</style>
+</svelte:head>
 
 <main>
 {#each content as block}
@@ -91,7 +86,7 @@
 		</Scroller>
 
 	{:else if block.type === 'calculator'}
-		<Budget
+		<BudgetActions
 			action = {data_modified}
 			{carbon}
 		/>

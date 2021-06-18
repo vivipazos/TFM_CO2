@@ -2,80 +2,54 @@
 import {scaleLinear} from 'd3-scale'
 export let action;
 export let carbon;
-export let year;
-export let percentage;
-export let widthV;
+
+console.log(carbon)
 
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonEnd  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
+let carbonStart = carbon[carbon.length - 1].carbonDioxide;
+let selectedActions = action;
+let actives_sum = 0;
+let growth = +carbonStart;
 
+let interval = 2000; /* In milliseconds */
+let yearlyTime = 5000; /* In milliseconds */
 
-/* function filter(d) {
-    selectedActions =
-        action.map((d) => {if (d.active === true) {
-            Amount = +d.amount_all;
-        } 
-          return d;
-        });
-  } 
+let scale = scaleLinear()
+    .domain([carbonStart, carbonEnd])
+    .range([0,100])
 
-let selected = filter(action) 
-$: console.log(selected) */
-/* function isTrue(value) {
-  return value === true
+$: if (action) {
+    selectedActions = action.filter(d => d.active === true);
+    actives_sum = selectedActions.reduce((accum, d) => accum + d.amount, 0);
 }
 
- selected_actions = action.filter(d => d.active === true)
-    .map(d => +d.amount_all)
-    .reduce((a,c) => a + c, 0) 
-$: console.log(selected_actions) */
+$:modifiedValue = baseValue - actives_sum;
 
-/* $:modifiedValue = baseValue - selectedAction
+const grow = () => {
+    let pace = modifiedValue / (yearlyTime / interval);
+    growth += pace;
+    console.log('Growth: ' + growth, 'Pace: ' + pace, 'ModifiedValue' + modifiedValue);
+}
 
-$:console.log(modifiedValue)
-
-let lastValue = carbon[carbon.length - 1]
-
-console.log(lastValue) */
+setInterval(grow, interval);
 
 </script>
-{#if year}
-<div style="--widthV: {widthV}" class="budgetBarYearly">
-    <hr class="vertical" />
-    <p class="year"><b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
-    <!-- <p class="yearLimit">2040</p> -->
-    <video title= "The widht of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
-        <source src="./smoke_edge_loop2.mp4" type="video/mp4">
-    </video>
-
-<div class="mark">
-    <p title= "1850 represents the mid 1800s period, when industrial revolution kick in strong. It is also taken as the reference year for historical human-made emissions"><b>1850</b><br> 7.23 Gt CO&#x2082;</p>
-</div>
-
-
-<!--     <svg class="dangerZone" viewBox="0 0 {width} {height}">
-            <g>
-                {#each circles as d}
-                <circle cx={d.x} cy={d.y} r={d.r} fill={d.color}/>
-                {/each}
-            </g>
-    </svg> -->
-</div>
-{:else}
-    <div style="width:{scale(growth)}vw" class="budgetBar"></div> 
-{/if}
-
+    
+<div class="budgetBar" style="width:{scale(growth)}vw"></div> 
+    
 <style>
-	.budgetBar {
-		position: sticky;
+    .budgetBar {
+        position: sticky;
         top: 0;
         left: 0;
-		margin: 0;
+        margin: 0;
         background-color: rgb(255,1,0);
         width: 0vw;
         height: 200px;
         z-index: 100;
-	}
+        transition: width 2s linear;
+    }
 
     @keyframes grow {
         from {
@@ -89,11 +63,11 @@ console.log(lastValue) */
     .budgetBarYearly {
         top: 0;
         left: 0;
-		margin: 0;
+        margin: 0;
         background-color: rgb(255,1,0);
         width: var(--widthV);
         height: 100vh;
-	}
+    }
 
     .vertical {
         border-left: 1px thick white;
@@ -142,11 +116,11 @@ console.log(lastValue) */
         font-weight: 600;
     }
     /* .yearLimit {
-		color: #BB3327;
+        color: #BB3327;
         position: absolute;
-		top:130px;
-		right:180px;
-	} */
+        top:130px;
+        right:180px;
+    } */
 
     /* .dangerZone {
         margin-left: 1200px;
