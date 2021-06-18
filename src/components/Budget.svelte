@@ -61,8 +61,6 @@ console.log(lastValue) */
             </g>
     </svg> -->
 </div>
-{:else}
-    <div style="width:{scale(growth)}vw" class="budgetBar"></div> 
 {/if}
 
 <style>
@@ -155,8 +153,8 @@ console.log(lastValue) */
     video {
         position: absolute;
         height: 100vh;
-        width: 30vw;
-        left: calc(var(--widthV) - 15vw);
+        width: 5vw;
+        left: calc(var(--widthV) - 2.5vw);
         object-fit: fill;
         offset: 0 0 0 3em;
         pointer-events: all;
