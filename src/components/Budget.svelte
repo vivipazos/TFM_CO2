@@ -9,7 +9,9 @@ export let widthV
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonLimit  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
 let selectedActions = action;
-$:console.log(year)
+let actives_sum;
+let time_anim = "100s";
+
 /*
 let circles = new Array(40).fill()
 	.map(a => ({
@@ -23,7 +25,18 @@ $: if(percentage)
 */
 
 $:console.log(action) //This is working and showing the active "action"
+$: if (action) {
+ selectedActions = action.filter(d => {
+  return d.active == true;
+  });
 
+    actives_sum = selectedActions.reduce((accum, d) => accum + d.amount, 0);
+
+    time_anim = (((17000-actives_sum)*100)/17000).toString() + "s"
+}
+$:console.log(selectedActions)
+$: console.log(actives_sum)
+$: console.log(time_anim)
 /* function filter(d) {
     selectedActions =
         action.map((d) => {if (d.active === true) {
@@ -77,7 +90,7 @@ console.log(lastValue) */
     </svg> -->
 </div>
 {:else}
-    <div class="budgetBar">
+    <div style="--time_anim: {time_anim}" class="budgetBar">
         
     </div> 
 {/if}
@@ -92,9 +105,9 @@ console.log(lastValue) */
         width: 0vw;
         height: 200px;
         animation-name: grow;
-        animation-duration: 100s;
+        animation-duration: var(--time_anim);
         animation-timing-function: linear;
-        animation-iteration-count: infinite;
+        animation-iteration-count: 1;
         z-index: 100;
 	}
 
