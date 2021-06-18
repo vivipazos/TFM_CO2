@@ -5,14 +5,14 @@
 	export let height;
 	export let tip = 'No data available';
 	export let visible = false;
-  export let tooltipWidth = 160;
-	$: tx = (x < width - tooltipWidth && x >= tooltipWidth / 2) 
-		? x - tooltipWidth / 2
-		: x < tooltipWidth / 2
-		? 0
-		: width - tooltipWidth - tooltipWidth / 2;
+    export let tooltipWidth = 200;
+	export let tooltipHeight=50;
+
+	$: tx = (x < width*0.80  && x>= width*0.55) ? x - tooltipWidth / 2: -50000;
+	$: ty = y+30;
+
+
 	
-	$: ty = y + 30;
 </script>
 
 <div class="tooltip" style="top: {ty}px; left: {tx}px; opacity: {visible ? 1: 0}; width: {tooltipWidth}px">

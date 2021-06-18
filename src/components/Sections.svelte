@@ -28,8 +28,8 @@ let height=900;
         </div>
 
    <div class='col scrollyText'>
-       <p> All emissions 1990-2017. See them as broken down by:</p>
-       <button class="ripple" title="Accumulated emissions 1990-2017, global"  on:click={() => scatterStep = 0}> Global</button>
+       <p> Accumulated emissions of CO2  as counted between 1990-2017. See them as broken down by:</p>
+       <button class="ripple" tooltip="Accumulated emissions 1990-2017, global"  on:click={() => scatterStep = 0}> Global</button>
        <button class="ripple" title="Accumulated direct emissions 1990-2017, by countries according to their domestic production" on:click={() => scatterStep = 1}> Countries by production</button>
        <button class="ripple" title="Accumulated direct emissions 1990-2017, by countries according to their consumption, regardless of the place of production" on:click={() => scatterStep = 2}> Countries by consumption</button>
        <button class="ripple" title="Main activities responsible for emissions, global % "  on:click={() => scatterStep = 3}> Sectors</button>
@@ -53,7 +53,7 @@ let height=900;
     }
  
     .container {
-        position: sticky !important;
+        position: sticky;
     }
     
     button {
@@ -90,5 +90,7 @@ let height=900;
         transition: background 0s;
     }
 
+
+   
 </style>
 

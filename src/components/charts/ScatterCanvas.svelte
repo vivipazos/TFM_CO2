@@ -6,42 +6,35 @@
     import { Delaunay } from 'd3-delaunay'
 	import Square from './Square.svelte'
 
-
 	export let data;
 	export let step = 0;
 	export let layout;
 	export let width;
 	export let height;
 	
-    let tooltipOptions;
-
-
-	const margin = { top: 0, right: 0, bottom: 50, left: 0 }
+    let tooltipOptions;	
 	let picked = null, click = false
- 
 
-$: y = scaleLinear().domain([0,100])
-					.range([margin.top, height-margin.bottom])
-					.nice()
+	let margin = { top: 0, right: 0, bottom: 50, left: 0 }
 
-$: delaunay = Delaunay.from(data, d => 0, d => y(d.coords[step].y)+y(d.coords[step].height) / 2)
+$: y = scaleLinear().domain([0,100]).range([0, height-margin.bottom])
+
+$: delaunay = Delaunay.from(data, d =>0, d => y(d.coords[step].y)  +  y(d.coords[step].height)/2 )
+
 </script>
-
 
 
 <div class=" {layout} absolute"  >
 	<Canvas
 		{width} {height}
 		style='cursor: pointer'
-		on:mousemove={({ offsetX: x, offsetY: y }) => {
-					picked = delaunay.find(x, y);
-					let tip = (data[picked].data[0]) ;
-					tooltipOptions = {x: x, y: y, tip: tip, visible: true}
-		}}
-		on:mouseout={() => {
-			picked = null
-			tooltipOptions = {x: -1000, y: -1000, tip: '', visible: false}
-		}}
+		on:mousemove={({ offsetX: x, offsetY: y }) => 	{picked = delaunay.find(x, y);
+														let tip = ( data[picked].data[0] ) ;
+														tooltipOptions = {x: x, y: y, tip: tip, visible: true}
+					}}
+		on:mouseout={() => {picked = null
+							tooltipOptions = {x: -5000, y: -5000, tip: '', visible: false}
+					}}
 		on:mousedown={() => click = true}
 		on:mouseup={() => click = false}
 	>
@@ -52,10 +45,12 @@ $: delaunay = Delaunay.from(data, d => 0, d => y(d.coords[step].y)+y(d.coords[st
 				y={y(d.coords[step].y)}
 				height={y(d.coords[step].height)}
 				width={width * 0.34}
-				stroke={i === picked ? "black" : "white"}
-				lineWidth={i === picked ? 3 : 1}
+				stroke={i === picked ? "white" : "white"}
+				lineWidth={i === picked ? 9 : 1}
+				
+				
 				/>
-
+  
 		{/each}
 	</Canvas>
 	<Tooltip {... tooltipOptions} {width} {height} />
