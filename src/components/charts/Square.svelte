@@ -9,20 +9,21 @@
 	export let height = 1;
 	export let fill = "null";
 	export let stroke = "white";
-  export let strokeWidth = 1;
+    export let lineWidth = 1;
 
-  const _x = tweened(x, { duration: 600, easing:quadOut});
-  const _y = tweened(y, { duration: 600, easing:quadOut});
+    const _x = tweened(x, { duration: 600, easing:quadOut});
+    const _y = tweened(y, { duration: 600, easing:quadOut});
 	const _width = tweened(width, { duration: 600, easing:cubicOut});
 	const _height = tweened(height, { duration: 600, easing:cubicOut});
-  $: _x.set(x);
-  $: _y.set(y);
+    $: _x.set(x);
+    $: _y.set(y);
 	$: _width.set(width);
 	$: _height.set(height);
 
 	$: render = ({ context }) => {
 		context.fillStyle = fill;
 		context.beginPath();
+		context.lineWidth = lineWidth;
 		context.strokeStyle = stroke;
 		context.rect($_x, $_y, $_width, $_height);
 		context.stroke()

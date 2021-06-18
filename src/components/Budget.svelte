@@ -59,12 +59,12 @@ console.log(lastValue) */
     <hr class="vertical" />
     <p class="year"><b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
-    <video autoplay muted loop>
+    <video title= "The widht of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
         <source src="./smoke_edge_loop2.mp4" type="video/mp4">
     </video>
 
 <div class="mark">
-    <p title= "This is a reference year"><b>1850</b><br> 7.23 Gt CO&#x2082;</p>
+    <p title= "1850 represents the mid 1800s period, when industrial revolution kick in strong. It is also taken as the reference year for historical human-made emissions"><b>1850</b><br> 7.23 Gt CO&#x2082;</p>
 </div>
 
 
@@ -148,7 +148,7 @@ console.log(lastValue) */
         pointer-events: all;
         animation: 3s fadeIn;
         animation-fill-mode: forwards;
-        visibility: hidden;
+       
     }
     @keyframes fadeIn {
     99% {
@@ -180,5 +180,6 @@ console.log(lastValue) */
         left: calc(var(--widthV) - 15vw);
         object-fit: fill;
         offset: 0 0 0 3em;
+        pointer-events: all;
     }
 </style>

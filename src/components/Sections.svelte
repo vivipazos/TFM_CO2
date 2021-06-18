@@ -7,45 +7,39 @@ let scatterStep=0;
 let width=1000;
 let height=900;
 
-// let innerHeight;
-// let innerWidth;
-
 
 </script>
+ <svelte:window bind:innerHeight={height} bind:innerWidth={width}/>
 
-<!-- <svelte:window bind:innerHeight={innerHeight} bind:innerWidth={innerWidth}/> -->
+<div class="container" >
 
-<div class="container">
+    <div >
+        {#if width}
+        <ScatterCanvas
+            data={data}
+            layout='fs'
+            step={scatterStep}
+            mark='square'
+            {width}
+            {height}
+            />
+            {/if}
+     
+        </div>
 
    <div class='col scrollyText'>
-       <p>See emissions broken down by:</p>
-       <button class="ripple" title="0" on:click={() => scatterStep = 0}> Global emissions versus land use</button>
-       <button class="ripple" title="1" on:click={() => scatterStep = 1}> Countries by production</button>
-       <button class="ripple" title="2" on:click={() => scatterStep = 2}> Countries by consumption</button>
-       <button class="ripple" title="3" on:click={() => scatterStep = 3}> Sectors</button>
-       <button class="ripple" title="4" on:click={() => scatterStep = 4}> Sectors in more detail </button>
+       <p> All emissions 1990-2017. See them as broken down by:</p>
+       <button class="ripple" title="Accumulated emissions 1990-2017, global"  on:click={() => scatterStep = 0}> Global</button>
+       <button class="ripple" title="Accumulated direct emissions 1990-2017, by countries according to their domestic production" on:click={() => scatterStep = 1}> Countries by production</button>
+       <button class="ripple" title="Accumulated direct emissions 1990-2017, by countries according to their consumption, regardless of the place of production" on:click={() => scatterStep = 2}> Countries by consumption</button>
+       <button class="ripple" title="Main activities responsible for emissions, global % "  on:click={() => scatterStep = 3}> Sectors</button>
+       <button class="ripple" title="Activities reponsible for emissions in detail, global %" on:click={() => scatterStep = 4}> Sectors in more detail </button>
    </div>
 
 
+   
 
-
-   <div >
-   {#if width}
-   <ScatterCanvas
-       data={data}
-       layout='wide'
-       step={scatterStep}
-       mark='square'
-       {width}
-       {height}
-       />
-       {/if}
-
-   </div>
-
-   <div class="yearspan">
-    <hr class="horizontal" />
-   </div>
+   
 </div>
 
 <style>
@@ -57,17 +51,11 @@ let height=900;
         width: 300px;
 
     }
-    .horizontal {
-        border-left: 100px thick white;
-        left: 55px;
-        margin: 0;
-        position:absolute;
-         z-index: 100;
-    }
+ 
     .container {
-        position: relative !important;
+        position: sticky !important;
     }
-
+    
     button {
         margin-top: 10px;
         position: relative;
