@@ -16,7 +16,7 @@ const arrow = './images/arrow.svg';
     <p class="year">Year: <b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
     <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
-        <source src="./smoke_edge_loop2.mp4" type="video/mp4">
+        <source src="./smoke6.mp4" type="video/mp4">
     </video>
 
 <div class="mark">
@@ -46,7 +46,7 @@ const arrow = './images/arrow.svg';
         top: 0;
         left: 0;
 		margin: 0;
-        background-color: rgb(255,1,0);
+        background-color: rgb(225,29,41);
         width: var(--widthV);
         height: 100vh;
 	}
@@ -102,8 +102,8 @@ const arrow = './images/arrow.svg';
     video {
         position: absolute;
         height: 100vh;
-        width: 5vw;
-        left: calc(var(--widthV) - 2.5vw);
+        width: 15vw;
+        left: calc(var(--widthV) - 0vw);
         object-fit: fill;
         offset: 0 0 0 3em;
         pointer-events: all;
