@@ -19,7 +19,7 @@ const arrow = './images/arrow.svg';
     </video>
 
 <div id="1850-mark" class="mark">
-    <div class="arrow">
+    <div class="arrow3">
         <InlineSVG src={arrow}/>
     </div>
     <p title= "1850 represents the mid 1800s period, when industrial revolution kick in strong. It is also taken as the reference year for historical human-made emissions">
@@ -102,7 +102,7 @@ const arrow = './images/arrow.svg';
     }
 
     /* Arrow */
-    .arrow {
+    .arrow3 {
         width:40px;
     }
 

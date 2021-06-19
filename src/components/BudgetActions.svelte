@@ -52,7 +52,7 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
     <div class="carbon-limit">
         <p>We will reach the carbon limit in </p>
         <span class="yearEnd">{yearEnd}</span>
-        <div class="arrow">
+        <div class="arrow2">
             <InlineSVG src={arrow}/>
         </div>
     </div>
@@ -136,7 +136,7 @@ video {
 }
 
 /* Arrow */
-.arrow {
+.arrow2 {
         width:40px;
         transform: rotate(180deg);
         margin-left: 10vw;

@@ -8,6 +8,9 @@
 	import Footer from './components/Footer.svelte';
 	import Sections from './components/Sections.svelte';
 
+	import InlineSVG from 'svelte-inline-svg';
+	const arrow = './images/arrow.svg';
+
 	import data from './data/data.json'
 
   	let offset, progress;
@@ -97,6 +100,16 @@
             </div>
 		</Scroller>
 
+	
+	{:else if block.type === 'transition'}
+		{#each block.text as p}
+			<div class=transitionBox>
+				<h4>{@html p.p}</h4>
+			<div class="arrow">
+				<InlineSVG src={arrow}/>
+			</div>
+			</div>
+		{/each}
 	
 	{:else if block.type === 'calculator'}
 	<div class="calc">
@@ -194,5 +207,19 @@
 		display: none;
 	}
 
+	:global(.transitionBox){
+		padding: 25vh 0 5vh 0;
+		margin: 0 auto;
+		width: 500px;
+		text-align: left;
+	}
+
+	/* Arrow */
+	:global(.arrow) {
+        width:40px;
+        transform: rotate(275deg);
+		transform: scaleY(-1);
+
+    }
 
 </style>
