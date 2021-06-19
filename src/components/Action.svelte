@@ -15,21 +15,14 @@ export let icon;
 export let active;
 export let onChange;
 
-const cities = './images/cities.svg';
-const coal = './images/coal.svg';
-const energy = './images/energy.svg';
-const fashion = './images/fashion.svg';
-// const recycle = './images/recycle.svg';
-const transport = './images/transport.svg';
-const vegetarian = './images/vegetarian.svg';
-const wetland = './images/wetland.svg';
-
-
 </script>
+
 <MaterialApp>
 
+<p>Individual title</p>
+{#if category === "Individual"}
 <div class="action">
-
+    <p>Individual title</p>
     <div class="action-block">
         <div class="d-flex flex-row">
             <div class="d-flex flex-column">
@@ -47,8 +40,31 @@ const wetland = './images/wetland.svg';
             </div>
         </div>       
     </div>
-
 </div>
+
+{:else if category === "Governments"}
+<div class="action">
+    <p>Goverment title</p>
+    <div class="action-block">
+        <div class="d-flex flex-row">
+            <div class="d-flex flex-column">
+                <div class="icon">
+                    <InlineSVG src='./images/{icon}.svg'/>
+                </div>
+            <label class="switch">
+                <input type="checkbox" bind:checked={active} on:change={onChange}>
+                <span class="slider round"></span>
+            </label>
+            </div>
+            <div class="d-flex flex-column">
+                <h4>{label}</h4>
+                <p> {desc} </p>
+            </div>
+        </div>       
+    </div>
+</div>
+{/if}
+
 
 </MaterialApp>
 <style>
