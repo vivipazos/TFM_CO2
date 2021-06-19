@@ -34,9 +34,13 @@ const grow = () => {
     growth += pace;
 }
 
-setInterval(grow, interval);
+let idVar = setInterval(grow, interval);
+
+$:if (growth > carbonEnd) { clearInterval(idVar) }
 
 $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
+
+
 
 </script>
 <div class="action-bar-wrapper">

@@ -39,6 +39,13 @@
 	$: currentIndex = Math.floor(Math.min(1, Math.max(actualProgress ||0, 0)) * numDatapoints);
 	$: currentDatapoint = carbon_modi[currentIndex];
 
+	// Toggle CSS displays
+	
+	$:if (actualProgress > 0.25) { 
+		let x = document.getElementById("1850-mark")
+		x.style.display = "none";
+	}
+
 </script>
 
 <svelte:head>

@@ -18,7 +18,7 @@ const arrow = './images/arrow.svg';
         <source src="./smoke6.mp4" type="video/mp4">
     </video>
 
-<div class="mark">
+<div id="1850-mark" class="mark">
     <div class="arrow">
         <InlineSVG src={arrow}/>
     </div>
