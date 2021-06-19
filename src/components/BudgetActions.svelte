@@ -87,49 +87,6 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
         }
     }
 
-    .budgetBarYearly {
-        top: 0;
-        left: 0;
-        margin: 0;
-        background-color: rgb(255,1,0);
-        width: var(--widthV);
-        height: 100vh;
-    }
-
-    .vertical {
-        border-left: 1px thick white;
-        height: 55px;
-        margin: 0;
-        position:absolute;
-        left: var(--widthV);
-        z-index: 100;
-    }
-    .year {
-        height: 60px;
-        margin: 10px;
-        position:absolute;
-        top: 0;
-        left: var(--widthV);
-        z-index: 100;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        color: black;
-    }
-    .mark {
-        height: 60px;
-        margin: 10px;
-        position:absolute;
-        top: 0;
-        z-index: 99;
-        border-left: 1px thick white;
-        font-family: 'Open Sans', sans-serif;
-        font-weight: 300;
-        color: black;
-        pointer-events: all;
-        animation: 3s fadeIn;
-        animation-fill-mode: forwards;
-       
-    }
     @keyframes fadeIn {
     99% {
         visibility: hidden;
@@ -137,10 +94,6 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
     100% {
         visibility: visible;
         }
-    }
-
-    b {
-        font-weight: 600;
     }
 
 video {

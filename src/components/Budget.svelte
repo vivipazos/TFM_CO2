@@ -2,10 +2,8 @@
 import {scaleLinear} from 'd3-scale'
 import InlineSVG from 'svelte-inline-svg';
 
-export let action;
 export let carbon;
 export let year;
-export let percentage;
 export let widthV;
 
 const arrow = './images/arrow.svg';
@@ -17,7 +15,7 @@ const arrow = './images/arrow.svg';
     <hr class="vertical" />
     <p class="year">Year: <b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
-    <video title= "The widht of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
+    <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
         <source src="./smoke_edge_loop2.mp4" type="video/mp4">
     </video>
 
@@ -34,16 +32,6 @@ const arrow = './images/arrow.svg';
 {/if}
 
 <style>
-	.budgetBar {
-		position: sticky;
-        top: 0;
-        left: 0;
-		margin: 0;
-        background-color: rgb(255,1,0);
-        width: 0vw;
-        height: 200px;
-        z-index: 100;
-	}
 
     @keyframes grow {
         from {

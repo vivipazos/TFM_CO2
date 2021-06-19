@@ -24,7 +24,7 @@
     "sass": "^1.32.13",
     "svelte": "^3.38.2",
     "svelte-material-ui": "^3.0.3",
-    "svelte-materialify": "^0.3.10",
+    "svelte-materialify": "^0.3.11",
     "svelte-mui": "^0.3.3-7",
     "svelte-preprocess": "^4.7.3"
   },

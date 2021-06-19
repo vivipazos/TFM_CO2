@@ -1,5 +1,7 @@
 <script>
 import InlineSVG from 'svelte-inline-svg';
+import { MaterialApp } from 'svelte-materialify';
+
 
 export let desc;
 export let category;
@@ -23,44 +25,53 @@ const wetland = './images/wetland.svg';
 
 
 </script>
+<MaterialApp>
+
 <div class="action">
 
     {#if label === 'Recycling'}
     <div class="action-block">
-        <div id="left-col">
-            <div class="icon">
-                <InlineSVG src={recycle}/>
+        <div class="d-flex flex-row">
+            <div class="d-flex flex-column">
+                <div class="icon">
+                    <InlineSVG src={vegetarian}/>
+                </div>
+            <label class="switch">
+                <input type="checkbox" bind:checked={active} on:change={onChange}>
+                <span class="slider round"></span>
+            </label>
             </div>
-        <label class="switch">
-            <input type="checkbox" bind:checked={active} on:change={onChange}>
-            <span class="slider round"></span>
-        </label>
-        </div>
-        <div id="right-col">
-            <h4>{label}</h4>
-            <p> {desc} </p>
-        </div>
+            <div class="d-flex flex-column">
+                <h4>{label}</h4>
+                <p> {desc} </p>
+            </div>
+        </div>       
     </div>
+
     {:else if label === 'Eat less meat'}
     <div class="action-block">
-        <div id="left-col">
-            <div class="icon">
-                <InlineSVG src={vegetarian}/>
+        <div class="d-flex flex-row">
+            <div class="d-flex flex-column">
+                <div class="icon">
+                    <InlineSVG src={vegetarian}/>
+                </div>
+            <label class="switch">
+                <input type="checkbox" bind:checked={active} on:change={onChange}>
+                <span class="slider round"></span>
+            </label>
             </div>
-        <label class="switch">
-            <input type="checkbox" bind:checked={active} on:change={onChange}>
-            <span class="slider round"></span>
-        </label>
-        </div>
-        <div id="right-col">
-            <h4>{label}</h4>
-            <p> {desc} </p>
-        </div>
+            <div class="d-flex flex-column">
+                <h4>{label}</h4>
+                <p> {desc} </p>
+            </div>
+        </div>       
     </div>
 
     {/if}
+
 </div>
 
+</MaterialApp>
 <style>
     .action {
         padding-bottom: 2rem;
@@ -72,14 +83,6 @@ const wetland = './images/wetland.svg';
         font-size: 22px;
         line-height: 26px;
         padding-top: 10vh;
-    }
-
-    #left-col {
-    }
-
-    #right-col {
-        right: 0;
-        position: absolute;
     }
 
     .switch {
