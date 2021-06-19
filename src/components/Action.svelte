@@ -1,6 +1,6 @@
 <script>
 import InlineSVG from 'svelte-inline-svg';
-import { MaterialApp } from 'svelte-materialify';
+import { MaterialApp, Container, Row, Col } from 'svelte-materialify';
 
 
 export let desc;
@@ -20,40 +20,60 @@ export let onChange;
 
 <MaterialApp>
 
+<Container>
 <div class="action">
-    <h4>{title}</h4>
+    <Row>
+    <Col cols={2} sm={0} md={2} lg={2}></Col>
+    <Col cols={7} sm={0} md={7} lg={7}>
+    <h4>{@html title}</h4>
+    </Col>
+    <Col cols={2} sm={0} md={2} lg={2}></Col>
+    </Row>
     <div class="action-block">
-        <div class="d-flex flex-row">
-            <div class="d-flex flex-column">
-                <div class="icon">
-                    <InlineSVG src='./images/{icon}.svg'/>
-                </div>
+        <Row>
+            <Col cols={2} sm={0} md={2} lg={2}></Col>
+            <Col cols={5} sm={0} md={5} lg={5}>
+            <div>
+            <div class="icon"><InlineSVG src='./images/{icon}.svg'/></div>
+            <p><b>{label}</b></p>
+            </div>
+            </Col>
+            <Col cols={2} sm={0} md={2} lg={2}>
             <label class="switch">
                 <input type="checkbox" bind:checked={active} on:change={onChange}>
                 <span class="slider round"></span>
             </label>
-            </div>
-            <div class="d-flex flex-column">
-                <h4>{label}</h4>
-                <p> {desc} </p>
-            </div>
-        </div>       
+            </Col>
+            <Col cols={2} sm={0} md={2} lg={2}></Col>
+        </Row>
+        <Row>
+            <Col cols={2} sm={0} md={2} lg={2}></Col>
+            <Col cols={5} sm={0} md={5} lg={5}>
+            <p> {desc} </p>
+            </Col>
+            <Col cols={5} sm={0} md={2} lg={5}}></Col>
+        </Row>
     </div>
 </div>
-
+</Container>
 
 </MaterialApp>
 <style>
+
+    .h4 {
+        font-family: "Open Sans", sans-serif !important;
+        font-size: 30px;
+    }
+
     .action {
         padding-bottom: 2rem;
         margin-top: 50vh;
         text-align: left;
         margin: 0 auto;
-        width: 450px;
+        /* width: 450px; */
         font-family: 'Open Sans', sans-serif;
         font-size: 22px;
         line-height: 26px;
-        padding-top: 10vh;
     }
 
     .switch {
@@ -114,7 +134,11 @@ export let onChange;
     }
 
     .icon {
-        width: 20px;
+        max-width: 40px; 
+    }
+
+    :global(.s-col){
+        padding:0;
     }
 
 </style>
