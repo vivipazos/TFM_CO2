@@ -11,6 +11,7 @@ export let amount_some;
 export let amount_some_desc;
 export let source;
 export let icon;
+export let title;
 // export let action;
 export let active;
 export let onChange;
@@ -19,10 +20,8 @@ export let onChange;
 
 <MaterialApp>
 
-<p>Individual title</p>
-{#if category === "Individual"}
 <div class="action">
-    <p>Individual title</p>
+    <h4>{title}</h4>
     <div class="action-block">
         <div class="d-flex flex-row">
             <div class="d-flex flex-column">
@@ -41,29 +40,6 @@ export let onChange;
         </div>       
     </div>
 </div>
-
-{:else if category === "Governments"}
-<div class="action">
-    <p>Goverment title</p>
-    <div class="action-block">
-        <div class="d-flex flex-row">
-            <div class="d-flex flex-column">
-                <div class="icon">
-                    <InlineSVG src='./images/{icon}.svg'/>
-                </div>
-            <label class="switch">
-                <input type="checkbox" bind:checked={active} on:change={onChange}>
-                <span class="slider round"></span>
-            </label>
-            </div>
-            <div class="d-flex flex-column">
-                <h4>{label}</h4>
-                <p> {desc} </p>
-            </div>
-        </div>       
-    </div>
-</div>
-{/if}
 
 
 </MaterialApp>
