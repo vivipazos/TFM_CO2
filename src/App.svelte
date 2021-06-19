@@ -137,10 +137,6 @@
 		font-family: 'Open Sans', sans-serif;
 	}
 
-	.calc {
-		padding-top:20vh;
-	}
-
 	/* .step-sections {
 		height: 300vh;
 	} */
@@ -165,14 +161,8 @@
 	:global(.scrollyText) {
 		background-color: hsl(0, 0%, 100%, 1);
 		border-radius: 5px;
-		padding: 20px;
+		padding: 14px;
 		font-size: 15px;
-	}
-	.calc_title {
-		margin-top: 500px;
-		margin-bottom: 100px;
-		text-align: center;
-		font-size: 36px;
 	}
 
 	:global(.firstPar) {
@@ -182,9 +172,9 @@
 	}
 
 	:global(.carbonDi) {
-		background-color: rgb(207,25,25);
+		background-color: rgb(225,29,41);
 		border-radius: 6px;
-		padding: 6px;
+		padding: 4px;
 		color: #fff;
 		font-weight: 700;
 	}

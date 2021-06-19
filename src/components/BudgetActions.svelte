@@ -71,7 +71,7 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
         top: 0;
         left: 0;
         margin: 0;
-        background-color: rgb(255,1,0);
+        background-color: rgb(225,29,41);
         height: 200px;
         z-index: 100;
         transition: width 2s linear;

@@ -12,7 +12,6 @@ const arrow = './images/arrow.svg';
 </script>
 {#if year}
 <div style="--widthV: {widthV}" class="budgetBarYearly">
-    <hr class="vertical" />
     <p class="year">Year: <b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
     <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
@@ -51,14 +50,6 @@ const arrow = './images/arrow.svg';
         height: 100vh;
 	}
 
-    .vertical {
-        border-left: 1px thick white;
-        height: 55px;
-        margin: 0;
-        position:absolute;
-        left: var(--widthV);
-        z-index: 100;
-    }
     .year {
         height: 60px;
         margin: 10px;
