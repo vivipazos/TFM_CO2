@@ -98,8 +98,6 @@
 			{carbon}
 		/>
 
-		<p class="calc_title">Toggle <strong>individual changes</strong> to make a difference</p>
-
 		{#each actions as object}
 			<Action
 			{...object}

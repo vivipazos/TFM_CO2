@@ -23,31 +23,63 @@ const wetland = './images/wetland.svg';
 
 
 </script>
-
 <div class="action">
-    <h4>
-        {label}
-    </h4>
-    <p>
-        {desc}
-    </p>
 
-    <label class="switch">
-        <input type="checkbox" bind:checked={active} on:change={onChange}>
-        <span class="slider round"></span>
-    </label>
+    {#if label === 'Recycling'}
+    <div class="action-block">
+        <div id="left-col">
+            <div class="icon">
+                <InlineSVG src={recycle}/>
+            </div>
+        <label class="switch">
+            <input type="checkbox" bind:checked={active} on:change={onChange}>
+            <span class="slider round"></span>
+        </label>
+        </div>
+        <div id="right-col">
+            <h4>{label}</h4>
+            <p> {desc} </p>
+        </div>
+    </div>
+    {:else if label === 'Eat less meat'}
+    <div class="action-block">
+        <div id="left-col">
+            <div class="icon">
+                <InlineSVG src={vegetarian}/>
+            </div>
+        <label class="switch">
+            <input type="checkbox" bind:checked={active} on:change={onChange}>
+            <span class="slider round"></span>
+        </label>
+        </div>
+        <div id="right-col">
+            <h4>{label}</h4>
+            <p> {desc} </p>
+        </div>
+    </div>
+
+    {/if}
 </div>
 
 <style>
     .action {
         padding-bottom: 2rem;
-        margin-top: 40px;
+        margin-top: 50vh;
         text-align: left;
         margin: 0 auto;
         width: 450px;
         font-family: 'Open Sans', sans-serif;
         font-size: 22px;
         line-height: 26px;
+        padding-top: 10vh;
+    }
+
+    #left-col {
+    }
+
+    #right-col {
+        right: 0;
+        position: absolute;
     }
 
     .switch {
@@ -105,6 +137,10 @@ const wetland = './images/wetland.svg';
 
     .slider.round:before {
         border-radius: 50%;
+    }
+
+    .icon {
+        width: 20px;
     }
 
 </style>
