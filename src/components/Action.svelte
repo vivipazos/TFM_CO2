@@ -22,17 +22,16 @@ export let onChange;
 
 <Container>
 <div class="action">
-    <Row>
+    <Row class="p-1">
     <Col cols={2} sm={0} md={2} lg={2}></Col>
-    <Col cols={7} sm={0} md={7} lg={7}>
+    <Col cols={8} sm={0} md={7} lg={7} class="pb-9">
     <h4>{@html title}</h4>
     </Col>
     <Col cols={2} sm={0} md={2} lg={2}></Col>
     </Row>
-    <div class="action-block">
-        <Row>
+        <Row class="p-1">
             <Col cols={2} sm={0} md={2} lg={2}></Col>
-            <Col cols={5} sm={0} md={5} lg={5}>
+            <Col cols={5} sm={0} md={5} lg={5} class="p-2">
             <div>
             <div class="icon"><InlineSVG src='./images/{icon}.svg'/></div>
             <p><b>{label}</b></p>
@@ -46,16 +45,14 @@ export let onChange;
             </Col>
             <Col cols={2} sm={0} md={2} lg={2}></Col>
         </Row>
-        <Row>
+        <Row class="p-1">
             <Col cols={2} sm={0} md={2} lg={2}></Col>
             <Col cols={5} sm={0} md={5} lg={5}>
             <p> {desc} </p>
             </Col>
             <Col cols={5} sm={0} md={2} lg={5}}></Col>
         </Row>
-    </div>
-</div>
-</Container>
+    </Container>
 
 </MaterialApp>
 <style>
@@ -66,14 +63,7 @@ export let onChange;
     }
 
     .action {
-        padding-bottom: 2rem;
-        margin-top: 50vh;
-        text-align: left;
-        margin: 0 auto;
-        /* width: 450px; */
         font-family: 'Open Sans', sans-serif;
-        font-size: 22px;
-        line-height: 26px;
     }
 
     .switch {
