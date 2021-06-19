@@ -44,9 +44,9 @@
 
 	// Toggle CSS displays
 
-	$:if (actualProgress < 0.3) { 
+	$:if (actualProgress > 0.3) { 
 		let firstMark = document.getElementById("1850-mark")
-		firstMark.style.display = "block"; 
+		firstMark.style.display = "none"; 
 	} 
 
 </script>
