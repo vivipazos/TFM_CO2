@@ -10,6 +10,7 @@ export let amount_all;
 export let amount_some;
 export let amount_some_desc;
 export let source;
+export let icon;
 // export let action;
 export let active;
 export let onChange;
@@ -18,7 +19,7 @@ const cities = './images/cities.svg';
 const coal = './images/coal.svg';
 const energy = './images/energy.svg';
 const fashion = './images/fashion.svg';
-const recycle = './images/recycle.svg';
+// const recycle = './images/recycle.svg';
 const transport = './images/transport.svg';
 const vegetarian = './images/vegetarian.svg';
 const wetland = './images/wetland.svg';
@@ -29,12 +30,11 @@ const wetland = './images/wetland.svg';
 
 <div class="action">
 
-    {#if label === 'Recycling'}
     <div class="action-block">
         <div class="d-flex flex-row">
             <div class="d-flex flex-column">
                 <div class="icon">
-                    <InlineSVG src={vegetarian}/>
+                    <InlineSVG src='./images/{icon}.svg'/>
                 </div>
             <label class="switch">
                 <input type="checkbox" bind:checked={active} on:change={onChange}>
@@ -47,27 +47,6 @@ const wetland = './images/wetland.svg';
             </div>
         </div>       
     </div>
-
-    {:else if label === 'Eat less meat'}
-    <div class="action-block">
-        <div class="d-flex flex-row">
-            <div class="d-flex flex-column">
-                <div class="icon">
-                    <InlineSVG src={vegetarian}/>
-                </div>
-            <label class="switch">
-                <input type="checkbox" bind:checked={active} on:change={onChange}>
-                <span class="slider round"></span>
-            </label>
-            </div>
-            <div class="d-flex flex-column">
-                <h4>{label}</h4>
-                <p> {desc} </p>
-            </div>
-        </div>       
-    </div>
-
-    {/if}
 
 </div>
 
