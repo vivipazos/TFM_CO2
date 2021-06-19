@@ -45,14 +45,13 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
             <source src="./smoke_edge_loop2.mp4" type="video/mp4">
             </video>
     </div>
-    <span class="carbon-limit">
-        <p>We will reach the carbon limit in 
-            <span class="yearEnd">{yearEnd}</span>
-        </p>
+    <div class="carbon-limit">
+        <p>We will reach the carbon limit in </p>
+        <span class="yearEnd">{yearEnd}</span>
         <div class="arrow">
             <InlineSVG src={arrow}/>
         </div>
-    </span>
+    </div>
 </div>
 
     
@@ -73,11 +72,9 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
         left: 0;
         margin: 0;
         background-color: rgb(255,1,0);
-        width: 0vw;
         height: 200px;
         z-index: 100;
         transition: width 2s linear;
-        max-width: 100vw;
         
     }
 
@@ -163,20 +160,29 @@ video {
     right: 10px;
     width: 140px;
     position: absolute;
-    font-size: 15px;
+    font-size: 14px;
     z-index: 300;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    opacity: 0.7;
+}
+
+.carbon-limit p {
+    margin: 0;
 }
 
 .yearEnd {
     font-weight: 700;
     font-size: 20px;
+    text-align: right;
 }
 
 /* Arrow */
 .arrow {
         width:40px;
-        transform: scaleX(-1);
         transform: rotate(180deg);
+        margin-left: 10vw;
 
     }
 </style>

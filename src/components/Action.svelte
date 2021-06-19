@@ -1,4 +1,6 @@
 <script>
+import InlineSVG from 'svelte-inline-svg';
+
 export let desc;
 export let category;
 export let label;
@@ -9,6 +11,17 @@ export let source;
 // export let action;
 export let active;
 export let onChange;
+
+const cities = './images/cities.svg';
+const coal = './images/coal.svg';
+const energy = './images/energy.svg';
+const fashion = './images/fashion.svg';
+const recycle = './images/recycle.svg';
+const transport = './images/transport.svg';
+const vegetarian = './images/vegetarian.svg';
+const wetland = './images/wetland.svg';
+
+
 </script>
 
 <div class="action">
