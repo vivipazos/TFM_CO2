@@ -75,6 +75,7 @@ const arrow = './images/arrow.svg';
         animation: 3s fadeIn;
         animation-fill-mode: forwards;
         width: 130px;
+        display: block;
        
     }
     @keyframes fadeIn {
