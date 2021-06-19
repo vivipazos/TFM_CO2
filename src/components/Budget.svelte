@@ -1,65 +1,35 @@
 <script>
 import {scaleLinear} from 'd3-scale'
+import InlineSVG from 'svelte-inline-svg';
+
 export let action;
 export let carbon;
 export let year;
 export let percentage;
 export let widthV;
 
-let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
-let carbonEnd  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
+const arrow = './images/arrow.svg';
 
-
-/* function filter(d) {
-    selectedActions =
-        action.map((d) => {if (d.active === true) {
-            Amount = +d.amount_all;
-        } 
-          return d;
-        });
-  } 
-
-let selected = filter(action) 
-$: console.log(selected) */
-/* function isTrue(value) {
-  return value === true
-}
-
- selected_actions = action.filter(d => d.active === true)
-    .map(d => +d.amount_all)
-    .reduce((a,c) => a + c, 0) 
-$: console.log(selected_actions) */
-
-/* $:modifiedValue = baseValue - selectedAction
-
-$:console.log(modifiedValue)
-
-let lastValue = carbon[carbon.length - 1]
-
-console.log(lastValue) */
 
 </script>
 {#if year}
 <div style="--widthV: {widthV}" class="budgetBarYearly">
     <hr class="vertical" />
-    <p class="year"><b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
+    <p class="year">Year: <b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
     <video title= "The widht of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
         <source src="./smoke_edge_loop2.mp4" type="video/mp4">
     </video>
 
 <div class="mark">
-    <p title= "1850 represents the mid 1800s period, when industrial revolution kick in strong. It is also taken as the reference year for historical human-made emissions"><b>1850</b><br> 7.23 Gt CO&#x2082;</p>
+    <div class="arrow">
+        <InlineSVG src={arrow}/>
+    </div>
+    <p title= "1850 represents the mid 1800s period, when industrial revolution kick in strong. It is also taken as the reference year for historical human-made emissions">
+        In <b>1850</b> we started with <br> 7.23 Gt CO&#x2082; in the atmosphere.
+    </p>
 </div>
 
-
-<!--     <svg class="dangerZone" viewBox="0 0 {width} {height}">
-            <g>
-                {#each circles as d}
-                <circle cx={d.x} cy={d.y} r={d.r} fill={d.color}/>
-                {/each}
-            </g>
-    </svg> -->
 </div>
 {/if}
 
@@ -116,7 +86,7 @@ console.log(lastValue) */
         height: 60px;
         margin: 10px;
         position:absolute;
-        top: 0;
+        top: 10vh;
         z-index: 99;
         border-left: 1px thick white;
         font-family: 'Open Sans', sans-serif;
@@ -125,6 +95,7 @@ console.log(lastValue) */
         pointer-events: all;
         animation: 3s fadeIn;
         animation-fill-mode: forwards;
+        width: 130px;
        
     }
     @keyframes fadeIn {
@@ -139,16 +110,6 @@ console.log(lastValue) */
     b {
         font-weight: 600;
     }
-    /* .yearLimit {
-		color: #BB3327;
-        position: absolute;
-		top:130px;
-		right:180px;
-	} */
-
-    /* .dangerZone {
-        margin-left: 1200px;
-    } */
 
     video {
         position: absolute;
@@ -159,4 +120,10 @@ console.log(lastValue) */
         offset: 0 0 0 3em;
         pointer-events: all;
     }
+
+    /* Arrow */
+    .arrow {
+        width:40px;
+    }
+
 </style>

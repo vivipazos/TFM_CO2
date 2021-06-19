@@ -1,7 +1,11 @@
 <script>
 import {scaleLinear} from 'd3-scale'
+import InlineSVG from 'svelte-inline-svg';
+
 export let action;
 export let carbon;
+
+const arrow = './images/arrow.svg';
 
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonEnd  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
@@ -10,8 +14,8 @@ let selectedActions = action;
 let actives_sum = 0;
 let growth = +carbonStart;
 
-let interval = 2000; /* In milliseconds */
-let yearlyTime = 5000; /* In milliseconds */
+let interval = 1000; /* In milliseconds */
+let yearlyTime = 1000; /* In milliseconds */
 
 let scale = scaleLinear()
     .domain([carbonStart, carbonEnd])
@@ -35,16 +39,34 @@ setInterval(grow, interval);
 $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
 
 </script>
-    
-<div class="budgetBar" style="width:{scale(growth)}vw">
-    <p>{yearEnd}</p>
-    <video title= "The widht of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
-        <source src="./smoke_edge_loop2.mp4" type="video/mp4">
-    </video>
+<div class="action-bar-wrapper">
+    <div class="budgetBar" style="width:{scale(growth)}vw">
+        <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
+            <source src="./smoke_edge_loop2.mp4" type="video/mp4">
+            </video>
+    </div>
+    <span class="carbon-limit">
+        <p>We will reach the carbon limit in 
+            <span class="yearEnd">{yearEnd}</span>
+        </p>
+        <div class="arrow">
+            <InlineSVG src={arrow}/>
+        </div>
+    </span>
 </div>
 
     
 <style>
+    .action-bar-wrapper {
+        box-shadow: 0 4px 2px -2px gray;
+        background-color: white;
+        position: sticky;
+        top: 0;
+        left: 0;
+        margin: 0;
+        z-index: 1;
+    }
+
     .budgetBar {
         position: sticky;
         top: 0;
@@ -55,6 +77,8 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
         height: 200px;
         z-index: 100;
         transition: width 2s linear;
+        max-width: 100vw;
+        
     }
 
     @keyframes grow {
@@ -121,27 +145,38 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
     b {
         font-weight: 600;
     }
-    /* .yearLimit {
-        color: #BB3327;
-        position: absolute;
-        top:130px;
-        right:180px;
-    } */
 
-    /* .dangerZone {
-        margin-left: 1200px;
-    } */
+video {
+    position: absolute;
+    height: 200px;
+    width: 40vw;
+    object-fit: fill;
+    pointer-events: all;
+    right: -40vw;
+    top:0;
+    margin:0;
+    padding: 0;
+}
 
-    video {
-        position: absolute;
-        height: 200px;
-        width: 40vw;
-        object-fit: fill;
-        pointer-events: all;
-        right: -40vw;
-        top:0;
-        margin:0;
-        padding: 0;
+.carbon-limit {
+    top: 10px;
+    right: 10px;
+    width: 140px;
+    position: absolute;
+    font-size: 15px;
+    z-index: 300;
+}
+
+.yearEnd {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Arrow */
+.arrow {
+        width:40px;
+        transform: scaleX(-1);
+        transform: rotate(180deg);
 
     }
 </style>

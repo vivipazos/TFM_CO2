@@ -11,7 +11,7 @@
 	import data from './data/data.json'
 
   	let offset, progress;
-	$:index=index < 8 ? index:0 ;
+	$:index=index < 10 ? index:0 ;
 
 	export let content;
 	export let actions;
@@ -38,6 +38,7 @@
 	$: actualProgress = Math.min(progress, 0.5) / 0.5;
 	$: currentIndex = Math.floor(Math.min(1, Math.max(actualProgress ||0, 0)) * numDatapoints);
 	$: currentDatapoint = carbon_modi[currentIndex];
+
 </script>
 
 <svelte:head>
@@ -79,13 +80,19 @@
 							</div>
 						{:else if step.type === 'sections'}
 							<Sections {data}/>
+						{:else if step.type === 'textbox-blank'}
+						<div class="scrollyText textbox-blank">
+							<p>{@html step.p}</p>
+						</div>
 						{/if}
 					</section>
                 {/each}
             </div>
 		</Scroller>
 
+	
 	{:else if block.type === 'calculator'}
+	<div class="calc">
 		<BudgetActions
 			action = {data_modified}
 			{carbon}
@@ -100,6 +107,7 @@
 			onChange = {() => data_modified = data_modified }
 		/>
 		{/each}
+	</div>
 
 	{:else if block.type === 'footer'}
 		<Footer>
@@ -131,15 +139,21 @@
 		font-family: 'Open Sans', sans-serif;
 	}
 
-	.step-sections {
-		height: 300vh;
+	.calc {
+		padding-top:20vh;
 	}
+
+	/* .step-sections {
+		height: 300vh;
+	} */
+
 	.step {
 		pointer-events: all;
 	}
 	.step-sections > :global(*) {
 		position: sticky;
 		top: 5vh;
+		z-index: 100;
 	}
 
 	section {
@@ -180,5 +194,10 @@
 	:global(svelte-scroller-foreground) {
 		pointer-events: none;
 	}
+
+	:global(.textbox-blank){
+		display: none;
+	}
+
 
 </style>
