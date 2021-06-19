@@ -22,22 +22,22 @@ export let onChange;
 
 <Container>
 <div class="action">
-    <Row class="p-1">
+    <Row>
     <Col cols={2} sm={0} md={2} lg={2}></Col>
-    <Col cols={8} sm={0} md={7} lg={7} class="pb-9">
+    <Col cols={8} sm={12} md={8} lg={8} class="pb-8">
     <h4>{@html title}</h4>
     </Col>
     <Col cols={2} sm={0} md={2} lg={2}></Col>
     </Row>
-        <Row class="p-1">
+        <Row>
             <Col cols={2} sm={0} md={2} lg={2}></Col>
-            <Col cols={5} sm={0} md={5} lg={5} class="p-2">
+            <Col cols={5} sm={10} md={5} lg={5}>
             <div>
             <div class="icon"><InlineSVG src='./images/{icon}.svg'/></div>
             <p><b>{label}</b></p>
             </div>
             </Col>
-            <Col cols={2} sm={0} md={2} lg={2}>
+            <Col cols={2} sm={2} md={2} lg={2}>
             <label class="switch">
                 <input type="checkbox" bind:checked={active} on:change={onChange}>
                 <span class="slider round"></span>
@@ -45,12 +45,12 @@ export let onChange;
             </Col>
             <Col cols={2} sm={0} md={2} lg={2}></Col>
         </Row>
-        <Row class="p-1">
+        <Row>
             <Col cols={2} sm={0} md={2} lg={2}></Col>
-            <Col cols={5} sm={0} md={5} lg={5}>
+            <Col cols={5} sm={10} md={6} lg={6}>
             <p> {desc} </p>
             </Col>
-            <Col cols={5} sm={0} md={2} lg={5}}></Col>
+            <Col cols={5} sm={2} md={4} lg={4}}></Col>
         </Row>
     </Container>
 
