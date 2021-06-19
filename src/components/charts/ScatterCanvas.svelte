@@ -21,6 +21,10 @@ $: y = scaleLinear().domain([0,100]).range([0, height-margin.bottom])
 
 $: delaunay = Delaunay.from(data, d =>0, d => y(d.coords[step].y)  +  y(d.coords[step].height)/2 )
 
+
+
+
+
 </script>
 
 
@@ -28,11 +32,12 @@ $: delaunay = Delaunay.from(data, d =>0, d => y(d.coords[step].y)  +  y(d.coords
 	<Canvas
 		{width} {height}
 		style='cursor: pointer'
-		on:mousemove={({ offsetX: x, offsetY: y }) => 	{picked = delaunay.find(x, y);
+		on:mousemove={({ offsetX: x, offsetY: y }) => 	{ picked = delaunay.find(x, y);													
+
 														let tip = ( data[picked].data[0] ) ;
 														tooltipOptions = {x: x, y: y, tip: tip, visible: true}
 					}}
-		on:mouseout={() => {picked = null
+						on:mouseout={() => {picked = null
 							tooltipOptions = {x: -5000, y: -5000, tip: '', visible: false}
 					}}
 		on:mousedown={() => click = true}
@@ -40,6 +45,8 @@ $: delaunay = Delaunay.from(data, d =>0, d => y(d.coords[step].y)  +  y(d.coords
 	>
 
 		{#each data as d, i}
+		   
+		   {#if d.coords[step].height>0}
 				<Square
 				x={width * 0.52}
 				y={y(d.coords[step].y)}
@@ -48,9 +55,10 @@ $: delaunay = Delaunay.from(data, d =>0, d => y(d.coords[step].y)  +  y(d.coords
 				stroke={i === picked ? "white" : "white"}
 				lineWidth={i === picked ? 9 : 1}
 				
-				
 				/>
-  
+			{/if}
+
+			
 		{/each}
 	</Canvas>
 	<Tooltip {... tooltipOptions} {width} {height} />
