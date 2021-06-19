@@ -40,14 +40,11 @@
 	$: currentDatapoint = carbon_modi[currentIndex];
 
 	// Toggle CSS displays
-	
-	$:let firstMark = document.getElementById("1850-mark")
 
 	$:if (actualProgress < 0.3) { 
+		let firstMark = document.getElementById("1850-mark")
 		firstMark.style.display = "block"; 
-	} else (actualProgress > 0.3) {
-		firstMark.style.display = "none"; 
-	}
+	} 
 
 </script>
 

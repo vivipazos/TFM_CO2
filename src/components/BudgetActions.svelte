@@ -46,7 +46,7 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
 <div class="action-bar-wrapper">
     <div class="budgetBar" style="width:{scale(growth)}vw">
         <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
-            <source src="./smoke_edge_loop2.mp4" type="video/mp4">
+            <source src="./smokeSquare2.mp4" type="video/mp4">
             </video>
     </div>
     <div class="carbon-limit">
