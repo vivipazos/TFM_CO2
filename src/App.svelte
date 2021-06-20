@@ -205,7 +205,7 @@
 	:global(.scrollyText) {
 		background-color: hsl(0, 0%, 100%, 0.9);
 		border-radius: 5px;
-		padding: 14px;
+		padding: 1rem;
 		font-size: 15px;
 		box-shadow: 1rem 1rem 1rem -1rem #00000033;
 	}
@@ -224,8 +224,8 @@
 	}
 
 	:global(.carbonDi-inline) {
-		color: #rgb(225,29,41);
 		font-weight: 900;
+		color: rgb(225,29,41);
 	}
 
 	:global(svelte-scroller-foreground) {

@@ -120,6 +120,7 @@ export let onChange;
 
     .icon {
         max-width: 40px; 
+        display: inline-block;
     }
 
     :global(.s-col){
