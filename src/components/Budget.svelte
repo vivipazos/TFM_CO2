@@ -6,6 +6,7 @@ export let carbon;
 export let year;
 export let widthV;
 export let mark1;
+export let limitbg;
 
 const arrow = './images/arrow.svg';
 
@@ -27,7 +28,13 @@ const arrow = './images/arrow.svg';
         In <b>1850</b> we started with <br> 7.23 Gt CO&#x2082; in the atmosphere.
     </p>
 </div>
-
+</div>
+<div class="limit-bg" bind:this={limitbg}>
+        <div class="carbon-budget-label">
+            <span class="white-bg">Remaining</span><br>
+            <span class="white-bg">carbon</span><br>
+            <span class="white-bg">budget</span>
+        </div>
 </div>
 {/if}
 
@@ -101,9 +108,35 @@ const arrow = './images/arrow.svg';
         pointer-events: all;
     }
 
-    /* Arrow */
+/* Arrow */
     .arrow3 {
         width:40px;
+    }
+
+    .limit-bg {
+        background-color:white;
+        background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAKElEQVQYV2NkwA58GbGI+zIwMGxGlwALghQjS8AFkSVQBGESGIIgCQBVnAVUPcxeHAAAAABJRU5ErkJggg==) repeat;
+        left:80vw;
+        width:20vw;
+        height:100vh;
+        position: absolute;
+        top: 0;
+        transition: opacity 0.5s;
+    }
+
+    .carbon-budget-label {
+        bottom: 6px;
+        position: absolute;
+        padding: 5px;
+        margin: 6px 5vw;
+        font-size: 0.8rem !important;
+        text-align:center;
+    }
+
+    .white-bg {
+        background-color: white;
+        padding: 4px;
+        line-height:1.2rem;
     }
 
 </style>

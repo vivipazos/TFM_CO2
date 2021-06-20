@@ -45,6 +45,7 @@
 	// Toggle CSS displays
 
 	$:mark1 = null
+	$:limitbg = null
 	
 	$:if (mark1 !== null) {
 	if (progress < 0.3) { 
@@ -54,7 +55,15 @@
 	}
 	}
 
-	// $:console.log(progress)
+	$:if (limitbg !== null) {
+	if (progress < 0.99) {
+		limitbg.style.opacity = 0;
+	} else {
+		limitbg.style.opacity = 1;
+	}
+	}
+
+	$:console.log(progress)
 
 </script>
 
@@ -86,6 +95,7 @@
 					widthV = {parseFloat(currentDatapoint.Percentage).toFixed(2).toString() + "%"}
 					{data}
 					bind:mark1 = {mark1}
+					bind:limitbg = {limitbg}
 				/>
 			</div>
 
