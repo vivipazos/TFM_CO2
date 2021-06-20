@@ -55,13 +55,13 @@ $:if (modifiedValue < 1) {
 <div bind:this={element} class="action-bar-wrapper">
     <div class="budgetBar" style="width:{scale(growth)}vw">
         <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
-            <source src="./smokeSquare2.mp4" type="video/mp4">
+            <source src="./smokeWide3.mp4" type="video/mp4">
             </video>
     </div>
     <div class="annotation-layer">
         <p>This bar represents how much of the carbon budget is left.</p>
         {#if modifiedValue > 1}
-        <p>Based on your choices below, annual emissions are now at {modifiedValue.toLocaleString('en-US')} Mt CO&#x2082;.</p>
+        <p>Based on your choices below, annual emissions are now at {modifiedValue} Mt CO&#x2082;.</p>
         {:else}
         <p>Great! Annual emissions are now at zero! But it's unlikely all the choices you selected will happen - read below to find out more.</p>
         {/if}
