@@ -53,6 +53,7 @@
     "sirv-cli": "^1.0.0",
     "svelte-canvas": "^0.6.1",
     "svelte-inline-svg": "^1.0.8",
+    "svelte-intersection-observer": "^0.7.0",
     "svelte-rough": "^0.2.0",
     "topojson-client": "^3.1.0"
   }

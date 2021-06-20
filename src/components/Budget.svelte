@@ -5,6 +5,7 @@ import InlineSVG from 'svelte-inline-svg';
 export let carbon;
 export let year;
 export let widthV;
+export let mark1;
 
 const arrow = './images/arrow.svg';
 
@@ -18,7 +19,7 @@ const arrow = './images/arrow.svg';
         <source src="./smoke6.mp4" type="video/mp4">
     </video>
 
-<div id="1850-mark" class="mark">
+<div id="1850-mark" class="mark" bind:this={mark1}>
     <div class="arrow3">
         <InlineSVG src={arrow}/>
     </div>
@@ -72,10 +73,9 @@ const arrow = './images/arrow.svg';
         font-weight: 300;
         color: black;
         pointer-events: all;
-        animation: 3s fadeIn;
-        animation-fill-mode: forwards;
         width: 130px;
         display: block;
+        transition: opacity 0.5s;
        
     }
     @keyframes fadeIn {

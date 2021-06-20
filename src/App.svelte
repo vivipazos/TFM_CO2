@@ -44,10 +44,13 @@
 
 	// Toggle CSS displays
 
-	$:if (actualProgress > 0.3) { 
-		let firstMark = document.getElementById("1850-mark")
-		firstMark.style.display = "none"; 
-	} 
+	let mark1 
+
+	$:if (progress > 0.3) { 
+		mark1.style.opacity = 0; 
+	}
+
+	$:console.log(progress)
 
 </script>
 
@@ -78,6 +81,7 @@
 						:selected_data[index].Percentage}
 					widthV = {parseFloat(currentDatapoint.Percentage).toFixed(2).toString() + "%"}
 					{data}
+					bind:mark1 = {mark1}
 				/>
 			</div>
 
