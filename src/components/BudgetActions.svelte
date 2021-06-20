@@ -15,7 +15,7 @@ let actives_sum = 0;
 let growth = +carbonStart;
 
 let interval = 1000; /* In milliseconds */
-let yearlyTime = 2000; /* In milliseconds */
+let yearlyTime = 1000; /* In milliseconds */
 
 let scale = scaleLinear()
     .domain([carbonStart, carbonEnd])
@@ -54,8 +54,12 @@ $:if (modifiedValue < 1) {
             </video>
     </div>
     <div class="annotation-layer">
-        <p>This bar is how much of the carbon budget is left.</p>
-        <p>Annual emissions are at {modifiedValue.toLocaleString('en-US')} Mt CO&#x2082; based on your choices below.</p>
+        <p>This bar represents how much of the carbon budget is left.</p>
+        {#if modifiedValue > 1}
+        <p>Based on your choices below, annual emissions are now at {modifiedValue.toLocaleString('en-US')} Mt CO&#x2082;.</p>
+        {:else}
+        <p>Great! Annual emissions are now at zero! But it's unlikely all the choices you selected will happen - read below to find out more.</p>
+        {/if}
     </div>
     <div class="carbon-limit">
         {#if modifiedValue > 1}
@@ -66,7 +70,7 @@ $:if (modifiedValue < 1) {
         </div>
         {:else}
         <div class="congrats-box">
-        <p><b>Congrats!</b> You reduced annual emissions to zero - but it's probably not likely!</p>
+        <p><b>Congrats!</b> Your choices gave us more time.</p>
         </div>
         {/if}
     </div>

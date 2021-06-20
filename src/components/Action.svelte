@@ -25,7 +25,7 @@ export let onChange;
     <Row>
     <Col cols={2} sm={0} md={2} lg={2}></Col>
     <Col cols={8} sm={12} md={8} lg={8} class="pb-8">
-    <h4>{@html title}</h4>
+    <h3>{@html title}</h3>
     </Col>
     <Col cols={2} sm={0} md={2} lg={2}></Col>
     </Row>
@@ -56,11 +56,6 @@ export let onChange;
 
 </MaterialApp>
 <style>
-
-    .h4 {
-        font-family: "Open Sans", sans-serif !important;
-        font-size: 30px;
-    }
 
     .action {
         font-family: 'Open Sans', sans-serif;
