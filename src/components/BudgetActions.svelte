@@ -1,11 +1,15 @@
 <script>
 import {scaleLinear} from 'd3-scale'
 import InlineSVG from 'svelte-inline-svg';
+import IntersectionObserver from "svelte-intersection-observer";
 
 export let action;
 export let carbon;
 
 const arrow = './images/arrow.svg';
+
+let element;
+let intersecting;
 
 let baseValue = 17000; //Mt CO2, constant yearly increase if nothing done
 let carbonEnd  = 2721042; //Mt CO2, the amount at the edge of the allowed budget before reaching 1.5 degrees
@@ -28,14 +32,15 @@ $: if (action) {
 
 $:modifiedValue = baseValue - actives_sum;
 
-$:console.log(modifiedValue)
+$:console.log(intersecting)
 
 const grow = () => {
     let pace = modifiedValue / (yearlyTime / interval);
     growth += pace;
 }
 
-let idVar = setInterval(grow, interval);
+let idVar
+$:if (intersecting) { idVar = setInterval(grow, interval); }
 
 $:if (growth > carbonEnd || modifiedValue < 1) { clearInterval(idVar) }
 
@@ -45,9 +50,9 @@ $:if (modifiedValue < 1) {
     modifiedValue = 0;
 }
 
-
 </script>
-<div class="action-bar-wrapper">
+<IntersectionObserver once {element} bind:intersecting={intersecting} threshold=1>
+<div bind:this={element} class="action-bar-wrapper">
     <div class="budgetBar" style="width:{scale(growth)}vw">
         <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
             <source src="./smokeSquare2.mp4" type="video/mp4">
@@ -76,10 +81,10 @@ $:if (modifiedValue < 1) {
     </div>
 </div>
 
-    
+</IntersectionObserver>   
 <style>
     .action-bar-wrapper {
-        box-shadow: 0 4px 2px -2px gray;
+        box-shadow: 0 1rem 1rem -1rem #00000033;
         background-color: white;
         position: sticky;
         top: 0;
