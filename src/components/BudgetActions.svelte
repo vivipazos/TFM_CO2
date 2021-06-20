@@ -15,7 +15,7 @@ let actives_sum = 0;
 let growth = +carbonStart;
 
 let interval = 1000; /* In milliseconds */
-let yearlyTime = 1000; /* In milliseconds */
+let yearlyTime = 2000; /* In milliseconds */
 
 let scale = scaleLinear()
     .domain([carbonStart, carbonEnd])
@@ -28,10 +28,6 @@ $: if (action) {
 
 $:modifiedValue = baseValue - actives_sum;
 
-$:if (modifiedValue < 1) {
-    modifiedValue = 1;
-}
-
 $:console.log(modifiedValue)
 
 const grow = () => {
@@ -41,10 +37,13 @@ const grow = () => {
 
 let idVar = setInterval(grow, interval);
 
-$:if (growth > carbonEnd) { clearInterval(idVar) }
+$:if (growth > carbonEnd || modifiedValue < 1) { clearInterval(idVar) }
 
 $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
 
+$:if (modifiedValue < 1) {
+    modifiedValue = 0;
+}
 
 
 </script>
@@ -54,12 +53,22 @@ $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
             <source src="./smokeSquare2.mp4" type="video/mp4">
             </video>
     </div>
+    <div class="annotation-layer">
+        <p>This bar is how much of the carbon budget is left.</p>
+        <p>Annual emissions are at {modifiedValue.toLocaleString('en-US')} Mt CO&#x2082; based on your choices below.</p>
+    </div>
     <div class="carbon-limit">
+        {#if modifiedValue > 1}
         <p>We will reach the carbon limit in </p>
         <span class="yearEnd">{yearEnd}</span>
         <div class="arrow2">
             <InlineSVG src={arrow}/>
         </div>
+        {:else}
+        <div class="congrats-box">
+        <p><b>Congrats!</b> You reduced annual emissions to zero - but it's probably not likely!</p>
+        </div>
+        {/if}
     </div>
 </div>
 
@@ -130,6 +139,19 @@ video {
     opacity: 0.7;
 }
 
+.annotation-layer {
+    top: 10px;
+    left: 20px;
+    width: 300px;
+    position: absolute;
+    font-size: 14px;
+    z-index: 300;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+    opacity: 0.7;
+}
+
 .carbon-limit p {
     margin: 0;
 }
@@ -147,4 +169,9 @@ video {
         margin-left: 10vw;
 
     }
+
+.congrats-box {
+    text-align: left;
+
+}
 </style>
