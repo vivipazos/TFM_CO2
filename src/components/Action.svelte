@@ -48,7 +48,7 @@ export let onChange;
         <Row>
             <Col cols={2} sm={0} md={2} lg={2}></Col>
             <Col cols={5} sm={10} md={6} lg={6}>
-            <p> {desc} </p>
+            <p> {@html desc} </p>
             </Col>
             <Col cols={5} sm={2} md={4} lg={4}}></Col>
         </Row>
