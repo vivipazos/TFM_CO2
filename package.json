@@ -43,7 +43,7 @@
     "d3-time-format": "^3.0.0",
     "esm": "^3.2.25",
     "layercake": "^4.1.0",
-    "lodash": "^4.17.20",
+    "lodash": "^4.17.21",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^2.1.1",
     "node-fetch": "^2.6.1",

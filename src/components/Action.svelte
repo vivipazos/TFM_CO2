@@ -16,6 +16,23 @@ export let title;
 export let active;
 export let onChange;
 
+function toggleText() {
+    var points = document.getElementById("points");
+    var showMoreText = document.getElementById("moreText");
+    var buttonText = document.getElementById("textButton");
+
+if (points.style.display === "none") {
+    showMoreText.style.display = "none";
+    points.style.display = "inline";
+    buttonText.innerHTML = "Show More";
+}
+
+  else {
+    showMoreText.style.display = "inline";
+    points.style.display = "none";
+    buttonText.innerHTML = "Show Less";
+  }
+}
 </script>
 
 <MaterialApp>
@@ -48,7 +65,13 @@ export let onChange;
         <Row>
             <Col cols={2} sm={0} md={2} lg={2}></Col>
             <Col cols={5} sm={10} md={6} lg={6}>
-            <p> {@html desc} </p>
+            <span id="points">...</span>
+            <span id="moreText" style="display:none">
+                <p> {@html desc} </p>
+            </span>
+            <button on:click={toggleText} id="textButton">
+                Show More
+            </button>
             </Col>
             <Col cols={5} sm={2} md={4} lg={4}}></Col>
         </Row>
@@ -56,7 +79,6 @@ export let onChange;
 
 </MaterialApp>
 <style>
-
     .action {
         font-family: 'Open Sans', sans-serif;
     }
