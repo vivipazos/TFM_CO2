@@ -61,7 +61,7 @@
 {#each content as block}
 
 	{#if block.type === 'head'}
-		<Header {...block}/>
+		<Header {...block}/> 
 
 	{:else if block.type === 'text'}
 		<Text {...block} />
@@ -131,17 +131,22 @@
 		<Footer>
 			<div slot="about">
 				{#each block.about as text}
-				{text.p}
+				{@html text.p}
+				{/each}
+			</div>
+			<div slot="team">
+				{#each block.team as text}
+				{@html text.p}
 				{/each}
 			</div>
 			<div slot="data">
 				{#each block.data as text}
-				{text.p}
+				{@html text.p}
 				{/each}
 			</div>
 			<div slot="disclaimer">
 				{#each block.disclaimer as text}
-				{text.p}
+				{@html text.p}
 				{/each}
 			</div>
 

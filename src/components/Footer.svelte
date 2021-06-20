@@ -7,11 +7,12 @@
    
         <h4>The project</h4>
         <p><slot name='about'></slot></p>
-        <h4>About the data</h4>
+        <h4>The team</h4>
+        <p><slot name='team'></slot></p>
+        <h4>The data</h4>
         <p><slot name='data'></slot></p>
         <h4>Disclaimer</h4>
         <p><slot name='disclaimer'></slot></p>         
-        <p>This project was designed and developed in the <a href='http://www.mastervisualtoolsudg.com/'>Master’s program in Visual Tools to Empower Citizens (MVTEC)</a> organized by <a href='https://www.fundacioudg.org/'>Fundació UdG</a> and the <a href='https://www.fundaciovit.org/'>ViT Foundation</a></p>
         
    
     </div>
@@ -19,8 +20,8 @@
 	
 <style>
     .footer {
-        background-color:#181616;
-        color:rgb(247, 238, 238);
+        background-color:#faf5f5;
+        color:rgb(17, 17, 17);
         padding-top:1rem;
         padding-left:10rem;
         padding-right:10rem;
