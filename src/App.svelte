@@ -9,7 +9,8 @@
 	import Sections from './components/Sections.svelte';
 
 	import InlineSVG from 'svelte-inline-svg';
-	const arrow = './images/arrow.svg';
+	
+	const transitionArrow = './images/transitionArrow.svg';
 
 	import data from './data/data.json'
 
@@ -63,7 +64,7 @@
 	}
 	}
 
-	$:console.log(progress)
+	// $:console.log(progress)
 
 </script>
 
@@ -120,14 +121,14 @@
 
 	
 	{:else if block.type === 'transition'}
+	<div class=transitionBox>
 		{#each block.text as p}
-			<div class=transitionBox>
-				<h4>{@html p.p}</h4>
-			<div class="arrow">
-				<InlineSVG src={arrow}/>
-			</div>
-			</div>
+				<h4><span class="transition-space">{@html p.p}</span></h4>
 		{/each}
+		<div class="transitionArrow">
+			<InlineSVG src={transitionArrow}/>
+		</div>
+	</div>
 	
 	{:else if block.type === 'calculator'}
 	<div class="calc">
@@ -202,24 +203,29 @@
 		font-family: 'Open Sans', sans-serif;
 	}
 	:global(.scrollyText) {
-		background-color: hsl(0, 0%, 100%, 1);
+		background-color: hsl(0, 0%, 100%, 0.9);
 		border-radius: 5px;
 		padding: 14px;
 		font-size: 15px;
+		box-shadow: 1rem 1rem 1rem -1rem #00000033;
 	}
 
 	:global(.firstPar) {
-		font-size: 30px;
-		line-height: 42px;
+		font-size: 2.4rem;
 		font-weight: 700;
 	}
 
 	:global(.carbonDi) {
 		background-color: rgb(225,29,41);
-		border-radius: 6px;
-		padding: 4px;
+		border-radius: 3px;
+		padding: 6px 6px 10px 6px;
 		color: #fff;
 		font-weight: 700;
+	}
+
+	:global(.carbonDi-inline) {
+		color: #rgb(225,29,41);
+		font-weight: 900;
 	}
 
 	:global(svelte-scroller-foreground) {
@@ -238,11 +244,13 @@
 	}
 
 	/* Arrow */
-	:global(.arrow) {
-        width:40px;
-        transform: rotate(275deg);
-		transform: scaleY(-1);
-
+	:global(.transitionArrow) {
+		position: inherit;
+		left:50vw;
     }
+
+	:global(.transition-space){
+		line-height: 1.5rem;
+	}
 
 </style>
