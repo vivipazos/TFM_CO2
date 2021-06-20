@@ -16,7 +16,7 @@ const arrow = './images/arrow.svg';
     <p class="year">Year: <b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
     <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
-        <source src="./smoke6.mp4" type="video/mp4">
+        <source src="./smokeLong.mp4" type="video/mp4">
     </video>
 
 <div id="1850-mark" class="mark" bind:this={mark1}>
