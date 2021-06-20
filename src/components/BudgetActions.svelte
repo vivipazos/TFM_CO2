@@ -27,6 +27,11 @@ $: if (action) {
 }
 
 $:modifiedValue = baseValue - actives_sum;
+
+$:if (modifiedValue < 1) {
+    modifiedValue = 1;
+}
+
 $:console.log(modifiedValue)
 
 const grow = () => {
