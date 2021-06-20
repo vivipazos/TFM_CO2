@@ -95,7 +95,7 @@ const arrow = './images/arrow.svg';
         position: absolute;
         height: 100vh;
         width: 15vw;
-        left: calc(var(--widthV) - 0vw);
+        left: calc(var(--widthV) - 2vw);
         object-fit: fill;
         offset: 0 0 0 3em;
         pointer-events: all;

@@ -44,13 +44,17 @@
 
 	// Toggle CSS displays
 
-	let mark1 
-
-	$:if (progress > 0.3) { 
-		mark1.style.opacity = 0; 
+	$:mark1 = null
+	
+	$:if (mark1 !== null) {
+	if (progress < 0.3) { 
+		mark1.style.opacity = 1; 
+	} else {
+		mark1.style.opacity = 0;
+	}
 	}
 
-	$:console.log(progress)
+	// $:console.log(progress)
 
 </script>
 

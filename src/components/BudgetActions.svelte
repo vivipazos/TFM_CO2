@@ -84,7 +84,7 @@ $:if (modifiedValue < 1) {
 </IntersectionObserver>   
 <style>
     .action-bar-wrapper {
-        box-shadow: 0 4px 2px -2px gray;
+        box-shadow: 0 1rem 1rem -1rem #00000033;
         background-color: white;
         position: sticky;
         top: 0;
