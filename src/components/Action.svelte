@@ -24,21 +24,20 @@ export let onChange;
 <div class="action">
     <Row>
     <Col cols={2} sm={0} md={2} lg={2}></Col>
-    <Col cols={7} sm={0} md={7} lg={7}>
-    <h4>{@html title}</h4>
+    <Col cols={8} sm={12} md={8} lg={8} class="pb-8">
+    <h3>{@html title}</h3>
     </Col>
     <Col cols={2} sm={0} md={2} lg={2}></Col>
     </Row>
-    <div class="action-block">
         <Row>
             <Col cols={2} sm={0} md={2} lg={2}></Col>
-            <Col cols={5} sm={0} md={5} lg={5}>
+            <Col cols={5} sm={10} md={5} lg={5}>
             <div>
             <div class="icon"><InlineSVG src='./images/{icon}.svg'/></div>
             <p><b>{label}</b></p>
             </div>
             </Col>
-            <Col cols={2} sm={0} md={2} lg={2}>
+            <Col cols={2} sm={2} md={2} lg={2}>
             <label class="switch">
                 <input type="checkbox" bind:checked={active} on:change={onChange}>
                 <span class="slider round"></span>
@@ -48,32 +47,18 @@ export let onChange;
         </Row>
         <Row>
             <Col cols={2} sm={0} md={2} lg={2}></Col>
-            <Col cols={5} sm={0} md={5} lg={5}>
+            <Col cols={5} sm={10} md={6} lg={6}>
             <p> {desc} </p>
             </Col>
-            <Col cols={5} sm={0} md={2} lg={5}}></Col>
+            <Col cols={5} sm={2} md={4} lg={4}}></Col>
         </Row>
-    </div>
-</div>
-</Container>
+    </Container>
 
 </MaterialApp>
 <style>
 
-    .h4 {
-        font-family: "Open Sans", sans-serif !important;
-        font-size: 30px;
-    }
-
     .action {
-        padding-bottom: 2rem;
-        margin-top: 50vh;
-        text-align: left;
-        margin: 0 auto;
-        /* width: 450px; */
         font-family: 'Open Sans', sans-serif;
-        font-size: 22px;
-        line-height: 26px;
     }
 
     .switch {

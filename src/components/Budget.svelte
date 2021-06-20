@@ -18,8 +18,8 @@ const arrow = './images/arrow.svg';
         <source src="./smoke6.mp4" type="video/mp4">
     </video>
 
-<div class="mark">
-    <div class="arrow">
+<div id="1850-mark" class="mark">
+    <div class="arrow3">
         <InlineSVG src={arrow}/>
     </div>
     <p title= "1850 represents the mid 1800s period, when industrial revolution kick in strong. It is also taken as the reference year for historical human-made emissions">
@@ -75,6 +75,7 @@ const arrow = './images/arrow.svg';
         animation: 3s fadeIn;
         animation-fill-mode: forwards;
         width: 130px;
+        display: block;
        
     }
     @keyframes fadeIn {
@@ -101,7 +102,7 @@ const arrow = './images/arrow.svg';
     }
 
     /* Arrow */
-    .arrow {
+    .arrow3 {
         width:40px;
     }
 

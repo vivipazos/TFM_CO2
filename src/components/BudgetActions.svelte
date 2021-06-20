@@ -27,6 +27,7 @@ $: if (action) {
 }
 
 $:modifiedValue = baseValue - actives_sum;
+
 $:console.log(modifiedValue)
 
 const grow = () => {
@@ -34,23 +35,44 @@ const grow = () => {
     growth += pace;
 }
 
-setInterval(grow, interval);
+let idVar = setInterval(grow, interval);
+
+$:if (growth > carbonEnd || modifiedValue < 1) { clearInterval(idVar) }
 
 $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
+
+$:if (modifiedValue < 1) {
+    modifiedValue = 0;
+}
+
 
 </script>
 <div class="action-bar-wrapper">
     <div class="budgetBar" style="width:{scale(growth)}vw">
         <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
-            <source src="./smoke_edge_loop2.mp4" type="video/mp4">
+            <source src="./smokeSquare2.mp4" type="video/mp4">
             </video>
     </div>
+    <div class="annotation-layer">
+        <p>This bar represents how much of the carbon budget is left.</p>
+        {#if modifiedValue > 1}
+        <p>Based on your choices below, annual emissions are now at {modifiedValue.toLocaleString('en-US')} Mt CO&#x2082;.</p>
+        {:else}
+        <p>Great! Annual emissions are now at zero! But it's unlikely all the choices you selected will happen - read below to find out more.</p>
+        {/if}
+    </div>
     <div class="carbon-limit">
+        {#if modifiedValue > 1}
         <p>We will reach the carbon limit in </p>
         <span class="yearEnd">{yearEnd}</span>
-        <div class="arrow">
+        <div class="arrow2">
             <InlineSVG src={arrow}/>
         </div>
+        {:else}
+        <div class="congrats-box">
+        <p><b>Congrats!</b> Your choices gave us more time.</p>
+        </div>
+        {/if}
     </div>
 </div>
 
@@ -121,6 +143,19 @@ video {
     opacity: 0.7;
 }
 
+.annotation-layer {
+    top: 10px;
+    left: 20px;
+    width: 300px;
+    position: absolute;
+    font-size: 14px;
+    z-index: 300;
+    text-align: left;
+    margin: 0 auto;
+    padding: 0;
+    opacity: 0.7;
+}
+
 .carbon-limit p {
     margin: 0;
 }
@@ -132,10 +167,15 @@ video {
 }
 
 /* Arrow */
-.arrow {
+.arrow2 {
         width:40px;
         transform: rotate(180deg);
         margin-left: 10vw;
 
     }
+
+.congrats-box {
+    text-align: left;
+
+}
 </style>
