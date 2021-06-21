@@ -50,7 +50,6 @@ $:if (modifiedValue < 1) {
     modifiedValue = 0;
 }
 
-$:console.log(growth)
 
 </script>
 <IntersectionObserver once {element} bind:intersecting={intersecting} threshold=1>
