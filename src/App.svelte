@@ -5,7 +5,7 @@
 	import Text from './components/common/Text.svelte';
 	import Scroller from '@sveltejs/svelte-scroller';
 	import Header from  './components/Header.svelte';
-	import Footer from './components/Footer.svelte';
+	import Footer2 from './components/Footer2.svelte';
 	import Sections from './components/Sections.svelte';
 
 	import { MaterialApp, Icon, Button } from 'svelte-materialify';
@@ -186,7 +186,7 @@
 	</div>
 
 	{:else if block.type === 'footer'}
-		<Footer>
+		<Footer2>
 			<div slot="about">
 				{#each block.about as text}
 				{@html text.p}
@@ -208,7 +208,7 @@
 				{/each}
 			</div>
 
-		</Footer>
+		</Footer2>
 	{/if}
 
 {/each}
