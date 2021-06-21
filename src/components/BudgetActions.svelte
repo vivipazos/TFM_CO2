@@ -6,6 +6,10 @@ import IntersectionObserver from "svelte-intersection-observer";
 export let action;
 export let carbon;
 
+export function reset() {
+    growth = +carbonStart;
+}
+
 const arrow = './images/arrow.svg';
 
 let element;
