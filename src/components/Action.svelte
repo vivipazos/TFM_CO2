@@ -50,7 +50,7 @@ if (points.style.display === "none") {
             <Col cols={2} sm={0} md={2} lg={2}></Col>
             <Col cols={5} sm={10} md={5} lg={5}>
             <div>
-            <div class="icon"><InlineSVG src='./images/{icon}.svg'/></div>
+            <div class="icon"><InlineSVG src='./images/{icon}.svg'/> </div>
             <p><b>{label}</b></p>
             </div>
             </Col>

@@ -47,6 +47,8 @@
 
 	$:mark1 = null
 	$:limitbg = null
+	$:mark1990 = null
+	$:mark2017 = null
 	
 	$:if (mark1 !== null) {
 	if (progress < 0.3) { 
@@ -61,6 +63,20 @@
 		limitbg.style.opacity = 0;
 	} else {
 		limitbg.style.opacity = 1;
+	}
+	}
+	$:if (mark1990 !== null) {
+	if (progress > 0.8 && progress < 0.9 ) {
+		mark1990.style.opacity = 1;
+	} else {
+		mark1990.style.opacity = 0;
+	}
+	}
+	$:if (mark2017 !== null) {
+		if (progress > 0.8  && progress < 0.9 ) {
+		mark2017.style.opacity = 1;
+	} else {
+		mark2017.style.opacity = 0;
 	}
 	}
 
@@ -97,6 +113,8 @@
 					{data}
 					bind:mark1 = {mark1}
 					bind:limitbg = {limitbg}
+					bind:mark1990 = {mark1990}
+					bind:mark2017 = {mark2017}
 				/>
 			</div>
 
