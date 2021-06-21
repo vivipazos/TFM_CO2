@@ -1,7 +1,12 @@
 <script>
 import InlineSVG from 'svelte-inline-svg';
-import { MaterialApp, Container, Row, Col } from 'svelte-materialify';
-
+import { MaterialApp, Container, Row, Col, ExpansionPanel, ExpansionPanels, Icon } from 'svelte-materialify';
+import {
+    mdiArrowDownDropCircleOutline,
+    mdiArrowDownDropCircle,
+    mdiMenuDown,
+    mdiArrowUpDown,
+  } from '@mdi/js';
 
 export let desc;
 export let category;
@@ -16,23 +21,6 @@ export let title;
 export let active;
 export let onChange;
 
-function toggleText() {
-    var points = document.getElementById("points");
-    var showMoreText = document.getElementById("moreText");
-    var buttonText = document.getElementById("textButton");
-
-if (points.style.display === "none") {
-    showMoreText.style.display = "none";
-    points.style.display = "inline";
-    buttonText.innerHTML = "Show More";
-}
-
-  else {
-    showMoreText.style.display = "inline";
-    points.style.display = "none";
-    buttonText.innerHTML = "Show Less";
-  }
-}
 </script>
 
 <MaterialApp>
@@ -65,13 +53,16 @@ if (points.style.display === "none") {
         <Row>
             <Col cols={2} sm={0} md={2} lg={2}></Col>
             <Col cols={5} sm={10} md={6} lg={6}>
-            <span id="points">...</span>
-            <span id="moreText" style="display:none">
-                <p> {@html desc} </p>
-            </span>
-            <button on:click={toggleText} id="textButton">
-                Show More
-            </button>
+
+                <ExpansionPanels popout>
+                    <ExpansionPanel>
+                        <span slot="icon" let:active>
+                            <Icon path={mdiArrowDownDropCircleOutline} rotate={active ? 180 : 0} />
+                          </span>
+                        <p> {@html desc} </p>
+                    </ExpansionPanel>
+                </ExpansionPanels>
+
             </Col>
             <Col cols={5} sm={2} md={4} lg={4}}></Col>
         </Row>
