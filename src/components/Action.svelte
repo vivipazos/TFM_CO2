@@ -37,18 +37,20 @@ export let onChange;
     <Col cols={2} sm={1} md={2} lg={2}></Col>
 </Row>
         <Row>
-            <Col cols={2} sm={1} md={2} lg={2}></Col>
+            <Col cols={2} sm={1} md={2} lg={2}>
+            
+            </Col>
             <Col cols={8} sm={11} md={8} lg={8}> 
                 <ExpansionPanels popout>
                     <ExpansionPanel>
                         <span slot="header">
                             <div class="toggleBoxes">
+                                <label class="switch">
+                                    <input type="checkbox" bind:checked={active} on:change={onChange}>
+                                    <span class="slider round"></span>
+                                </label>
                             <div class="iconSVG"><InlineSVG src='./images/{icon}.svg'/></div>
                             <p class="label">{label}</p> 
-                            <label class="switch">
-                                <input type="checkbox" bind:checked={active} on:change={onChange}>
-                                <span class="slider round"></span>
-                            </label>
                             </div>
                         </span>
                         <span slot="icon" let:active>
@@ -71,11 +73,10 @@ export let onChange;
     }
 
     .switch {
-        position: absolute;
+        position: relative;
         display: inline-block;
         width: 60px;
         height: 34px;
-        margin-left: 33vw;
     }
 
     .switch input { 
@@ -141,10 +142,11 @@ export let onChange;
     }
 
     p.label {
-        font-weight: 400;
+        font-weight: 600;
         font-size: 1rem;
         color: black;
         margin-bottom: 0;
+        padding: 5px 0 0 10px;
     }
 
     :global(.s-expansion-panel:before) {
