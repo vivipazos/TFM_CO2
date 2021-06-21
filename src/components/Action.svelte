@@ -67,6 +67,7 @@ export let onChange;
 <style>
     .action {
         font-family: 'Open Sans', sans-serif;
+        z-index: -1;
     }
 
     .switch {

@@ -4,8 +4,8 @@ export let  data;
 import ScatterCanvas from './charts/ScatterCanvas.svelte'
 
 let scatterStep=0;
-let width=1000;
-let height=900;
+let width=500;
+let height=500;
 
 
 </script>
@@ -28,11 +28,15 @@ let height=900;
         </div>
 
    <div class='col scrollyText'>
-       <p> Accumulated emissions of CO2  as counted between 1990-2017. See them as broken down by:</p>
+       <p> Accumulated emissions of <span class="carbonDi-inline"> CO&#x2082;</span> as counted between 1990-2017. Choose how you want to <b>explore</b> them :</p>
        <button class="ripple" tooltip="Accumulated emissions 1990-2017, global"  on:click={() => scatterStep = 0}> Global</button>
+       <br>
        <button class="ripple" title="Accumulated direct emissions 1990-2017, by countries according to their domestic production" on:click={() => scatterStep = 1}> Countries by production</button>
+       <br>
        <button class="ripple" title="Accumulated direct emissions 1990-2017, by countries according to their consumption, regardless of the place of production" on:click={() => scatterStep = 2}> Countries by consumption</button>
+       <br>
        <button class="ripple" title="Main activities responsible for emissions, global % "  on:click={() => scatterStep = 3}> Sectors</button>
+       <br>
        <button class="ripple" title="Activities reponsible for emissions in detail, global %" on:click={() => scatterStep = 4}> Sectors in more detail </button>
    </div>
 
@@ -45,9 +49,9 @@ let height=900;
 <style>
     .col {
         position:absolute;
-        top: 25vh;
+        top: 10vh;
         margin: 0 auto;
-        left: -20vw;
+        left: -10vw;
         width: 300px;
 
     }
@@ -64,13 +68,14 @@ let height=900;
         transition: background 400ms;
         color: black;
         background-color: #f4f4f4;
-        padding: 0.5em;
+        padding: 0.25em;
         font-family: 'Open Sans', sans-serif;
         font-size: 15px;
         outline: 0;
         border: 0;
         border-radius: 0.25rem;
         cursor: pointer;
+        position: center
     }
 
     .ripple {

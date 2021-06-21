@@ -7,6 +7,8 @@ export let year;
 export let widthV;
 export let mark1;
 export let limitbg;
+export let mark1990;
+export let mark2017;
 
 const arrow = './images/arrow.svg';
 
@@ -16,7 +18,7 @@ const arrow = './images/arrow.svg';
 <div style="--widthV: {widthV}" class="budgetBarYearly">
     <p class="year">Year: <b>{year}</b><br>{(carbon/1000).toFixed(2)} Gt CO&#x2082;</p>
     <!-- <p class="yearLimit">2040</p> -->
-    <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
+    <video autoplay muted loop>
         <source src="./smokeLong.mp4" type="video/mp4">
     </video>
 
@@ -24,9 +26,14 @@ const arrow = './images/arrow.svg';
     <div class="arrow3">
         <InlineSVG src={arrow}/>
     </div>
-    <p title= "1850 represents the mid 1800s period, when industrial revolution kick in strong. It is also taken as the reference year for historical human-made emissions">
-        In <b>1850</b> we started with <br> 7.23 Gt CO&#x2082; in the atmosphere.
+    <p >In <b>1850</b> we started with <br> 7.23 Gt CO&#x2082; in the atmosphere.
     </p>
+</div>
+<div id="1990" class="mark1990" bind:this={mark1990}>
+    <p ><b>1990</b></p>
+</div>
+<div id="2017" class="mark2017" bind:this={mark2017}>
+    <p ><b>2017</b></p>
 </div>
 </div>
 <div class="limit-bg" bind:this={limitbg}>
@@ -85,6 +92,30 @@ const arrow = './images/arrow.svg';
         transition: opacity 0.5s;
        
     }
+    .mark1990 {
+        height: 60px;
+        margin: 10px;
+        position:absolute;
+        top: 0;
+        left: 48vw;
+        z-index: 100;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        color: black;
+       
+    }
+    .mark2017 {
+        height: 60px;
+        margin: 10px;
+        position:absolute;
+        top: 0;
+        left: 80vw;
+        z-index: 100;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        color: black;
+       
+    }
     @keyframes fadeIn {
     99% {
         visibility: hidden;
@@ -102,7 +133,7 @@ const arrow = './images/arrow.svg';
         position: absolute;
         height: 100vh;
         width: 15vw;
-        left: calc(var(--widthV) - 2vw);
+        left: calc(var(--widthV) - 0vw);
         object-fit: fill;
         offset: 0 0 0 3em;
         pointer-events: all;
@@ -116,8 +147,8 @@ const arrow = './images/arrow.svg';
     .limit-bg {
         background-color:white;
         background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAKElEQVQYV2NkwA58GbGI+zIwMGxGlwALghQjS8AFkSVQBGESGIIgCQBVnAVUPcxeHAAAAABJRU5ErkJggg==) repeat;
-        left:80vw;
-        width:20vw;
+        left:87.5vw;
+        width:12.5vw;
         height:100vh;
         position: absolute;
         top: 0;
