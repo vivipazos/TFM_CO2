@@ -6,6 +6,10 @@ import IntersectionObserver from "svelte-intersection-observer";
 export let action;
 export let carbon;
 
+export function reset() {
+    growth = +carbonStart;
+}
+
 const arrow = './images/arrow.svg';
 
 let element;
@@ -42,12 +46,16 @@ const grow = () => {
 let idVar
 $:if (intersecting) { idVar = setInterval(grow, interval); }
 
-$:if (growth > carbonEnd || modifiedValue < 1) { clearInterval(idVar) }
+$:if (growth > carbonEnd || modifiedValue < 1) { clearInterval(idVar) } // Stops growth when annual emissions are below 0
 
 $:yearEnd = 2020 + Math.floor((carbonEnd - carbonStart) / modifiedValue);
 
 $:if (modifiedValue < 1) {
     modifiedValue = 0;
+}
+
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
 $:console.log(growth)
@@ -61,16 +69,15 @@ $:console.log(growth)
             </video>
     </div>
     <div class="annotation-layer">
-        <p>This bar represents how much of the carbon budget is left.</p>
         {#if modifiedValue > 1}
-        <p>Based on your choices below, annual emissions are now at {modifiedValue} Mt CO&#x2082;.</p>
+        <p class="bolder">Based on your choices, annual emissions are now at: <b>{numberWithSpaces(modifiedValue)}</b> Mt CO&#x2082;.</p>
         {:else}
         <p>Great! Annual emissions are now at zero! But it's unlikely all the choices you selected will happen - read below to find out more.</p>
         {/if}
     </div>
     <div class="carbon-limit">
         {#if modifiedValue > 1}
-        <p>We will reach the carbon limit in </p>
+        <p>We may reach the carbon limit in </p>
         <span class="yearEnd">{yearEnd}</span>
         <div class="arrow2">
             <InlineSVG src={arrow}/>
@@ -184,5 +191,9 @@ video {
 .congrats-box {
     text-align: left;
 
+}
+
+p.bolder {
+    font-weight: 600;
 }
 </style>

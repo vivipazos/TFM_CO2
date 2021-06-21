@@ -8,8 +8,11 @@
 	import Footer from './components/Footer.svelte';
 	import Sections from './components/Sections.svelte';
 
+	import { MaterialApp, Icon, Button } from 'svelte-materialify';
+	import { mdiRefresh } from '@mdi/js';
+
 	import InlineSVG from 'svelte-inline-svg';
-	
+
 	const transitionArrow = './images/transitionArrow.svg';
 
 	import data from './data/data.json'
@@ -20,6 +23,8 @@
 	export let content;
 	export let actions;
 	export let carbon;
+
+	let budgetActions;
 
 	let carbon_modi = carbon.map(d => {
           d.year = parseFloat(d.year);
@@ -78,6 +83,12 @@
 	} else {
 		mark2017.style.opacity = 0;
 	}
+	}
+
+	function resetActions() {
+		budgetActions.reset();
+		actions.forEach(a => a.active = false);
+		actions = actions; // triggers svelte re-render
 	}
 
 	// $:console.log(progress)
@@ -147,13 +158,23 @@
 			<InlineSVG src={transitionArrow}/>
 		</div>
 	</div>
-	
+
 	{:else if block.type === 'calculator'}
 	<div class="calc">
 		<BudgetActions
+			bind:this={budgetActions}
 			action = {data_modified}
 			{carbon}
 		/>
+
+		<MaterialApp>
+			<div class="d-flex flex-column flex-sm-row justify-space-between">
+				<Button fab on:click={resetActions}>
+					<Icon path={mdiRefresh} />
+					Reset
+				</Button>
+			</div>
+		</MaterialApp>
 
 		{#each actions as object}
 			<Action
