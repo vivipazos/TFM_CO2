@@ -29,35 +29,28 @@ export let onChange;
 <Container>
 
 <div class="action">
-    <Row>
-    <Col cols={2} sm={0} md={2} lg={2}></Col>
-    <Col cols={8} sm={12} md={8} lg={8} class="pb-8">
-    <h3>{@html title}</h3>
+<Row>
+    <Col cols={4} sm={0} md={3} lg={3}></Col>
+    <Col cols={4} sm={12} md={6} lg={6} class="pb-1">
+        <h3>{@html title}</h3>
     </Col>
-    <Col cols={2} sm={0} md={2} lg={2}></Col>
-    </Row>
+    <Col cols={4} sm={0} md={3} lg={3}></Col>
+</Row>
         <Row>
-            <Col cols={2} sm={0} md={2} lg={2}></Col>
-            <Col cols={5} sm={10} md={5} lg={5}>
-            <div>
-            <div class="icon"><InlineSVG src='./images/{icon}.svg'/></div>
-            <p><b>{label}</b></p>
-            </div>
-            </Col>
-            <Col cols={2} sm={2} md={2} lg={2}>
-            <label class="switch">
-                <input type="checkbox" bind:checked={active} on:change={onChange}>
-                <span class="slider round"></span>
-            </label>
-            </Col>
-            <Col cols={2} sm={0} md={2} lg={2}></Col>
-        </Row>
-        <Row>
-            <Col cols={2} sm={0} md={2} lg={2}></Col>
-            <Col cols={5} sm={10} md={6} lg={6}>
-
+            <Col cols={2} sm={1} md={2} lg={2}></Col>
+            <Col cols={8} sm={11} md={8} lg={8}> 
                 <ExpansionPanels popout>
                     <ExpansionPanel>
+                        <span slot="header">
+                            <div class="toggleBoxes">
+                            <div class="icon"><InlineSVG src='./images/{icon}.svg'/></div>
+                            <p class="label">{label}</p> 
+                            <label class="switch">
+                                <input type="checkbox" bind:checked={active} on:change={onChange}>
+                                <span class="slider round"></span>
+                            </label>
+                            </div>
+                        </span>
                         <span slot="icon" let:active>
                             <Icon path={mdiArrowDownDropCircleOutline} rotate={active ? 180 : 0} />
                           </span>
@@ -66,7 +59,7 @@ export let onChange;
                 </ExpansionPanels>
 
             </Col>
-            <Col cols={5} sm={2} md={4} lg={4}}></Col>
+            <Col cols={2} sm={1} md={2} lg={2}}></Col>
         </Row>
     </Container>
 
@@ -135,7 +128,6 @@ export let onChange;
 
     .icon {
         max-width: 40px; 
-        display: inline-block;
     }
 
     :global(.s-col){
@@ -143,7 +135,17 @@ export let onChange;
     }
 
     :global(.s-expansion-panels) {
-        z-index: 0;
+        z-index: 0 !important;
+    }
+
+    p.label {
+        font-weight: 600;
+        font-size: 1rem;
+        color: black;
+    }
+
+    :global(.s-expansion-panel) {
+        box-shadow: 0;
     }
 
 </style>
