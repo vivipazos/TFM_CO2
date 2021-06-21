@@ -1,11 +1,12 @@
 <script>
 import InlineSVG from 'svelte-inline-svg';
-import { MaterialApp, Container, Row, Col, ExpansionPanel, ExpansionPanels, Icon } from 'svelte-materialify';
+import { MaterialApp, Container, Row, Col, ExpansionPanel, ExpansionPanels, Icon, Button } from 'svelte-materialify';
 import {
     mdiArrowDownDropCircleOutline,
     mdiArrowDownDropCircle,
     mdiMenuDown,
     mdiArrowUpDown,
+    mdiRefresh
   } from '@mdi/js';
 
 export let desc;
@@ -26,6 +27,7 @@ export let onChange;
 <MaterialApp>
 
 <Container>
+
 <div class="action">
     <Row>
     <Col cols={2} sm={0} md={2} lg={2}></Col>
@@ -138,6 +140,10 @@ export let onChange;
 
     :global(.s-col){
         padding:0;
+    }
+
+    :global(.s-expansion-panels) {
+        z-index: 0;
     }
 
 </style>
