@@ -29,44 +29,39 @@ export let onChange;
 <Container>
 
 <div class="action">
-    <Row>
-    <Col cols={2} sm={0} md={2} lg={2}></Col>
-    <Col cols={8} sm={12} md={8} lg={8} class="pb-8">
-    <h3>{@html title}</h3>
+<Row>
+    <Col cols={2}} sm={1} md={2} lg={2}></Col>
+    <Col cols={8} sm={11} md={8} lg={8} class="pb-1">
+        <h3 class="category">{@html title}</h3>
     </Col>
-    <Col cols={2} sm={0} md={2} lg={2}></Col>
-    </Row>
+    <Col cols={2} sm={1} md={2} lg={2}></Col>
+</Row>
         <Row>
-            <Col cols={2} sm={0} md={2} lg={2}></Col>
-            <Col cols={5} sm={10} md={5} lg={5}>
-            <div>
-            <div class="icon"><InlineSVG src='./images/{icon}.svg'/> </div>
-            <p><b>{label}</b></p>
-            </div>
+            <Col cols={2} sm={1} md={2} lg={2}>
+            
             </Col>
-            <Col cols={2} sm={2} md={2} lg={2}>
-            <label class="switch">
-                <input type="checkbox" bind:checked={active} on:change={onChange}>
-                <span class="slider round"></span>
-            </label>
-            </Col>
-            <Col cols={2} sm={0} md={2} lg={2}></Col>
-        </Row>
-        <Row>
-            <Col cols={2} sm={0} md={2} lg={2}></Col>
-            <Col cols={5} sm={10} md={6} lg={6}>
-
+            <Col cols={8} sm={11} md={8} lg={8}> 
                 <ExpansionPanels popout>
                     <ExpansionPanel>
+                        <span slot="header">
+                            <div class="toggleBoxes">
+                                <label class="switch">
+                                    <input type="checkbox" bind:checked={active} on:change={onChange}>
+                                    <span class="slider round"></span>
+                                </label>
+                            <div class="iconSVG"><InlineSVG src='./images/{icon}.svg'/></div>
+                            <p class="label">{label}</p> 
+                            </div>
+                        </span>
                         <span slot="icon" let:active>
                             <Icon path={mdiArrowDownDropCircleOutline} rotate={active ? 180 : 0} />
-                          </span>
+                        </span>
                         <p> {@html desc} </p>
                     </ExpansionPanel>
                 </ExpansionPanels>
 
             </Col>
-            <Col cols={5} sm={2} md={4} lg={4}}></Col>
+            <Col cols={2} sm={1} md={2} lg={2}}></Col>
         </Row>
     </Container>
 
@@ -134,9 +129,8 @@ export let onChange;
         border-radius: 50%;
     }
 
-    .icon {
+    .iconSVG {
         max-width: 40px; 
-        display: inline-block;
     }
 
     :global(.s-col){
@@ -144,7 +138,40 @@ export let onChange;
     }
 
     :global(.s-expansion-panels) {
-        z-index: 0;
+        z-index: 0 !important;
+    }
+
+    p.label {
+        font-weight: 600;
+        font-size: 1rem;
+        color: black;
+        margin-bottom: 0;
+        padding: 5px 0 0 10px;
+    }
+
+    :global(.s-expansion-panel:before) {
+        box-shadow: none !important;
+    }
+
+    :global(button.s-expansion-panel__header) {
+        padding: 6px 2px !important;
+    }
+
+    .toggleBoxes {
+        display: flex;
+        padding: 10px;
+    }
+
+    .category {
+        margin-left: 20px;
+    }
+
+    :global(.s-icon) {
+        padding-right:15px;
+    }
+
+    :global(.s-expansion-panel__icon){
+        margin-left: 0 !important;
     }
 
 </style>

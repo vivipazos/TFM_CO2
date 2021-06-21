@@ -58,7 +58,7 @@ function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
 
-$:console.log(growth)
+// $:console.log(growth)
 
 </script>
 <IntersectionObserver once {element} bind:intersecting={intersecting} threshold=1>

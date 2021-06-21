@@ -167,15 +167,16 @@
 			{carbon}
 		/>
 
+	<div class="calc-header">
 		<MaterialApp>
 			<div class="d-flex flex-column flex-sm-row justify-space-between">
-				<Button fab on:click={resetActions}>
+				<Button outlined on:click={resetActions}>
 					<Icon path={mdiRefresh} />
-					Reset
+					&#xa0;Reset
 				</Button>
 			</div>
 		</MaterialApp>
-
+	</div>
 		{#each actions as object}
 			<Action
 			{...object}
@@ -290,6 +291,13 @@
 
 	:global(.transition-space){
 		line-height: 1.5rem;
+	}
+
+	:global(.calc-header){
+		width: 20px;
+		left: 20vw;
+		padding: 1rem;
+
 	}
 
 </style>
