@@ -30,26 +30,26 @@ export let onChange;
 
 <div class="action">
 <Row>
-    <Col cols={2}} sm={1} md={2} lg={2}></Col>
+    <Col cols={2} sm={1} md={2} lg={2}></Col>
     <Col cols={8} sm={11} md={8} lg={8} class="pb-1">
         <h3 class="category">{@html title}</h3>
     </Col>
     <Col cols={2} sm={1} md={2} lg={2}></Col>
 </Row>
         <Row>
-            <Col cols={2} sm={1} md={2} lg={2}>
-            
+            <Col cols={2} sm={1} md={2} lg={2}></Col>
+            <Col cols={1} sm={1} md={1} lg={1}>
+                <label class="switch">
+                    <input type="checkbox" bind:checked={active} on:change={onChange}>
+                    <span class="slider round"></span>
+                </label>
             </Col>
-            <Col cols={8} sm={11} md={8} lg={8}> 
+            <Col cols={4} sm={10} md={4} lg={4}> 
                 <ExpansionPanels popout>
                     <ExpansionPanel>
                         <span slot="header">
                             <div class="toggleBoxes">
-                                <label class="switch">
-                                    <input type="checkbox" bind:checked={active} on:change={onChange}>
-                                    <span class="slider round"></span>
-                                </label>
-                            <div class="iconSVG"><InlineSVG src='./images/{icon}.svg'/></div>
+                            <InlineSVG class="iconSVG" src='./images/{icon}.svg'/>
                             <p class="label">{label}</p> 
                             </div>
                         </span>
@@ -77,6 +77,8 @@ export let onChange;
         display: inline-block;
         width: 60px;
         height: 34px;
+        margin: 1rem 2px 0 1rem;
+        text-align: right;
     }
 
     .switch input { 
@@ -129,8 +131,8 @@ export let onChange;
         border-radius: 50%;
     }
 
-    .iconSVG {
-        max-width: 40px; 
+    :global(svg#iconSVG) {
+        max-width: 30px; 
     }
 
     :global(.s-col){
@@ -151,6 +153,7 @@ export let onChange;
 
     :global(.s-expansion-panel:before) {
         box-shadow: none !important;
+        max-width:420px !important;
     }
 
     :global(button.s-expansion-panel__header) {
@@ -160,6 +163,7 @@ export let onChange;
     .toggleBoxes {
         display: flex;
         padding: 10px;
+        width: 380px;
     }
 
     .category {
@@ -172,6 +176,10 @@ export let onChange;
 
     :global(.s-expansion-panel__icon){
         margin-left: 0 !important;
+    }
+
+    :global(.s-expansion-panels.popout>.s-expansion-panel) {
+        max-width: 420px !important;
     }
 
 </style>

@@ -91,8 +91,6 @@
 		actions = actions; // triggers svelte re-render
 	}
 
-	// $:console.log(progress)
-
 </script>
 
 <svelte:head>
