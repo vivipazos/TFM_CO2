@@ -28,7 +28,7 @@
 		context.strokeStyle = stroke;
 		context.rect($_x, $_y, $_width, $_height);
 		context.stroke()
-		if ( $_height>30) context.fillText(text, $_x+$_width/2, $_y+15/2+$_height/2)
+		if ( $_height>20) context.fillText(text, $_x+$_width/2, $_y+15/2+$_height/2)
 		context.font = "15px Open Sans";
 		context.fillStyle = "white";
         context.textAlign = "center";

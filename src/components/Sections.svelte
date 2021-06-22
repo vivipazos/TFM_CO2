@@ -28,12 +28,12 @@ let height=500;
         </div>
 
    <div class='col scrollyText'>
-       <p> Accumulated emissions of <span class="carbonDi-inline"> CO&#x2082;</span> as counted between 1990-2017. Choose how you want to <b>explore</b> them :</p>
-       <button class="ripple" tooltip="Accumulated emissions 1990-2017, global"  on:click={() => scatterStep = 0}> Global</button>
+        <h2>946 Gt</h2> <p> of human-made <span class="carbonDi-inline"> CO&#x2082;</span> emissions accumulates between 1990-2017. <br>Choose how you want to <b>explore</b> them :</p>
+       <button class="ripple" tooltip="Accumulated emissions, global"  on:click={() => scatterStep = 0}> Global</button>
        <br>
-       <button class="ripple" title="Accumulated direct emissions 1990-2017, by countries according to their domestic production" on:click={() => scatterStep = 1}> Countries by production</button>
+       <button class="ripple" title="Accumulated direct emissions, according to countries' domestic production" on:click={() => scatterStep = 1}> Countries by production</button>
        <br>
-       <button class="ripple" title="Accumulated direct emissions 1990-2017, by countries according to their consumption, regardless of the place of production" on:click={() => scatterStep = 2}> Countries by consumption</button>
+       <button class="ripple" title="Accumulated direct emissions, according to countries' consumption, regardless of the place of production" on:click={() => scatterStep = 2}> Countries by consumption</button>
        <br>
        <button class="ripple" title="Main activities responsible for emissions, global % "  on:click={() => scatterStep = 3}> Sectors</button>
        <br>
@@ -95,7 +95,7 @@ let height=500;
         transition: background 0s;
     }
 
-
+hs { }
    
 </style>
 
