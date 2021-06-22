@@ -279,12 +279,15 @@
 		margin: 0 auto;
 		width: 500px;
 		text-align: left;
+		height: 480px;
 	}
 
 	/* Arrow */
 	:global(.transitionArrow) {
-		position: inherit;
-		left:50vw;
+		position: relative;
+		left: 100%;
+		top: -25vh;
+
     }
 
 	:global(.transition-space){
@@ -293,7 +296,7 @@
 
 	:global(.calc-header){
 		width: 20px;
-		left: 20vw;
+		margin-left: 1rem;
 		padding: 1rem;
 
 	}

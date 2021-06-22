@@ -62,6 +62,7 @@ function numberWithSpaces(x) {
 
 </script>
 <IntersectionObserver once {element} bind:intersecting={intersecting} threshold=1>
+<hr>
 <div bind:this={element} class="action-bar-wrapper">
     <div class="budgetBar" style="width:{scale(growth)}vw">
         <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
@@ -195,5 +196,11 @@ video {
 
 p.bolder {
     font-weight: 600;
+}
+
+hr {
+    border-top: 2px solid black;
+    position: relative;
+    top: -10px;
 }
 </style>

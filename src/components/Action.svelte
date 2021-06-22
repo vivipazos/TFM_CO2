@@ -30,26 +30,26 @@ export let onChange;
 
 <div class="action">
 <Row>
-    <Col cols={2} sm={1} md={2} lg={2}></Col>
+    <Col cols={3} sm={0} md={3} lg={3}></Col>
     <Col cols={8} sm={11} md={8} lg={8} class="pb-1">
         <h3 class="category">{@html title}</h3>
     </Col>
     <Col cols={2} sm={1} md={2} lg={2}></Col>
 </Row>
         <Row>
-            <Col cols={2} sm={1} md={2} lg={2}></Col>
+            <Col cols={3} sm={0} md={3} lg={3}></Col>
             <Col cols={1} sm={1} md={1} lg={1}>
                 <label class="switch">
                     <input type="checkbox" bind:checked={active} on:change={onChange}>
                     <span class="slider round"></span>
                 </label>
             </Col>
-            <Col cols={4} sm={10} md={4} lg={4}> 
+            <Col cols={4} sm={6} md={4} lg={4}> 
                 <ExpansionPanels popout>
                     <ExpansionPanel>
                         <span slot="header">
                             <div class="toggleBoxes">
-                            <InlineSVG class="iconSVG" src='./images/{icon}.svg'/>
+                            <InlineSVG src='./images/{icon}.svg'/>
                             <p class="label">{label}</p> 
                             </div>
                         </span>
@@ -61,7 +61,6 @@ export let onChange;
                 </ExpansionPanels>
 
             </Col>
-            <Col cols={2} sm={1} md={2} lg={2}}></Col>
         </Row>
     </Container>
 
