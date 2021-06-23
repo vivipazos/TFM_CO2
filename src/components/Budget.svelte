@@ -9,6 +9,7 @@ export let mark1;
 export let limitbg;
 export let mark1990;
 export let mark2017;
+export let mark2040;
 
 const arrow = './images/arrow.svg';
 
@@ -26,8 +27,14 @@ const arrow = './images/arrow.svg';
     <div class="arrow3">
         <InlineSVG src={arrow}/>
     </div>
-    <p >In <b>1850</b> we started with <br> 7.23 Gt CO&#x2082; in the atmosphere.
+    <p >This <b>red smoke</b> is how much CO&#x2082; was in the atmosphere in 1850.
     </p>
+</div>
+<div id="2040-mark" class="mark2040" bind:this={mark2040}>
+    <p >This is the carbon limit. We don't want to reach here.</p>
+    <div class="arrow2040">
+        <InlineSVG src={arrow}/>
+    </div>
 </div>
 <div id="1990" class="mark1990" bind:this={mark1990}>
     <p ><b>1990</b></p>
@@ -116,6 +123,21 @@ const arrow = './images/arrow.svg';
         color: black;
        
     }
+
+    .mark2040 {
+        height: 60px;
+        margin: 10px;
+        width: 100px;
+        position:absolute;
+        top: 0;
+        right: 1rem;
+        z-index: 100;
+        font-family: 'Open Sans', sans-serif;
+        font-weight: 300;
+        color: black;
+        top: 10vh;
+       
+    }
     @keyframes fadeIn {
     99% {
         visibility: hidden;
@@ -142,6 +164,13 @@ const arrow = './images/arrow.svg';
 /* Arrow */
     .arrow3 {
         width:40px;
+    }
+
+    .arrow2040 {
+        width:40px;
+        transform: rotate(180deg);
+        margin-left: 5rem;
+        margin-top: -1rem;
     }
 
     .limit-bg {

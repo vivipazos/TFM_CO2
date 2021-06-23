@@ -54,6 +54,7 @@
 	$:limitbg = null
 	$:mark1990 = null
 	$:mark2017 = null
+	$:mark2040 = null
 	
 	$:if (mark1 !== null) {
 	if (progress < 0.3) { 
@@ -79,6 +80,13 @@
 	}
 	$:if (mark2017 !== null) {
 		if (progress > 0.8  && progress < 0.9 ) {
+		mark2017.style.opacity = 1;
+	} else {
+		mark2017.style.opacity = 0;
+	}
+	}
+	$:if (mark2040 !== null) {
+		if (progress > 0.7  && progress < 0.99 ) {
 		mark2017.style.opacity = 1;
 	} else {
 		mark2017.style.opacity = 0;
@@ -124,6 +132,7 @@
 					bind:limitbg = {limitbg}
 					bind:mark1990 = {mark1990}
 					bind:mark2017 = {mark2017}
+					bind:mark2040 = {mark2040}
 				/>
 			</div>
 
