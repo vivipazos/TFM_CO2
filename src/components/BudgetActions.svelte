@@ -65,7 +65,7 @@ function numberWithSpaces(x) {
 <hr>
 <div bind:this={element} class="action-bar-wrapper">
     <div class="budgetBar" style="width:{scale(growth)}vw">
-        <video title= "The width of the red is the accumulated emissions. There is some uncertainty in the numbers, that is why the edge is not precisely defined" autoplay muted loop>
+        <video  autoplay muted loop>
             <source src="./smokeWide3.mp4" type="video/mp4">
             </video>
     </div>
@@ -183,10 +183,10 @@ video {
 
 /* Arrow */
 .arrow2 {
-        width:40px;
+        width:30px;
         transform: rotate(180deg);
-        margin-left: 10vw;
-
+        position: relative;
+        margin-left: 80%;
     }
 
 .congrats-box {
@@ -201,6 +201,5 @@ p.bolder {
 hr {
     border-top: 2px solid black;
     position: relative;
-    top: -10px;
 }
 </style>

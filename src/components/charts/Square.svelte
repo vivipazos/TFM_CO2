@@ -8,9 +8,9 @@
 	export let width = 1;
 	export let height = 1;
 	export let fill = "null";
-	export let stroke = "white";
-    export let lineWidth = 1;
+	export let lineWidth = 1;
 	export let text =""
+	export let stroke= "white"
 
     const _x = tweened(x, { duration: 600, easing:quadOut});
     const _y = tweened(y, { duration: 600, easing:quadOut});
@@ -25,7 +25,9 @@
 		context.fillStyle = fill;
 		context.beginPath();
 		context.lineWidth = lineWidth;
-		context.strokeStyle = stroke;
+		context.strokeStyle= stroke 	
+		if ( $_height>0) context.globalAlpha = 1;
+		if ( $_height<0.0000001) context.globalAlpha = 0;
 		context.rect($_x, $_y, $_width, $_height);
 		context.stroke()
 		if ( $_height>20) context.fillText(text, $_x+$_width/2, $_y+15/2+$_height/2)

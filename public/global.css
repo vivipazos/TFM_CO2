@@ -20,7 +20,7 @@ h1 {
 	font-size: 3rem;
 	line-height: 1.15;
 }
-h2, h3, h4, p { line-height: 1.5 !important; }
+h2, h3, h4, p, sp { line-height: 1.5 !important; }
 h2, h3 { font-weight: 400; }
 h2 { font-size: 2.2rem !important;}
 h3 { font-size: 0.9rem !important;
@@ -33,6 +33,11 @@ h4 {
 }
 p { 
 	font-size: 1rem;
+	font-weight: 400;
+	font-family: 'Open Sans', sans-serif !important;
+}
+sp { 
+	font-size: 0.8rem;
 	font-weight: 400;
 	font-family: 'Open Sans', sans-serif !important;
 }
@@ -91,3 +96,37 @@ section.col-text.text {
 	font-size: 1.5rem !important;
 	font-weight: 600 !important;
 }
+
+    
+a {
+	outline: none !important;
+	text-decoration: none !important;
+	padding: 2px 1px 0 !important;
+  }
+  
+  a:link {
+	color: #ff0404 !important;
+  }
+  
+  a:visited {
+	color: #d80707 !important;
+  }
+  
+  a:focus {
+	border-bottom: 1px solid !important;
+	background: #f7a4a4 !important;
+  }
+  
+  a:hover {
+	border-bottom: 1px solid !important;
+	background: #feaaaa !important;
+  }
+  
+  a:active {
+	background: #860101 !important;
+	color: #131313 !important;
+  }
+  
+  h4 {
+	  padding-bottom: 10px;
+  }

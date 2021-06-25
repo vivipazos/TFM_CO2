@@ -40,17 +40,17 @@
 
 		{#each data as d, i}
 		   
-		   {#if d.coords[step].height>0}
+		  
 				<Square
 				x={width * 0.515}
 				y={y(d.coords[step].y)}
 				height={y(d.coords[step].height)}
 				width={width * 0.335}
 				stroke={i === picked ? "white" : "white"}
-				lineWidth={i === picked ? 5 : 1}
+				lineWidth={i === picked ? 3 : 0.2}
 				text={d.data[0]}
 				/>
-			{/if}
+			
 
 			
 		{/each}

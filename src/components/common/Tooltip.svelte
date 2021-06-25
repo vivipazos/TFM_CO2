@@ -8,7 +8,7 @@
     export let tooltipWidth = 200;
 	export let tooltipHeight=50;
 
-	$: tx = (x < width*0.80  && x>= width*0.55) ? x - tooltipWidth / 2: -50000;
+	$: tx = (x < width*0.85  && x>= width*0.52) ? x - tooltipWidth / 2: -50000;
 	$: ty = y+30;
 
 

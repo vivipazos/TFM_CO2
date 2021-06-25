@@ -13,9 +13,11 @@
 
 	import InlineSVG from 'svelte-inline-svg';
 
-	const transitionArrow = './images/transitionArrow.svg';
+	const transitionArrow = './images/transitionArrow-mobile.svg';
 
-	import data from './data/data.json'
+	import data from './data/data.json';
+
+	const logo = './images/favicon_co2.svg'; 
 
   	let offset, progress;
 	$:index=index < 10 ? index:0 ;
@@ -85,11 +87,12 @@
 		mark2017.style.opacity = 0;
 	}
 	}
+	
 	$:if (mark2040 !== null) {
-		if (progress > 0.7  && progress < 0.99 ) {
-		mark2017.style.opacity = 1;
+		if (progress > 0.3  && progress < 0.8 ) {
+		mark2040.style.opacity = 1;
 	} else {
-		mark2017.style.opacity = 0;
+		mark2040.style.opacity = 0;
 	}
 	}
 
@@ -158,9 +161,11 @@
 	
 	{:else if block.type === 'transition'}
 	<div class=transitionBox>
+		<div class="transition-space">
 		{#each block.text as p}
-				<h4><span class="transition-space">{@html p.p}</span></h4>
+				<h4>{@html p.p}</h4>
 		{/each}
+		</div>
 		<div class="transitionArrow">
 			<InlineSVG src={transitionArrow}/>
 		</div>
@@ -287,27 +292,41 @@
 		padding: 25vh 0 5vh 0;
 		margin: 0 auto;
 		width: 500px;
-		text-align: left;
-		height: 480px;
+		height: 600px;
 	}
 
 	/* Arrow */
 	:global(.transitionArrow) {
 		position: relative;
-		left: 100%;
-		top: -25vh;
-
-    }
+		top: -600px;
+		width: 60%;
+		right: -400px;
+		z-index: -100;
+		/* stroke-dasharray: 450;
+  		stroke-dashoffset: 450;
+  		animation: draw 2s linear forwards; */
+	}
+	/* 
+	@keyframes draw {
+  	to {
+    stroke-dashoffset: 0;
+  	}
+	} */
 
 	:global(.transition-space){
-		line-height: 1.5rem;
+		background-color: white;
+		border: 3px solid rgba(0, 0, 0, 0.2);
+		padding: 20px;
+		border-radius: 6px;
 	}
 
 	:global(.calc-header){
 		width: 20px;
 		margin-left: 1rem;
 		padding: 1rem;
-
 	}
 
+	:global(.s-container.margin){
+		margin-left: 30vw !important;
+	}
 </style>

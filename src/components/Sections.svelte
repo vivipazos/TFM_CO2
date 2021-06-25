@@ -2,6 +2,9 @@
 export let  data;
 
 import ScatterCanvas from './charts/ScatterCanvas.svelte'
+import InlineSVG from 'svelte-inline-svg';
+import { Button, Icon, MaterialApp } from 'svelte-materialify';
+import { mdiInformationOutline } from '@mdi/js';
 
 let scatterStep=0;
 let width=500;
@@ -28,16 +31,20 @@ let height=500;
         </div>
 
    <div class='col scrollyText'>
-        <h2>946 Gt</h2> <p> of human-made <span class="carbonDi-inline"> CO&#x2082;</span> emissions accumulates between 1990-2017. <br>Choose how you want to <b>explore</b> them :</p>
+        <h2>946 Gt</h2> <p> of human-made <span class="carbonDi-inline"> CO&#x2082;</span> emissions accumulated between 1990-2017. <br>Choose how you want to <b>explore</b> them :</p>
        <button class="ripple" tooltip="Accumulated emissions, global"  on:click={() => scatterStep = 0}> Global</button>
        <br>
-       <button class="ripple" title="Accumulated direct emissions, according to countries' domestic production" on:click={() => scatterStep = 1}> Countries by production</button>
+       <button class="ripple"  on:click={() => scatterStep = 1}> Countries by production</button> 
+       <span title="According to countries' domestic production, also known as territorial emissions. This is how national emissions are reported. Notice the slice of International transport not accounted in countries' budgets.. "> <InlineSVG src='./images/information.svg'/>   </span>
+       <br> 
+       <button class="ripple"  on:click={() => scatterStep = 2}> Countries by consumption</button>
+       <span title="According to countries' consumption and regardless of the place of production, also known as trade-adjusted. It is a closer mesaure of the lifestyle of a country's citizens."> <InlineSVG src='./images/information.svg'/>   </span>
        <br>
-       <button class="ripple" title="Accumulated direct emissions, according to countries' consumption, regardless of the place of production" on:click={() => scatterStep = 2}> Countries by consumption</button>
+       <button class="ripple"  on:click={() => scatterStep = 3}> Sectors</button>
        <br>
-       <button class="ripple" title="Main activities responsible for emissions, global % "  on:click={() => scatterStep = 3}> Sectors</button>
+       <button class="ripple"  on:click={() => scatterStep = 4}> Sectors in more detail </button>
        <br>
-       <button class="ripple" title="Activities reponsible for emissions in detail, global %" on:click={() => scatterStep = 4}> Sectors in more detail </button>
+       <sp>Largest emitters -responsible for at least 20% of the total- show their name. Explore the rest by hovering.</sp>
    </div>
 
 
@@ -61,7 +68,7 @@ let height=500;
     }
     
     button {
-        margin-top: 10px;
+        margin-top: 5px;
         position: relative;
         overflow: hidden;
         -webkit-transition: background 400ms;
