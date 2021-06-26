@@ -13,7 +13,7 @@
 
 	import InlineSVG from 'svelte-inline-svg';
 
-	const transitionArrow = './images/transitionArrow-mobile.svg';
+	const transitionArrow = './images/transitionArrow.svg';
 
 	import data from './data/data.json';
 
@@ -161,11 +161,11 @@
 	
 	{:else if block.type === 'transition'}
 	<div class=transitionBox>
-		<div class="transition-space">
+		<!-- <div class="transition-space">
 		{#each block.text as p}
 				<h4>{@html p.p}</h4>
 		{/each}
-		</div>
+		</div> -->
 		<div class="transitionArrow">
 			<InlineSVG src={transitionArrow}/>
 		</div>
@@ -298,20 +298,10 @@
 	/* Arrow */
 	:global(.transitionArrow) {
 		position: relative;
-		top: -600px;
-		width: 60%;
-		right: -400px;
-		z-index: -100;
-		/* stroke-dasharray: 450;
-  		stroke-dashoffset: 450;
-  		animation: draw 2s linear forwards; */
+		z-index: -1;
+		width: 70vw;
+		top: -4rem;
 	}
-	/* 
-	@keyframes draw {
-  	to {
-    stroke-dashoffset: 0;
-  	}
-	} */
 
 	:global(.transition-space){
 		background-color: white;

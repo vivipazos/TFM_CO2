@@ -28,7 +28,7 @@
 		{width} {height}
 		style='cursor: pointer'
 		on:mousemove={({ offsetX: x, offsetY: y }) => 	{ picked = delaunay.find(x, y);	
-														let tip =  ( data[picked].data[0] ) ;														
+														let tip =  (  `${data[picked].data[0]}: ${data[picked].coords[step].height.toFixed(2)} % `  ) ;														
 														tooltipOptions = {x: x, y: y, tip: tip, visible: (data[picked].coords[step].height>0)?true:false } 
 					}}
 		on:mouseout={() => {picked = null

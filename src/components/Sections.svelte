@@ -44,7 +44,7 @@ let height=500;
        <br>
        <button class="ripple"  on:click={() => scatterStep = 4}> Sectors in more detail </button>
        <br>
-       <sp>Largest emitters -responsible for at least 20% of the total- show their name. Explore the rest by hovering.</sp>
+       <sp>Largest emitters show their name. Explore the rest by hovering.</sp>
    </div>
 
 

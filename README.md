@@ -2,6 +2,8 @@
 
 By [Núria Altimir](https://twitter.com/naltimir), [Oriol Vidal](https://www.linkedin.com/in/oriol-vidal-porta/), [Rebecca Pazos](https://www.linkedin.com/in/rebeccapazos/) and [Víctor Garcia](https://www.linkedin.com/in/v%C3%ADctor-garcia-dom%C3%ADnguez-9083571a3/)
 
+View the project here: <https://tfm-co-2.vercel.app/>
+
 MVTEC Mentors: Xaquin G.V & Matt Osborn
 
 This project was designed and developed in the [Master’s program in Visual Tools to Empower Citizens (MVTEC)](http://www.mastervisualtoolsudg.com/) organized by [Fundació UdG](https://www.fundacioudg.org/) and the [ViT Foundation](https://www.fundaciovit.org/).
@@ -49,9 +51,9 @@ We wanted to get a good range of options - from those circulating in the public 
 - [Reduce transport emissions][3]: Climate Watch historical data on Greenhouse gas emissions.
 - [Increase renewable energy][4]: International Renewable Energy Agency 2017 report.
 - [Restore and protect forests and wetlands][5]: Sectoral greenhouse gas emission reduction potential in 2030 by UNEP report.
-- [Build our cities more sustainably][6]: The New Climate Economy report
-- [Reduce industry emissions][7]: Climate Accountability's carbon majors report from 2020 
-- [Sustainable fast fashion][8]: Clothes and Climate change report from Group Against Smog and Pollution (GASP) .
+- [Build our cities more sustainably][6]: The New Climate Economy report.
+- [Reduce industry emissions][7]: Climate Accountability's carbon majors report from 2020.
+- [Sustainable fast fashion][8]: Clothes and Climate change report from Group Against Smog and Pollution (GASP).
 - [More artificial meat][9]: Artificial Meat and the environment report from the European Environment Agency (EEA).
 
 [1]: http://www.fao.org/fileadmin/templates/nr/sustainability_pathways/docs/FWF_and_climate_change.pdf
@@ -60,7 +62,7 @@ We wanted to get a good range of options - from those circulating in the public 
 [4]: https://www.ourenergypolicy.org/wp-content/uploads/2017/11/IRENA_A_key_climate_solution_2017.pdf
 [5]: https://media.sitra.fi/2017/11/08200104/Sectoral_greenhouse_gas_emission_reduction_potentials_in_20301.pdf'
 [6]: https://newclimateeconomy.report/workingpapers/wp-content/uploads/sites/5/2016/04/NCE-technical-note-emission-reduction-potential_final.pdf
-[7]: https://climateaccountability.org/pdf/CarbonMajorsPDF2020/Top%20Twenty%20graphics/Top%20Twenty%20graphics/Top%20Twenty%201965-2018%20Table.png
+[7]: https://climateaccountability.org/pdf/CarbonMajorsPDF2020/Figures%20&%20Tables/Figures%20&%20Tables/TopTwenty%20CO2e%202018%20Table.png
 [8]: https://gasp-pgh.org/2020/07/28/clothes-climate-change-how-a-fashion-choice-change-could-lead-to-better-air-quality/
 [9]: https://www.eea.europa.eu/publications/artificial-meat-and-the-environment/artificial-meat-and-the-environment
 
@@ -74,7 +76,7 @@ Another big ethical chapter is that of avoiding bias during usage and interpreta
 
 Here we detail both numerical processing and decision-making steps.
 
-### Accounting of CO2 emissions, remaining budget, uncertainty:  
+### Accounting of CO<sub>2</sub> emissions, remaining budget, uncertainty:  
 
 - **Historical time series 1750-2017**, in Gt CO<sub>2</sub> is the sum of
 	Owid data per year, Mt CO<sub>2</sub> →  global Gt CO<sub>2</sub>, via sum and unit change
@@ -91,14 +93,15 @@ Not all countries had a value for their emissions by consumption, so the differe
 
 For each of the actions data, we had to find the most recent data point and ensure it is an annual value and in the correct data format.  
 - **Food waste**: We found that 4.4 Gt CO<sub>2</sub> eq was the emission rate that could be avoided yearly, if we reduce all food waste. So, as this seems impossible to achieve from one year to another, we decided to make the action as cutting our food waste by half so the final impact is 2.2 Gt CO<sub>2</sub> eq/year.
-- **Eat less meat**: We found data about the emissions impact of different types of diets (vegan, vegetarian…) but we thought that again, it was more realistic to think about globally changing to a flexitarian diet (eat meat once a week) so we collected the data from the report as it was: 5130 Mt CO2 eq/year.
-- **Reduce transport emissions**: TBC
-- **Increase renewable energy**:
-- **Restore and protect forests and wetlands**:
-- **Build our cities more sustainably**:
-- **Reduce industry emissions**:
-- **Sustainable fast fashion**:
-- **More artificial meat**: 
+- **Eat less meat**: We found data about the emissions impact of different types of diets (vegan, vegetarian…) but we thought that again, it was more realistic to think about globally changing to a flexitarian diet (eat meat once a week) so we collected the data from the report as it was: 5130 Mt CO<sub>2</sub> eq/year.
+- **Reduce transport emissions**: Using 2018 data for 193 countries, total emissions from transport is at 47 260 Mt CO<sub>2</sub> eq. We decided to pick a more realistic emission reduction goal of reducing this by just 20 per cent, which equals 9 452 Mt CO<sub>2</sub> eq.
+- **Increase renewable energy**: We found that just 16% of the world’s energy supply came from solar, wind and other renewable sources. In the same report it said that if we could get that figure up to 65% by 2050, which researchers say is both technically and financially feasible, then we could prevent 14,000 million tonnes of carbon dioxide emissions. We converted this unit to Mt CO<sub>2</sub> eq and divide this figure that will be achieved by 2050, by 30 years to get an average yearly carbon dioxide equivalent reduction figure year by year. In fact, the reduction is not linear but as we showed the changes on CO<sub>2</sub> as velocity to reach the carbon limit the effect is approximately the same.
+- **Restore and protect forests and wetlands**: We collected and grouped the data from the reports classified as regrow lost forests, stop forest loss and protect and restore wetlands and peatlands (10124, 3000 and 2713 MtCO<sub>2</sub>eq respectively). This data was again from now to 2050 so we summed the figures and divided by 30 years to get the numbers yearly.
+- **Build our cities more sustainably**: According to the report, the estimated abatement potential is 2 Gt CO<sub>2</sub>eq by 2030. So as it has been done before, we have devided by 10 years this figure and got a 0.2 Gt CO<sub>2</sub>eq/year.
+- **Reduce industry emissions**:For the year 2018, the top 20 companies contributed 14,152 Mt CO<sub>2</sub> eq. If they reduced their emissions to zero, this would make a huge impact on the annual emissions. We decided to keep this one as is to show the source of most emissions is from big coal & oil companies.
+- **Sustainable fast fashion**: This data was collected directly from the source. The best way to combat fashion-related waste and pollution is to change the buying habits. So if we were all aware of this problem and how much it pollutes it is feasable to get rid of all the emissions that this industry is producing.
+- **More artificial meat**: We found the yearly emitting data that is estimated to be produced by livestock supply chains. After reading the report and getting more information on the subject we decided that a feasible action could be to
+cut by half this figure by changing the way industries produce meat. In order to calculate the yearly reduction, we divided the figure by 2 (due to half industry changing to this method), we multiplied by 78 and divided by 100 (we get this percentage from the lower reduction percentage of gas emission using this technology cited on the source).
 
 These values are then aggregated into a yearly value, and then added to the last value of the historical data - set as the variable modified_value.
 With this reactive variable, we can then change the value added each year depending on the user input in the toggles.
@@ -116,7 +119,7 @@ It is quite common to see emission data displayed as a time series and partition
 We were working with the ideas of a common space, accountability, partitioning from the start. After brainstorming the ideas of using red, showing uncertainty,  adding movement and a “calculator” idea came up.  The process can be followed in the project’s [figma](https://www.figma.com/file/IOEJYgX7xWMXXeGZHTv1Dg/first-prototypes?node-id=0%3A1) page.
 
 ### Layout
-We wanted to show that CO2 emissions, no matter how you try to attribute it to any one country or company, are still filling up our common space - that is our atmosphere, which, in essence, is our common fate. We achieve this by using a single colored shape that takes up the whole screen. The vertical arrangement is from past (history) to future (actions).
+We wanted to show that CO<sub>2</sub> emissions, no matter how you try to attribute it to any one country or company, are still filling up our common space - that is our atmosphere, which, in essence, is our common fate. We achieve this by using a single colored shape that takes up the whole screen. The vertical arrangement is from past (history) to future (actions).
 
 ### Markers
 
@@ -128,7 +131,7 @@ We wanted to show that CO2 emissions, no matter how you try to attribute it to a
 
 ### Style
 
-The dominant color is red (#C02) because <sub>2</sub> absorbs and emits infrared radiation (heat). Cinematographic effect adds interest. General style is simple and bold. We used a combination of black, white and red, with little variation in between to also allow users to give importance to the negative space - the portions remaining of the carbon budget. The use of the ACDC inspired font was an endearing nod to the title of the project - Highway to #C02 hell.
+The dominant color is red (#C02) because CO<sub>2</sub> absorbs and emits infrared radiation (heat). Cinematographic effect adds interest. General style is simple and bold. We used a combination of black, white and red, with little variation in between to also allow users to give importance to the negative space - the portions remaining of the carbon budget. The use of the ACDC inspired font was an endearing nod to the title of the project - Highway to #C02 hell.
 
 ### Interaction
 
@@ -150,15 +153,17 @@ The diagram shows an overview of the main elements used to construct the project
 ![scheme](https://user-images.githubusercontent.com/13485334/123438014-de224a80-d602-11eb-9745-3ee8e32f87c2.png)
 
 ### Part 1: Budget
-Historical data is fed into a CSS variable for the width which is then progressively stepped through as the scroller progresses. 
+Historical data is fed into a CSS variable for the width which is then progressively stepped through as the scroller progresses. Both the gas video we did and the bar moves with this variable. The tricky part was to make the background stop at some point while the foreground keep showing new slides with information. The solution was to play with the progress variable of the scroller. 
 
 ### Part 2: Sections
-An interactive stacked chart is created in a separate Svelte component and displayed as a slide in the scroll progress.
+An interactive stacked chart is created in a separate Svelte component and displayed as a slide in the scroll progress. The most complicated part was to merge the budget with the sections. We wanted the scroller to work until it reaches a certain point, then it stops and the user can interact with the data and afterwards you can scroll again. The problem was that we wanted this interactive to be on the foreground but on the same time with a text panel with buttons to filter the data. We had lots of problems also with the transitions between the interactive and the tooltip but we finally made it.
 
 ### Part 3: BudgetActions + Actions
 Action data creates the selection items for users to toggle on/off different reduction options. As they toggle on/off this adds a data row to indicate if the item is 'active' or 'inactive'. This new data array is then pushed to another Svelte component called BudgetActions which creates the moving bar chart again with a CSS variable from the new data. 
 
 We used [setInterval](https://www.w3schools.com/jsref/met_win_setinterval.asp) to begin the growth of the bar, and [intersection observer](https://www.npmjs.com/package/svelte-intersection-observer) to trigger the growth only when the bar comes into view. 
+
+We used expansion panels from [svelte-materialify](https://github.com/TheComputerM/svelte-materialify) to make the explanatory text expandable as we wanted to show them all together in the screen at the same time we ensure the reader understands what each action means. We also added a reset button in case the user filled the budget.
 
 ### Global implementation
 
@@ -190,12 +195,14 @@ The view-point issue in this project reflects on an on-going debate between the 
 #### One thing that went well:
 - A good thing was to be able finally to participate in all the steps of the implementation and gain a huge amount of hands-on practice - Núria
 - Working with experts or people knowledgeable on the topic is essential to enrich the visual experience and storytelling, otherwise it is easy to fall into tropes or convey information inaccurately. - Rebecca
-- TBC - Victor
-- TBC - Oriol
+- Cooperation between us went really well. We had different points of views due to quite divers academic backgrounds but we bring out the best of each to develop this project. - Victor
+- Different kinds of expertise in the team has been essential to construct something with great projection in all aspects. - Oriol
 
 #### One thing to improve:
 - A thing that went not so good was the workflow, which was rather patchy due to different working rhythms, availability, and diverging views - Núria
 - Deeper understanding of structuring and coding a project, not something I am often exposed to so I can see there were flaws in our workflow - Rebecca
+- At the same time we were coding, we were taking some design decisions and changes so the code had to be rewritten many times. If we had had more time we could have worked first on the design part and afterwards code the webpage. - Víctor
+- Not being able to help as I would like in the coding part. - Oriol
 
 
 ### Overall improvements
@@ -210,7 +217,6 @@ Remaining improvements from general to details:
 - Section part: 
 	- Improve the  way the info icons show the information (a nicer tooltip or expansion panels to mimic the interaction in the Actions part)
 	- Show also data per capita
-	- Add the values to the tooltip over sections
 - Actions part
 	- Match the bar and video colors totally
 	- Better transition between sections - this was an important part of the project. A possible solution is to do a zoom effect at the end of the scroll that is achievable with stronger coding skills.
